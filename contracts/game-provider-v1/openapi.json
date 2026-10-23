@@ -1,16 +1,21 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "Arena generic game provider — local reference",
-    "version": "2026-10-23.1",
-    "description": "Experimental local contract; generic hosted Arena ingestion is not deployed."
+    "title": "Arena game provider — sandbox API",
+    "version": "2026-10-23.2",
+    "description": "Sandbox source delivery. Hosted access requires an owned Studio release and game-scoped source credential; check GET /v1/status for current availability. No production-value or payout authority."
   },
   "servers": [
+    {
+      "url": "https://hybrid-arena.com",
+      "description": "Hosted sandbox; scoped Studio source key required"
+    },
     {
       "url": "http://127.0.0.1:8789",
       "description": "Disposable loopback sandbox only"
     }
   ],
+  "x-hosted-sandbox-status": "https://hybrid-arena.com/v1/status",
   "x-production-writes-available": false,
   "x-value-movement": false,
   "paths": {

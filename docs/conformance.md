@@ -1,8 +1,8 @@
 # Local alpha acceptance
 
-Release: `v0.1.0-alpha.1`; contract: `2026-10-23.1`.
+Release: `v0.1.0-alpha.2`; contract: `2026-10-23.2`.
 
-Local validation on Node 22.23.3 and Python 3.12 passed 23 Node tests and five
+Local validation on Node 22.23.3 and Python 3.12 passed 24 Node tests and five
 Python tests. CI additionally runs the same suite on Node 22 and 24. Check the
 release's exact source revision and CI run before relying on a downloadable build.
 

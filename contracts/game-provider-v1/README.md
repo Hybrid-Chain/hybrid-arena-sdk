@@ -1,6 +1,6 @@
 # Game provider contract v1 — early preview
 
-Contract version: `2026-10-23.1`. Availability: local reference only.
+Contract version: `2026-10-23.2`. Availability: local reference and scoped hosted sandbox client. Check /v1/status on the hosted origin.
 
 A registered release declares publisher/game/version/ruleset, possible outcomes,
 capabilities and source-clock precision. The reference registry is fixture-owned;
@@ -20,8 +20,7 @@ registered game release; source UTC occurrence time stays optional.
 - `GET /v1/receipts/{request_id}`: recover the exact original accepted receipt.
 - `GET /v1/status`: local reference availability; no account or write authority.
 
-These paths are not part of Arena's production operation inventory. The receiver
-must bind `127.0.0.1` and use disposable state. Hosted multi-tenant authority is M3.
+The local receiver binds `127.0.0.1` with fixture state. Hosted sandbox routes use the same signing protocol with revocable game-scoped Studio keys; check `https://hybrid-arena.com/v1/status`. Browser sessions cannot sign source requests. Never use the public demo key against the hosted service.
 Maximum body 256 KiB, 100 events per batch, 64 actors, 16 outcomes, depth 20.
 These are reference bounds, not a production throughput/availability SLA.
 
@@ -78,6 +77,5 @@ not an independently signed game result or a chain receipt. It explicitly record
 No SDK method signs a transaction, allocates collateral or releases customer funds.
 Future approved rule/settlement/wallet services consume evidence separately.
 
-Public projection, retained replay data, source integrity review and credential
-provisioning are explicit later capabilities. Publishing this schema does not
+Hosted receipts use `assurance: arena_hosted_sandbox` and still have `anchor: null` and no payout authority. Explicitly opted-in filtered facts are published separately on Testnet; chain evidence is recovered through Arena/Explorer proof APIs, not inferred from the ingestion receipt. The optional `activity` field records source-reported synthetic/bot/human/mixed activity; it is not independent player verification. Publishing this schema does not
 grant a game source an Arena identity, operator license or production write key.

@@ -1,7 +1,7 @@
 import {createHash,createHmac,randomBytes} from 'node:crypto';
 import type {Json} from './types.js';
 export const MAX_BODY_BYTES = 262144;
-export const CONTRACT_VERSION = '2026-10-23.1';
+export const CONTRACT_VERSION = '2026-10-23.2';
 export const newId = (): string => randomBytes(16).toString('hex');
 export const sha256 = (bytes: string | Uint8Array): string => createHash('sha256').update(bytes).digest('hex');
 

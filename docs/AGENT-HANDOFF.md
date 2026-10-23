@@ -1,8 +1,7 @@
 # Agent integration handoff
 
 1. Read the README, common protocol and `contracts/game-provider-v1/manifest.json`.
-2. Check actual availability. OpenAPI paths in this repository describe a local
-   reference receiver; do not send writes to Arena production using them.
+2. Check actual availability. OpenAPI paths support the local reference receiver and the canonical hosted sandbox. Check `/v1/status` and use only a game-scoped Studio key for hosted writes; fixture authority is never a hosted credential.
 3. Use a server-authoritative game source and the registered publisher/game/release
    binding. Public aliases/opaque match actor IDs are not identity credentials.
 4. Preserve every queued request's original ID, canonical bytes, target and hash.
@@ -23,8 +22,5 @@ a venv, launch `arena sandbox --demo`, and run the local sample in either langua
 Use `arena validate` and `arena scaffold` for the contract files. CI includes
 actual HTTP and cross-language outbox recovery rather than mocked success only.
 
-Check `docs/milestones.md` and the release manifest for supported scope. Generated
-OpenAPI under this repository still does not describe hosted production writes.
-The shared website discovery links to this kit without adding `/v1/matches` to
-Arena's production API inventory. Publishing credentials, Unity/C#, public evidence
-projection and wallet integration remain their own milestones.
+Check `docs/milestones.md` and the release manifest for supported scope. Generated OpenAPI describes sandbox source writes only. It grants no production-value authority.
+The shared website discovery links to this kit and distinguishes scoped hosted source paths from first-party browser operations. Read `docs/hosted.md` for registration, revocation and public Testnet evidence. Unity/C#, Mainnet deployment and wallet integration remain separate milestones.

@@ -12,6 +12,7 @@ export interface GameManifest extends GameBinding {
 export interface MatchRequest extends GameBinding {
   schema: 'arena.game.match.v1'; request_id: string; match_id: string; epoch: string;
   participants: {actor_id: string; outcome_id: string}[];
+  activity?: 'synthetic' | 'bot' | 'human' | 'mixed' | 'not_reported';
 }
 interface EventBase {
   event_id: string; sequence: number; game_time_ms: number;
@@ -36,7 +37,7 @@ export interface Receipt {
   match_id: string; epoch: string; request_sha256: string; manifest_sha256: string;
   first_sequence: number | null; last_sequence: number;
   state: 'created' | 'live' | 'held' | 'completed' | 'canceled'; accepted_at: string;
-  assurance: 'local_reference_only'; anchor: null; payout_authorized: false;
+  assurance: 'local_reference_only' | 'arena_hosted_sandbox'; anchor: null; payout_authorized: false;
 }
 export interface ClientOptions {
   baseUrl: string; publisherId: string; gameId: string; keyId: string;

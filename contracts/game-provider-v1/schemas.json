@@ -203,6 +203,15 @@
           },
           "minItems": 0,
           "maxItems": 64
+        },
+        "activity": {
+          "enum": [
+            "synthetic",
+            "bot",
+            "human",
+            "mixed",
+            "not_reported"
+          ]
         }
       },
       "required": [
@@ -711,7 +720,10 @@
           "maxLength": 40
         },
         "assurance": {
-          "const": "local_reference_only"
+          "enum": [
+            "local_reference_only",
+            "arena_hosted_sandbox"
+          ]
         },
         "anchor": {
           "type": "null"

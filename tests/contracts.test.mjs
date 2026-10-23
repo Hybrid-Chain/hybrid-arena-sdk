@@ -36,10 +36,16 @@ test('published signing fixture binds exact body, target and publisher/environme
 test('reference paths cannot be mistaken for live Arena operations or payouts',()=>{
  const m=json('manifest.json'),o=json('openapi.json');
  assert.equal(m.production_ingestion,false);assert.equal(m.payout_authority,false);assert.deepEqual(m.production_paths,[]);
- assert.equal(o['x-production-writes-available'],false);assert.ok(o.servers.every(s=>s.url.startsWith('http://127.0.0.1:')));
+ assert.equal(o['x-production-writes-available'],false);assert.ok(o.servers.some(s=>s.url==='https://hybrid-arena.com'));
  for(const [path,methods] of Object.entries(o.paths))for(const op of Object.values(methods)){
   if(path!=='/v1/status')assert.deepEqual(op.security,[{GameSignature:[]}]);
   for(const p of path.matchAll(/\{([^}]+)\}/g))assert.ok(op.parameters.some(x=>x.name===p[1]&&x.in==='path'&&x.required));
  }
  const receipt=schemas.$defs.Receipt.properties;assert.equal(receipt.payout_authorized.const,false);assert.equal(receipt.anchor.type,'null');
+});
+
+test('hosted sandbox assurance is additive, never a chain or payout authorization',()=>{
+ const props=schemas.$defs.Receipt.properties;assert.deepEqual(props.assurance.enum,['local_reference_only','arena_hosted_sandbox']);
+ const match=json('fixtures/demo-match.json');assert.ok(validate('MatchRequest',{...match,activity:'synthetic'}));assert.equal(validate('MatchRequest',{...match,activity:'verified_person'}),false);
+ assert.equal(props.anchor.type,'null');assert.equal(props.payout_authorized.const,false);
 });

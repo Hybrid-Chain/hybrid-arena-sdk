@@ -5,8 +5,7 @@ Hybrid Arena. MIT licensed. This repository is the common-contract source for
 future third-party integrations; existing CS2 and Star Quest protocols are preserved.
 
 **Early preview:** TypeScript/Node and Python clients, a durable outbox, CLI and
-loopback reference receiver are available. Generic hosted ingestion, Studio
-publishing, chain publication and payouts remain later milestones. Packages are
+loopback reference receiver are available. Hosted sandbox integration and Studio onboarding are described in the hosted quick start; inspect runtime availability before sending. Mainnet deployment and payouts remain later milestones. Packages are
 distributed as source and GitHub release assets; no npm/PyPI registry publication
 is claimed.
 
@@ -50,3 +49,11 @@ https://hybrid-arena.com/.well-known/arena.json.
 
 Browser sign-in, source delivery credentials, match admission and wallet execution
 have different authorities. A game source cannot grant itself any of them.
+
+## Hosted Testnet integration
+
+[Hosted quick start](docs/hosted.md) covers Studio registration, scoped source
+keys, real receipt inspection and public Testnet evidence. Check the live status
+before sending: hosting availability is separate from the SDK release. The
+community directory supports feedback and release-bound promotion votes. Mainnet
+application deployment and real-value authority remain separate rollout gates.
