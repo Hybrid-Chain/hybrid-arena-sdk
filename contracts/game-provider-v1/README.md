@@ -8,6 +8,11 @@ there is no self-registration API. A signed match request must match this releas
 Opaque match-local actors may be assigned to outcomes; they are not authenticated
 Hybrid-ID users. Native admission remains the game's separate responsibility.
 
+The runnable local kit is now in the SDK alpha; follow
+https://github.com/Hybrid-Chain/hybrid-arena-sdk/blob/main/docs/getting-started.md.
+Game-extension metrics are safe integers/booleans with units defined by the
+registered game release; source UTC occurrence time stays optional.
+
 ## Reference operations
 
 - `POST /v1/matches`: create one immutable match using `request_id`.

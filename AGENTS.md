@@ -12,5 +12,7 @@
 - Tests use fixture authority, loopback and disposable databases only. Run
   TypeScript build, Node tests and Python tests before releases. Reference server
   always binds loopback. Published docs must accurately state deployment status.
+- The intentionally public `demo-key` / repeated-byte secret and synthetic
+  participant IDs are fixture authority, never provisioned on a live service.
 - Use US English. SDK packages, schemas, examples, agent context and release
   manifests must agree on contract version and artifact checksums.

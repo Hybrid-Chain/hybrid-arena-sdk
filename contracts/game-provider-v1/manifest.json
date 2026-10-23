@@ -1,7 +1,8 @@
 {
   "schema": "arena.game-provider-manifest.v1",
   "version": "2026-10-23.1",
-  "status": "contract_preview",
+  "sdk_version": "0.1.0-alpha.1",
+  "status": "local_sandbox_available",
   "scope": "local_reference_only",
   "source_repository": "https://github.com/Hybrid-Chain/hybrid-arena-sdk",
   "production_ingestion": false,

@@ -1,0 +1,16 @@
+{
+  "schema": "arena.contract-checksums.v1",
+  "version": "2026-10-23.1",
+  "files": {
+    "README.md": "155c47696241cb77918469d509a9e2e67db7c28f584f118eee14e2ae2efd930c",
+    "fixtures/cs2-mapping.json": "e4854659185d5e794b4aafc8aa496a517ad1adeb364e9f3ee4c0b3f08006c14d",
+    "fixtures/demo-events.json": "31f4c5ec6e5d182cf2294417b1d8c72cf09514d57d17b9ce76c7dcb41a3a7e99",
+    "fixtures/demo-manifest.json": "0002bfce4c4489068109df846e6b8b97598daa71347861b3df14fb2734f63b02",
+    "fixtures/demo-match.json": "3c875f2db87eb1a7b50e7f691ad723b297f0671b60c90dbef3caea7e27ec4ef5",
+    "fixtures/signing-vector.json": "5df035d1c34f0a11d188a9d5a52f7154b71d8104daa49ad524ac947093376c63",
+    "fixtures/starquest-mapping.json": "6c7cee61b1b6f335ed60b0bc225b58ec517995e1f69390cead5547b8fa747ac9",
+    "manifest.json": "1e175dbcc6afb562bc9609b916c852bfdf61d9aedba11fb9baf9450cc004f63a",
+    "openapi.json": "76fa717b8d01ea59bbec01a4ba4c9933b61356e12c432ec872deec8fd8d25808",
+    "schemas.json": "924132bc00b0aa53d6ed8a7e1328ac5a9d67daee48c20b797694d01193798d4a"
+  }
+}

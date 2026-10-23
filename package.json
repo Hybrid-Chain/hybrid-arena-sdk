@@ -9,7 +9,7 @@
   "types": "./dist/index.d.ts",
   "exports": {".": {"types": "./dist/index.d.ts", "import": "./dist/index.js"}},
   "bin": {"arena": "./scripts/arena.mjs"},
-  "files": ["dist", "contracts", "scripts/arena.mjs", "reference", "examples", "README.md", "LICENSE"],
+  "files": ["dist", "contracts", "scripts/arena.mjs", "reference", "examples", "docs", "README.md", "LICENSE"],
   "scripts": {
     "test:contracts": "node --test tests/contracts.test.mjs",
     "build": "tsc -p tsconfig.json",

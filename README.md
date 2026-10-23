@@ -4,10 +4,11 @@ Open game-provider contracts and server-side tools for integrating games with
 Hybrid Arena. MIT licensed. This repository is the common-contract source for
 future third-party integrations; existing CS2 and Star Quest protocols are preserved.
 
-**Early preview:** the common contract is published for evaluation. The runnable
-SDK and loopback reference sandbox follow in milestone M2. Generic production
-ingestion, Studio publishing, chain publication and payouts are not activated by
-this contract. No package-registry publication is claimed.
+**Early preview:** TypeScript/Node and Python clients, a durable outbox, CLI and
+loopback reference receiver are available. Generic hosted ingestion, Studio
+publishing, chain publication and payouts remain later milestones. Packages are
+distributed as source and GitHub release assets; no npm/PyPI registry publication
+is claimed.
 
 ## Contract first
 
@@ -16,14 +17,31 @@ this contract. No package-registry publication is claimed.
 - [Reference OpenAPI](contracts/game-provider-v1/openapi.json)
 - [Existing-game mappings](docs/game-mappings.md)
 - [Agent instructions](docs/AGENT-HANDOFF.md)
+- [Local quick start](docs/getting-started.md)
+- [Delivery and recovery](docs/recovery.md)
 - [Delivery status](docs/milestones.md)
 
-Validate the contract locally with Node 22.13+ (Node 24 used in CI):
+Use Node 22.13+ on a POSIX host; Node 22 and 24 are checked in CI. The local
+SQLite stores require owner-only POSIX permissions. Native Windows ACL support
+and Unity/C# are follow-on work. From a checkout:
 
 ```sh
 npm ci
-npm run test:contracts
+npm run build
+npm run sandbox
 ```
+
+In a second terminal, send a synthetic three-event game to that local receiver:
+
+```sh
+node scripts/arena.mjs demo --base-url http://127.0.0.1:8789
+```
+
+For Python, create a virtual environment and install `./python`, then run
+`python examples/demo.py http://127.0.0.1:8789`. Run `npm run test:contracts`
+for schema/signing fixtures; full Node tests also use the installed Python SDK.
+All default demo IDs/credentials are public fixture authority. The receiver
+always listens on loopback and no command creates an Arena production match.
 
 The reference HTTP paths belong to the local sandbox. They are not newly deployed
 routes at `hybrid-arena.com`. Arena's current production operations are documented

@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hybrid-arena-sdk"
+version = "0.1.0a1"
+description = "Hybrid Arena server SDK for the local game-provider reference contract"
+requires-python = ">=3.10"
+dependencies = ["jsonschema==4.25.1"]
+license = "MIT"
+license-files = ["LICENSE"]
+readme = "README.md"
+
+[project.urls]
+Source = "https://github.com/Hybrid-Chain/hybrid-arena-sdk"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+hybrid_arena_sdk = ["contracts/*.json", "py.typed"]
