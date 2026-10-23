@@ -1,0 +1,28 @@
+{
+  "schema": "arena.game.manifest.v1",
+  "publisher_id": "demo-studio",
+  "game_id": "cs2-fixture",
+  "game_version": "0.1.0",
+  "ruleset_id": "duel-mr5",
+  "ruleset_version": "1.0.0",
+  "outcomes": [
+    {
+      "outcome_id": "a",
+      "label": "Team A"
+    },
+    {
+      "outcome_id": "b",
+      "label": "Team B"
+    }
+  ],
+  "capabilities": {
+    "spectate": false,
+    "join": false,
+    "replays": false
+  },
+  "clock": {
+    "kind": "server",
+    "precision_ms": 16,
+    "tick_rate_hz": 64
+  }
+}

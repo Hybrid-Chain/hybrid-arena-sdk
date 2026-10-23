@@ -1,0 +1,21 @@
+{
+  "schema": "arena.game.match.v1",
+  "publisher_id": "demo-studio",
+  "game_id": "demo-duel",
+  "game_version": "0.1.0",
+  "ruleset_id": "duel",
+  "ruleset_version": "1.0.0",
+  "request_id": "11111111111111111111111111111111",
+  "match_id": "22222222222222222222222222222222",
+  "epoch": "33333333333333333333333333333333",
+  "participants": [
+    {
+      "actor_id": "pilot-a",
+      "outcome_id": "a"
+    },
+    {
+      "actor_id": "pilot-b",
+      "outcome_id": "b"
+    }
+  ]
+}

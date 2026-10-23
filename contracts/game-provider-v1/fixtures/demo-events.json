@@ -1,0 +1,55 @@
+{
+  "schema": "arena.game.events.v1",
+  "publisher_id": "demo-studio",
+  "game_id": "demo-duel",
+  "batch_id": "44444444444444444444444444444444",
+  "match_id": "22222222222222222222222222222222",
+  "epoch": "33333333333333333333333333333333",
+  "first_sequence": 1,
+  "previous_batch_sha256": null,
+  "events": [
+    {
+      "event_id": "55555555555555555555555555555555",
+      "sequence": 1,
+      "type": "match_started",
+      "game_time_ms": 0,
+      "source_tick": 0,
+      "payload": {}
+    },
+    {
+      "event_id": "66666666666666666666666666666666",
+      "sequence": 2,
+      "type": "game_event",
+      "game_time_ms": 1000,
+      "source_tick": 60,
+      "payload": {
+        "name": "demo.hit",
+        "actor_id": "pilot-a",
+        "target_actor_id": "pilot-b",
+        "values": {
+          "damage": 10
+        }
+      }
+    },
+    {
+      "event_id": "77777777777777777777777777777777",
+      "sequence": 3,
+      "type": "match_completed",
+      "game_time_ms": 2000,
+      "source_tick": 120,
+      "payload": {
+        "winner": "a",
+        "scores": [
+          {
+            "outcome_id": "a",
+            "score": 2
+          },
+          {
+            "outcome_id": "b",
+            "score": 0
+          }
+        ]
+      }
+    }
+  ]
+}

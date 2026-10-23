@@ -1,0 +1,36 @@
+{
+  "schema": "arena.game.manifest.v1",
+  "publisher_id": "demo-studio",
+  "game_id": "starquest-fixture",
+  "game_version": "0.1.0",
+  "ruleset_id": "battlefield",
+  "ruleset_version": "1.0.0",
+  "outcomes": [
+    {
+      "outcome_id": "tokugawa",
+      "label": "tokugawa"
+    },
+    {
+      "outcome_id": "hibernia",
+      "label": "hibernia"
+    },
+    {
+      "outcome_id": "colos",
+      "label": "colos"
+    },
+    {
+      "outcome_id": "red-star",
+      "label": "red-star"
+    }
+  ],
+  "capabilities": {
+    "spectate": false,
+    "join": false,
+    "replays": false
+  },
+  "clock": {
+    "kind": "simulation",
+    "precision_ms": 17,
+    "tick_rate_hz": 60
+  }
+}

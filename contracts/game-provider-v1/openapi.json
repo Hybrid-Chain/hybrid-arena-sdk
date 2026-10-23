@@ -1,0 +1,509 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Arena generic game provider — local reference",
+    "version": "2026-10-23.1",
+    "description": "Experimental local contract; generic hosted Arena ingestion is not deployed."
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:8789",
+      "description": "Disposable loopback sandbox only"
+    }
+  ],
+  "x-production-writes-available": false,
+  "x-value-movement": false,
+  "paths": {
+    "/v1/matches": {
+      "post": {
+        "operationId": "createReferenceMatch",
+        "security": [
+          {
+            "GameSignature": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-Arena-Key-Id",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Arena-Publisher",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Arena-Environment",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Arena-Timestamp",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Arena-Nonce",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "./schemas.json#/$defs/MatchRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Local reference result; no financial authority.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./schemas.json#/$defs/Receipt"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Protocol failure; preserve original request identity and terms.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./schemas.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Protocol failure; preserve original request identity and terms.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./schemas.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Protocol failure; preserve original request identity and terms.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./schemas.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Protocol failure; preserve original request identity and terms.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./schemas.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Protocol failure; preserve original request identity and terms.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./schemas.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Protocol failure; preserve original request identity and terms.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./schemas.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Protocol failure; preserve original request identity and terms.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./schemas.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Protocol failure; preserve original request identity and terms.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./schemas.json#/$defs/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/matches/{match_id}/events": {
+      "post": {
+        "operationId": "appendReferenceEvents",
+        "security": [
+          {
+            "GameSignature": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-Arena-Key-Id",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Arena-Publisher",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Arena-Environment",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Arena-Timestamp",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Arena-Nonce",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "match_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{32}$"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "./schemas.json#/$defs/EventBatch"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Local reference result; no financial authority.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./schemas.json#/$defs/Receipt"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Protocol failure; preserve original request identity and terms.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./schemas.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Protocol failure; preserve original request identity and terms.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./schemas.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Protocol failure; preserve original request identity and terms.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./schemas.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Protocol failure; preserve original request identity and terms.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./schemas.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Protocol failure; preserve original request identity and terms.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./schemas.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Protocol failure; preserve original request identity and terms.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./schemas.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Protocol failure; preserve original request identity and terms.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./schemas.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Protocol failure; preserve original request identity and terms.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./schemas.json#/$defs/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/receipts/{request_id}": {
+      "get": {
+        "operationId": "recoverReferenceReceipt",
+        "security": [
+          {
+            "GameSignature": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-Arena-Key-Id",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Arena-Publisher",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Arena-Environment",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Arena-Timestamp",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Arena-Nonce",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "request_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{32}$"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Local reference result; no financial authority.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./schemas.json#/$defs/Receipt"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Protocol failure; preserve original request identity and terms.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./schemas.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Protocol failure; preserve original request identity and terms.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./schemas.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Protocol failure; preserve original request identity and terms.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./schemas.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Protocol failure; preserve original request identity and terms.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./schemas.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Protocol failure; preserve original request identity and terms.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./schemas.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Protocol failure; preserve original request identity and terms.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./schemas.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Protocol failure; preserve original request identity and terms.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./schemas.json#/$defs/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Protocol failure; preserve original request identity and terms.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./schemas.json#/$defs/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/status": {
+      "get": {
+        "operationId": "referenceStatus",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Local availability, production ingestion false, payout authority false."
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "GameSignature": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Arena-Signature",
+        "description": "ARENA-GAME-HMAC-V1. See README for exact canonical bytes, publisher/environment binding and fresh nonce."
+      }
+    }
+  }
+}

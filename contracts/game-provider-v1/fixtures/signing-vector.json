@@ -1,0 +1,14 @@
+{
+  "fixture_only": true,
+  "secret_hex": "0101010101010101010101010101010101010101010101010101010101010101",
+  "method": "POST",
+  "path": "/v1/matches",
+  "publisher_id": "demo-studio",
+  "environment": "sandbox",
+  "timestamp": "1792785600",
+  "nonce": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "body_utf8": "{\"epoch\":\"33333333333333333333333333333333\",\"game_id\":\"demo-duel\",\"game_version\":\"0.1.0\",\"match_id\":\"22222222222222222222222222222222\",\"participants\":[{\"actor_id\":\"pilot-a\",\"outcome_id\":\"a\"},{\"actor_id\":\"pilot-b\",\"outcome_id\":\"b\"}],\"publisher_id\":\"demo-studio\",\"request_id\":\"11111111111111111111111111111111\",\"ruleset_id\":\"duel\",\"ruleset_version\":\"1.0.0\",\"schema\":\"arena.game.match.v1\"}",
+  "body_sha256": "a1936ef5a62a5fbdd1ecad84fdc54c99cad50120c01265089d15042664e5113c",
+  "canonical_text": "ARENA-GAME-HMAC-V1\nPOST\n/v1/matches\ndemo-studio\nsandbox\n1792785600\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\na1936ef5a62a5fbdd1ecad84fdc54c99cad50120c01265089d15042664e5113c",
+  "signature": "1bbdf0b2cb5603d75c4dcf29f0a23e73a40366c5f0fa73e76a5d8b55bb04fdc7"
+}
