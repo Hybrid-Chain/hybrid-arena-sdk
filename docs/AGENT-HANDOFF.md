@@ -24,3 +24,13 @@ actual HTTP and cross-language outbox recovery rather than mocked success only.
 
 Check `docs/milestones.md` and the release manifest for supported scope. Generated OpenAPI describes sandbox source writes only. It grants no production-value authority.
 The shared website discovery links to this kit and distinguishes scoped hosted source paths from first-party browser operations. Read `docs/hosted.md` for registration, revocation and public Testnet evidence. Unity/C#, Mainnet deployment and wallet integration remain separate milestones.
+
+## Hosted commissioning
+
+The live sandbox and Studio/community developer preview are commissioned. Current
+availability comes from `/v1/status` and Arena's canonical manifest, not an older
+packaged capability snapshot. Code release alpha.3 remains compatible with the
+current contract; contract metadata is versioned separately from binary releases.
+See `docs/deployment-20261023.json` and the linked actual native proof. Acceptance
+uses a synthetic service-owned fixture, not an independent human creator or game.
+Mainnet application deployment and financial execution remain unavailable.

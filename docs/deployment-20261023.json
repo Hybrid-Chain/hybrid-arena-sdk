@@ -1,0 +1,55 @@
+{
+  "schema": "arena.game-provider-deployment.v1",
+  "observed_at": "2026-10-23T22:43:53.026Z",
+  "scope": "sandbox_only",
+  "sdk": {
+    "repository": "https://github.com/Hybrid-Chain/hybrid-arena-sdk",
+    "version": "0.1.0-alpha.3",
+    "revision": "ba08bb88d91b62d9a1d50051357be62df4890c00",
+    "release": "https://github.com/Hybrid-Chain/hybrid-arena-sdk/releases/tag/v0.1.0-alpha.3"
+  },
+  "minimum_arena_revision": "ad0b34cc0835179d2c4dc631c1eabf7106f920b0",
+  "explorer_revision": "6e96cff4c8b2a16e3c0295eb335e98e8d0e4c2f4",
+  "core_arena_only_overlay_revision": "6b551d793bc8cc1875468c4069277ace75171843",
+  "acceptance": {
+    "authority": "operator_test_with_explicit_synthetic_service_owned_facts",
+    "node_public_https": true,
+    "python_public_https": true,
+    "original_receipt_recovery": true,
+    "matches": 1,
+    "events": 3,
+    "receipts": 2,
+    "duplicate_effects": false,
+    "fixture_key_revoked": true,
+    "revoked_receipt_http_status": 401,
+    "online_backup_verified": true,
+    "isolated_restore_verified": true,
+    "production_database_replaced": false,
+    "synthetic_public_playable_listing_created": false,
+    "community_votes_or_feedback_manufactured": false,
+    "human_creator_acceptance": false
+  },
+  "native_verification": {
+    "state": "chain_confirmed",
+    "height": 1039,
+    "certificate_count": 14,
+    "bundle": "https://hybrid-arena.com/api/proofs/5644def3309cb7608bb492b860acbcbd",
+    "explorer": "https://hybrid-explorer.com/explorer/arena/sdk-0c3ce394f93239ba6a21be5e/81ccd2fee81dbd6716ff972e2e11a087",
+    "note": "Independent verification of actual native receipt. Query the live verification bundle for current publisher retention state.",
+    "network": "hybrid-testnet",
+    "assurance": "SINGLE_OPERATOR_SINGLE_HOST_NON_VALUE_TESTNET"
+  },
+  "community": {
+    "default_votes_required": 25,
+    "vote_scope": "one_active_vote_per_account_per_release",
+    "threshold_reached_action": "queue_review",
+    "audited_admin_vote_override": true,
+    "mainnet_application_deployed": false
+  },
+  "financial": {
+    "funding_enabled": false,
+    "order_execution_enabled": false,
+    "wallet_payout_authority": false,
+    "creator_payments_enabled": false
+  }
+}
