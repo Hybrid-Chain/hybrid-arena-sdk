@@ -1,6 +1,6 @@
 {
   "name": "@hybrid-chain/arena-sdk",
-  "version": "0.1.0-alpha.2",
+  "version": "0.1.0-alpha.3",
   "description": "Hybrid Arena game-provider SDK and local reference sandbox",
   "type": "module",
   "license": "MIT",

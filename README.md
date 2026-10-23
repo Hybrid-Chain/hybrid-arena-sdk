@@ -42,8 +42,7 @@ for schema/signing fixtures; full Node tests also use the installed Python SDK.
 All default demo IDs/credentials are public fixture authority. The receiver
 always listens on loopback and no command creates an Arena production match.
 
-The reference HTTP paths belong to the local sandbox. They are not newly deployed
-routes at `hybrid-arena.com`. Arena's current production operations are documented
+The same source protocol supports the local sandbox and canonical hosted sandbox. Hosted writes require a revocable game-scoped Studio key; the fixture key never grants hosted authority. Arena's current production operations are documented
 at https://hybrid-arena.com/api/openapi.json and its capability manifest at
 https://hybrid-arena.com/.well-known/arena.json.
 

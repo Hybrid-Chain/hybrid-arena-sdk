@@ -2,7 +2,7 @@
 
 The canonical origin is `https://hybrid-arena.com`. First inspect
 `GET /v1/status`; disabled/unavailable means stop and retain original requests.
-Use SDK `v0.1.0-alpha.2` or newer, which accepts hosted sandbox receipts.
+Use SDK `v0.1.0-alpha.3` or newer, which accepts hosted sandbox receipts.
 
 1. Sign in to [Arena Studio](https://hybrid-arena.com/studio) with Hybrid-ID.
 2. Create a publisher workspace and game. Register an immutable release with its

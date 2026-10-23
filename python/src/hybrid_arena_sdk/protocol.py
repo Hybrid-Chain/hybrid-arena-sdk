@@ -7,7 +7,7 @@ import secrets
 import time
 from urllib.parse import urlsplit
 
-CONTRACT_VERSION = "2026-10-23.1"
+CONTRACT_VERSION = "2026-10-23.2"
 MAX_BODY_BYTES = 262144
 
 

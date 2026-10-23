@@ -1,6 +1,6 @@
 # Connect a local game source
 
-The first runnable release is `v0.1.0-alpha.2`. It exercises the proposed common
+The first runnable release is `v0.1.0-alpha.3`. It exercises the proposed common
 contract on your machine. Hosted game credentials and publishing are M3/M4.
 
 ## Source installation
@@ -8,7 +8,7 @@ contract on your machine. Hosted game credentials and publishing are M3/M4.
 ```sh
 git clone https://github.com/Hybrid-Chain/hybrid-arena-sdk.git
 cd hybrid-arena-sdk
-git checkout v0.1.0-alpha.2
+git checkout v0.1.0-alpha.3
 npm ci
 npm run build
 python3 -m venv .venv
