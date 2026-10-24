@@ -56,3 +56,7 @@ keys, real receipt inspection and public Testnet evidence. Check the live status
 before sending: hosting availability is separate from the SDK release. The
 community directory supports feedback and release-bound promotion votes. Mainnet
 application deployment and real-value authority remain separate rollout gates.
+
+## Playable reference and creator tools
+
+Run `arena starter my-game` for an editable Signal Rush mini-game, or `arena minigame --config /private/config.json --manifest manifest.json --state /private/state`. See [the full server integration](examples/signal-rush/README.md). The Arena browser preview is at https://hybrid-arena.com/developers/reference-game. Studio creator tools add sandbox outcome rules, delivery diagnostics, durable test-unit simulations, illustrative creator statements and promotion dry runs. Their first-party browser authority is separate from SDK source keys; no SDK method grants trading, wallet or Mainnet deployment authority.

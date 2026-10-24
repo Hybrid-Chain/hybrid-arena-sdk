@@ -34,3 +34,7 @@ current contract; contract metadata is versioned separately from binary releases
 See `docs/deployment-20261023.json` and the linked actual native proof. Acceptance
 uses a synthetic service-owned fixture, not an independent human creator or game.
 Mainnet application deployment and financial execution remain unavailable.
+
+## Creator-platform continuation
+
+Start from `examples/signal-rush/README.md` for a complete server-owned game and `arena starter` for editable files. Keep exact release/destination/outbox binding. Arena documents the separate first-party Studio tools in `/integrations/games/creator-platform-v1/README.md` and outcome mappings in `/integrations/games/outcomes-v1/README.md`. A source key reports facts only; browser sessions accept simulation terms. Never call this sandbox liquidity or creator compensation real money. Mainnet dry runs submit nothing.

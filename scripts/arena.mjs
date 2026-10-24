@@ -10,6 +10,8 @@ const help=`Hybrid Arena SDK — local reference preview
   arena demo --base-url http://127.0.0.1:8789 [--state DIR]
   arena validate manifest.json
   arena scaffold NEW_DIRECTORY
+  arena starter NEW_DIRECTORY
+  arena minigame --config FILE --manifest FILE --state DIR [--port 8790]
 
 Fixture credentials are public and usable only in a disposable loopback sandbox.
 No command deploys to Arena, signs a wallet action or publishes chain evidence.`;
@@ -22,6 +24,24 @@ try {
   const manifest=JSON.parse(readFileSync(resolve(args[0]),'utf8'));validate('GameManifest',manifest);canonicalJson(manifest);
   if(new Set(manifest.outcomes.map(o=>o.outcome_id)).size!==manifest.outcomes.length)throw Error('Duplicate outcomes');
   console.log(JSON.stringify({valid:true,contract:'2026-10-23.1',production_ingestion:false}));
+ }else if(command==='starter'){
+  if(args.length!==1)throw Error('Use arena starter NEW_DIRECTORY');
+  const dir=resolve(args[0]);if(existsSync(dir))throw Error('Choose a new directory');mkdirSync(dir,{mode:0o700});mkdirSync(dir+'/vendor');
+  const root=new URL('../examples/signal-rush/',import.meta.url);
+  for(const name of ['engine.mjs','index.html'])writeFileSync(dir+'/'+name,readFileSync(new URL(name,root)));
+  const server=readFileSync(new URL('server.mjs',root),'utf8').replace("from'../../dist/index.js'","from'@hybrid-chain/arena-sdk'").replace("from'../../dist/private-db.js'","from'./private-db.mjs'");writeFileSync(dir+'/server.mjs',server);
+  writeFileSync(dir+'/private-db.mjs',readFileSync(new URL('../dist/private-db.js',import.meta.url)));
+  writeFileSync(dir+'/manifest.json',JSON.stringify(demoManifest,null,2)+'\n');
+  writeFileSync(dir+'/package.json',JSON.stringify({name:'arena-signal-rush-starter',private:true,type:'module',scripts:{start:'node server.mjs'},dependencies:{'@hybrid-chain/arena-sdk':'file:./vendor/arena-sdk.tgz'}},null,2)+'\n');
+  writeFileSync(dir+'/.gitignore','node_modules/\nprivate/\n.arena/\n*.sqlite*\narena-source-key.json\n');
+  writeFileSync(dir+'/README.md','# Signal Rush starter\n\nDownload the SDK npm tarball from the GitHub release and save it as vendor/arena-sdk.tgz, then run npm install. The SDK is not published to the npm registry.\n\nStart the loopback Arena reference receiver. Follow examples/signal-rush/README.md in the SDK for the public local fixture configuration; save it outside source with mode0600. Run npm start -- /private/config.json manifest.json /private/signal-state. Open http://127.0.0.1:8790.\n\nFor hosted Testnet delivery, use your own Studio source key and exact registered two-outcome manifest. Secrets stay server-side. This loopback reference has one local player seat; public hosting needs TLS, admission, abuse controls and review. No command deploys or grants wallet authority.\n');
+  console.log(JSON.stringify({created:dir,scope:'editable_loopback_reference_game',credentials_created:false,payout_authority:false}));
+ }else if(command==='minigame'){
+  const options={};for(let i=0;i<args.length;i++){if(!['--config','--manifest','--state','--port'].includes(args[i])||options[args[i]]!==undefined||!args[i+1])throw Error('Invalid mini-game option');options[args[i]]=args[++i];}
+  if(!options['--config']||!options['--manifest']||!options['--state'])throw Error('Mini-game requires --config, --manifest and --state');
+  const {lstatSync}=await import('node:fs');const file=lstatSync(options['--config']);if(!file.isFile()||file.isSymbolicLink()||file.mode&0o077||file.uid!==process.getuid())throw Error('Owner-only source configuration required');
+  const {createSignalServer}=await import('../examples/signal-rush/server.mjs');const game=createSignalServer({config:JSON.parse(readFileSync(options['--config'])),manifest:JSON.parse(readFileSync(options['--manifest'])),statePath:resolve(options['--state'])});
+  console.log(JSON.stringify({url:await game.listen(Number(options['--port']??8790)),scope:'reference_game',activity:'mixed',payout_authority:false}));let closing=false;const close=async()=>{if(closing)return;closing=true;await game.close();};process.once('SIGINT',close);process.once('SIGTERM',close);
  }else if(command==='scaffold'){
   if(args.length!==1)throw Error('Use arena scaffold NEW_DIRECTORY');
   const dir=resolve(args[0]);if(existsSync(dir))throw Error('Choose a new directory');mkdirSync(dir,{mode:0o700});

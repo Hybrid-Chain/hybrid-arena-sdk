@@ -112,7 +112,7 @@ class ArenaClient:
 
     def _request(self, method, path, body=""):
         headers = sign_request(**self.signing, method=method, path=path, body=body)
-        headers["User-Agent"] = "Hybrid-Arena-SDK/0.1.0a3"
+        headers["User-Agent"] = "Hybrid-Arena-SDK/0.1.0a4"
         if method == "POST":
             headers["Content-Type"] = "application/json"
         req = urllib.request.Request(self.base_url + path, method=method, headers=headers, data=body.encode("utf-8") if method == "POST" else None)
