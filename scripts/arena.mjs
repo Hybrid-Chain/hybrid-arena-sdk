@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import {readFileSync,mkdirSync,writeFileSync,existsSync} from 'node:fs';
 import {resolve} from 'node:path';
-import {ArenaClient,validate,newId,sha256,canonicalJson} from '../dist/index.js';
+import {ArenaClient,validate,newId,sha256,canonicalJson,CONTRACT_VERSION} from '../dist/index.js';
 import {createReferenceServer,demoKey,demoManifest} from '../reference/server.mjs';
 const [command,...args]=process.argv.slice(2);
 const help=`Hybrid Arena SDK — local reference preview
@@ -23,7 +23,7 @@ try {
   if(args.length!==1)throw Error('Use arena validate manifest.json');
   const manifest=JSON.parse(readFileSync(resolve(args[0]),'utf8'));validate('GameManifest',manifest);canonicalJson(manifest);
   if(new Set(manifest.outcomes.map(o=>o.outcome_id)).size!==manifest.outcomes.length)throw Error('Duplicate outcomes');
-  console.log(JSON.stringify({valid:true,contract:'2026-10-23.1',production_ingestion:false}));
+  console.log(JSON.stringify({valid:true,contract:CONTRACT_VERSION,production_ingestion:false}));
  }else if(command==='starter'){
   if(args.length!==1)throw Error('Use arena starter NEW_DIRECTORY');
   const dir=resolve(args[0]);if(existsSync(dir))throw Error('Choose a new directory');mkdirSync(dir,{mode:0o700});mkdirSync(dir+'/vendor');
@@ -34,7 +34,7 @@ try {
   writeFileSync(dir+'/manifest.json',readFileSync(new URL('manifest.json',root)));
   writeFileSync(dir+'/package.json',JSON.stringify({name:'arena-signal-rush-starter',private:true,type:'module',scripts:{start:'node server.mjs'},dependencies:{'@hybrid-chain/arena-sdk':'file:./vendor/arena-sdk.tgz'}},null,2)+'\n');
   writeFileSync(dir+'/.gitignore','node_modules/\nprivate/\n.arena/\n*.sqlite*\narena-source-key.json\n');
-  writeFileSync(dir+'/README.md','# Signal Rush starter\n\nDownload the SDK npm tarball from the GitHub release and save it as vendor/arena-sdk.tgz, then run npm install. The SDK is not published to the npm registry.\n\nStart the loopback Arena reference receiver. Follow examples/signal-rush/README.md in the SDK for the public local fixture configuration; save it outside source with mode0600. Run npm start -- /private/config.json manifest.json /private/signal-state. Open http://127.0.0.1:8790.\n\nFor hosted Testnet delivery, use your own Studio source key and exact registered two-outcome manifest. Secrets stay server-side. This loopback reference has one local player seat; public hosting needs TLS, admission, abuse controls and review. No command deploys or grants wallet authority.\n');
+  writeFileSync(dir+'/README.md','# Signal Rush starter\n\nDownload the SDK npm tarball from the GitHub release and save it as vendor/arena-sdk.tgz, then run npm install. The SDK is not published to the npm registry.\n\nStart arena sandbox --demo --manifest manifest.json --state /private/receiver-state. Follow examples/signal-rush/README.md in the SDK for the public local fixture configuration; save it outside source with mode0600. Run npm start -- /private/config.json manifest.json /private/signal-state. Open http://127.0.0.1:8790.\n\nFor hosted Testnet delivery, use your own Studio source key and exact registered two-outcome manifest. Secrets stay server-side. This loopback reference has one local player seat; public hosting needs TLS, admission, abuse controls and review. No command deploys or grants wallet authority.\n');
   console.log(JSON.stringify({created:dir,scope:'editable_loopback_reference_game',credentials_created:false,payout_authority:false}));
  }else if(command==='minigame'){
   const options={};for(let i=0;i<args.length;i++){if(!['--config','--manifest','--state','--port'].includes(args[i])||options[args[i]]!==undefined||!args[i+1])throw Error('Invalid mini-game option');options[args[i]]=args[++i];}
