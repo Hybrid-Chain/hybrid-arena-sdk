@@ -29,7 +29,7 @@ The shared website discovery links to this kit and distinguishes scoped hosted s
 
 The live sandbox and Studio/community developer preview are commissioned. Current
 availability comes from `/v1/status` and Arena's canonical manifest, not an older
-packaged capability snapshot. Code release alpha.3 remains compatible with the
+packaged capability snapshot. Code release alpha.4 remains compatible with the
 current contract; contract metadata is versioned separately from binary releases.
 See `docs/deployment-20261023.json` and the linked actual native proof. Acceptance
 uses a synthetic service-owned fixture, not an independent human creator or game.
@@ -38,3 +38,5 @@ Mainnet application deployment and financial execution remain unavailable.
 ## Creator-platform continuation
 
 Start from `examples/signal-rush/README.md` for a complete server-owned game and `arena starter` for editable files. Keep exact release/destination/outbox binding. Arena documents the separate first-party Studio tools in `/integrations/games/creator-platform-v1/README.md` and outcome mappings in `/integrations/games/outcomes-v1/README.md`. A source key reports facts only; browser sessions accept simulation terms. Never call this sandbox liquidity or creator compensation real money. Mainnet dry runs submit nothing.
+
+CP1–CP6 are deployed on Arena23db9a6. Review the current108-operation website OpenAPI and exact first-party Studio schemas. Current allowlisted commissioning summary: https://hybrid-arena.com/integrations/games/creator-platform-v1/deployment.json . Mainnet execution and independent human acceptance remain unavailable/outstanding respectively.
