@@ -10,14 +10,14 @@ facts; it never starts a replacement match. One match per private state director
 ## Local end-to-end run
 
 1. Build the SDK: `npm ci && npm run build`.
-2. Start `arena sandbox --demo --state /tmp/arena-receiver`.
+2. Start `arena sandbox --demo --manifest examples/signal-rush/manifest.json --state /tmp/arena-receiver`.
 3. Create a new owner-only directory and configuration file (mode 0600):
 
 ```json
 {"base_url":"http://127.0.0.1:8789","key_id":"demo-key","publisher_id":"demo-studio","game_id":"demo-duel","environment":"sandbox","secret_hex":"0101010101010101010101010101010101010101010101010101010101010101"}
 ```
 
-4. Run `node examples/signal-rush/server.mjs /private/config.json contracts/game-provider-v1/fixtures/demo-manifest.json /private/signal-state`.
+4. Run `node examples/signal-rush/server.mjs /private/config.json examples/signal-rush/manifest.json /private/signal-state`.
 5. Open `http://127.0.0.1:8790` to play or watch. Wait for accepted match creation
    before starting. Reload or restart with the same configuration and state path
    to test recovery. New state paths intentionally create new matches.
@@ -49,3 +49,5 @@ Agent implementation checklist: preserve server-authoritative inputs; use exact
 release IDs; preserve private state and original outbox destination; label bot and
 test activity; expose source gaps rather than reconstructing missing facts; never
 put source keys in client JavaScript; never infer payout authority from a receipt.
+
+The registered game must declare its actual simulation clock: 100ms precision, 10Hz. The reference emits `arena.metric_coverage` for objective_points over its complete game interval; current stat templates hold without this explicit coverage assertion. Round-winner entries are prematch-only until a trusted future-round schedule exists.

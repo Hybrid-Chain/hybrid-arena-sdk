@@ -6,7 +6,7 @@ import {createReferenceServer,demoKey,demoManifest} from '../reference/server.mj
 const [command,...args]=process.argv.slice(2);
 const help=`Hybrid Arena SDK — local reference preview
 
-  arena sandbox --demo [--state DIR] [--port 8789]
+  arena sandbox --demo [--manifest FILE] [--state DIR] [--port 8789]
   arena demo --base-url http://127.0.0.1:8789 [--state DIR]
   arena validate manifest.json
   arena scaffold NEW_DIRECTORY
@@ -31,7 +31,7 @@ try {
   for(const name of ['engine.mjs','index.html'])writeFileSync(dir+'/'+name,readFileSync(new URL(name,root)));
   const server=readFileSync(new URL('server.mjs',root),'utf8').replace("from'../../dist/index.js'","from'@hybrid-chain/arena-sdk'").replace("from'../../dist/private-db.js'","from'./private-db.mjs'");writeFileSync(dir+'/server.mjs',server);
   writeFileSync(dir+'/private-db.mjs',readFileSync(new URL('../dist/private-db.js',import.meta.url)));
-  writeFileSync(dir+'/manifest.json',JSON.stringify(demoManifest,null,2)+'\n');
+  writeFileSync(dir+'/manifest.json',readFileSync(new URL('manifest.json',root)));
   writeFileSync(dir+'/package.json',JSON.stringify({name:'arena-signal-rush-starter',private:true,type:'module',scripts:{start:'node server.mjs'},dependencies:{'@hybrid-chain/arena-sdk':'file:./vendor/arena-sdk.tgz'}},null,2)+'\n');
   writeFileSync(dir+'/.gitignore','node_modules/\nprivate/\n.arena/\n*.sqlite*\narena-source-key.json\n');
   writeFileSync(dir+'/README.md','# Signal Rush starter\n\nDownload the SDK npm tarball from the GitHub release and save it as vendor/arena-sdk.tgz, then run npm install. The SDK is not published to the npm registry.\n\nStart the loopback Arena reference receiver. Follow examples/signal-rush/README.md in the SDK for the public local fixture configuration; save it outside source with mode0600. Run npm start -- /private/config.json manifest.json /private/signal-state. Open http://127.0.0.1:8790.\n\nFor hosted Testnet delivery, use your own Studio source key and exact registered two-outcome manifest. Secrets stay server-side. This loopback reference has one local player seat; public hosting needs TLS, admission, abuse controls and review. No command deploys or grants wallet authority.\n');
@@ -54,18 +54,18 @@ try {
   const options={};
   for(let i=0;i<args.length;i++){
    const arg=args[i];if(arg==='--demo'){if(options.demo)throw Error('Duplicate option');options.demo=true;continue;}
-   if(!['--state','--port','--base-url'].includes(arg)||options[arg]!==undefined||!args[i+1]||args[i+1].startsWith('--'))throw Error('Invalid option');options[arg]=args[++i];
+   if(!['--state','--port','--base-url','--manifest'].includes(arg)||options[arg]!==undefined||!args[i+1]||args[i+1].startsWith('--'))throw Error('Invalid option');options[arg]=args[++i];
   }
   const state=resolve(options['--state']??'.arena/'+command);
   if(command==='sandbox'){
    if(!options.demo||options['--base-url'])throw Error('Reference sandbox requires --demo');
    const port=Number(options['--port']??8789);
-   const service=createReferenceServer({databasePath:state+'/receiver.sqlite'});const url=await service.listen(port);
+   const service=createReferenceServer({databasePath:state+'/receiver.sqlite',...(options['--manifest']?{manifest:JSON.parse(readFileSync(options['--manifest']))}:{})});const url=await service.listen(port);
    console.log(JSON.stringify({local_url:url,scope:'local_reference_only',fixture_authority:true,production_ingestion:false,payout_authority:false}));
    let closing=false;const close=async()=>{if(closing)return;closing=true;await service.close();};
    process.once('SIGINT',close);process.once('SIGTERM',close);
   }else{
-   if(!options['--base-url']||options['--port']||options.demo)throw Error('Demo requires an explicit --base-url');
+   if(!options['--base-url']||options['--port']||options['--manifest']||options.demo)throw Error('Demo requires an explicit --base-url');
    const u=new URL(options['--base-url']);if(u.protocol!=='http:'||u.hostname!=='127.0.0.1')throw Error('Demo runs only against literal IPv4 loopback');
    const client=new ArenaClient({...demoKey,baseUrl:options['--base-url'],outboxPath:state+'/outbox.sqlite'});
    try{
