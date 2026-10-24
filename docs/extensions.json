@@ -1,0 +1,15 @@
+{
+  "schema": "arena.sdk-extensions.v1",
+  "version": "2026-10-24.1",
+  "core_source_contract": "2026-10-23.2",
+  "canonical_origin": "https://hybrid-arena.com",
+  "current_availability": "https://hybrid-arena.com/.well-known/arena.json",
+  "extensions": [
+    {"id":"scoped_developer_automation","path":"/api/studio/automation","methods":["GET","POST"],"authority":"developer_bearer","scopes":["integration:read","release:create","outcome:create"],"publishing":false,"source_authority":false,"financial_execution":false},
+    {"id":"practice_source_admission","path":"/v1/practice-admissions","methods":["GET","POST"],"authority":"ARENA-PRACTICE-ADMISSION-V1","game_source_key":true,"optional_new_market_policy":"source_confirmed_v1","immediate_orders_only":true,"native_pretrade_admission":false,"financial_execution":false}
+  ],
+  "node_helpers": ["ArenaDeveloperClient","PracticeAdmissionClient","signPracticeAdmission"],
+  "python_extension_helpers": false,
+  "testnet_wallet_submission": false,
+  "mainnet_deployment": false
+}

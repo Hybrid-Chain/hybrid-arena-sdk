@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import {readFileSync,mkdirSync,writeFileSync,existsSync} from 'node:fs';
 import {resolve} from 'node:path';
-import {ArenaClient,validate,newId,sha256,canonicalJson,CONTRACT_VERSION} from '../dist/index.js';
+import {ArenaClient,ArenaDeveloperClient,validate,newId,sha256,canonicalJson,CONTRACT_VERSION} from '../dist/index.js';
 import {createReferenceServer,demoKey,demoManifest} from '../reference/server.mjs';
 const [command,...args]=process.argv.slice(2);
 const help=`Hybrid Arena SDK — local reference preview
@@ -10,8 +10,9 @@ const help=`Hybrid Arena SDK — local reference preview
   arena demo --base-url http://127.0.0.1:8789 [--state DIR]
   arena validate manifest.json
   arena scaffold NEW_DIRECTORY
-  arena starter NEW_DIRECTORY
+  arena starter NEW_DIRECTORY [--manifest EXACT_MANIFEST_FILE]
   arena minigame --config FILE --manifest FILE --state DIR [--port 8790]
+  arena studio --access PRIVATE_FILE [--request ORIGINAL_JSON_FILE]
 
 Fixture credentials are public and usable only in a disposable loopback sandbox.
 No command deploys to Arena, signs a wallet action or publishes chain evidence.`;
@@ -24,14 +25,19 @@ try {
   const manifest=JSON.parse(readFileSync(resolve(args[0]),'utf8'));validate('GameManifest',manifest);canonicalJson(manifest);
   if(new Set(manifest.outcomes.map(o=>o.outcome_id)).size!==manifest.outcomes.length)throw Error('Duplicate outcomes');
   console.log(JSON.stringify({valid:true,contract:CONTRACT_VERSION,production_ingestion:false}));
+ }else if(command==='studio'){
+  const options={};for(let i=0;i<args.length;i++){if(!['--access','--request'].includes(args[i])||options[args[i]]||!args[i+1])throw Error('Use arena studio --access PRIVATE_FILE [--request ORIGINAL_JSON_FILE]');options[args[i]]=args[++i];}
+  if(!options['--access'])throw Error('Private developer access file required');const {lstatSync}=await import('node:fs');const f=lstatSync(options['--access']);if(!f.isFile()||f.isSymbolicLink()||f.uid!==process.getuid()||(f.mode&0o077))throw Error('Owner-only mode0600 developer configuration required');
+  const client=new ArenaDeveloperClient(JSON.parse(readFileSync(options['--access'],'utf8')));const result=options['--request']?await client.command(JSON.parse(readFileSync(options['--request'],'utf8'))):await client.inspect();console.log(JSON.stringify(result));
  }else if(command==='starter'){
-  if(args.length!==1)throw Error('Use arena starter NEW_DIRECTORY');
+  if(![1,3].includes(args.length)||args.length===3&&args[1]!=='--manifest')throw Error('Use arena starter NEW_DIRECTORY [--manifest EXACT_MANIFEST_FILE]');
+  const manifest=args.length===3?JSON.parse(readFileSync(resolve(args[2]),'utf8')):JSON.parse(readFileSync(new URL('../examples/signal-rush/manifest.json',import.meta.url),'utf8'));validate('GameManifest',manifest);if(manifest.outcomes.length!==2||manifest.clock.precision_ms!==100||manifest.clock.tick_rate_hz!==10)throw Error('Signal Rush requires two outcomes and a 100ms/10Hz simulation clock');
   const dir=resolve(args[0]);if(existsSync(dir))throw Error('Choose a new directory');mkdirSync(dir,{mode:0o700});mkdirSync(dir+'/vendor');
   const root=new URL('../examples/signal-rush/',import.meta.url);
   for(const name of ['engine.mjs','index.html'])writeFileSync(dir+'/'+name,readFileSync(new URL(name,root)));
   const server=readFileSync(new URL('server.mjs',root),'utf8').replace("from'../../dist/index.js'","from'@hybrid-chain/arena-sdk'").replace("from'../../dist/private-db.js'","from'./private-db.mjs'");writeFileSync(dir+'/server.mjs',server);
   writeFileSync(dir+'/private-db.mjs',readFileSync(new URL('../dist/private-db.js',import.meta.url)));
-  writeFileSync(dir+'/manifest.json',readFileSync(new URL('manifest.json',root)));
+  writeFileSync(dir+'/manifest.json',JSON.stringify(manifest,null,2)+'\n');
   writeFileSync(dir+'/package.json',JSON.stringify({name:'arena-signal-rush-starter',private:true,type:'module',scripts:{start:'node server.mjs'},dependencies:{'@hybrid-chain/arena-sdk':'file:./vendor/arena-sdk.tgz'}},null,2)+'\n');
   writeFileSync(dir+'/.gitignore','node_modules/\nprivate/\n.arena/\n*.sqlite*\narena-source-key.json\n');
   writeFileSync(dir+'/README.md','# Signal Rush starter\n\nDownload the SDK npm tarball from the GitHub release and save it as vendor/arena-sdk.tgz, then run npm install. The SDK is not published to the npm registry.\n\nStart arena sandbox --demo --manifest manifest.json --state /private/receiver-state. Follow examples/signal-rush/README.md in the SDK for the public local fixture configuration; save it outside source with mode0600. Run npm start -- /private/config.json manifest.json /private/signal-state. Open http://127.0.0.1:8790.\n\nFor hosted Testnet delivery, use your own Studio source key and exact registered two-outcome manifest. Secrets stay server-side. This loopback reference has one local player seat; public hosting needs TLS, admission, abuse controls and review. No command deploys or grants wallet authority.\n');

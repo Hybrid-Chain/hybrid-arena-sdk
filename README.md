@@ -60,3 +60,7 @@ application deployment and real-value authority remain separate rollout gates.
 ## Playable reference and creator tools
 
 Run `arena starter my-game` for an editable Signal Rush mini-game, or `arena minigame --config /private/config.json --manifest manifest.json --state /private/state`. See [the full server integration](examples/signal-rush/README.md). The Arena browser preview is at https://hybrid-arena.com/developers/reference-game. Studio creator tools add sandbox outcome rules, delivery diagnostics, durable test-unit simulations, illustrative creator statements and promotion dry runs. Their first-party browser authority is separate from SDK source keys; no SDK method grants trading, wallet or Mainnet deployment authority.
+
+## Creator workflow extensions (alpha.5)
+
+[Guided setup, scoped CLI access and optional source-clock admission](docs/creator-next.md). [Independent creator pilot](docs/creator-pilot.md). Node helpers are separate from original Node/Python game-source authority. No funding, wallet submission or Mainnet activation.

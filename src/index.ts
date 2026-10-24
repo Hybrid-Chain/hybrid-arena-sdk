@@ -3,3 +3,5 @@ export {Outbox} from './outbox.js';
 export {canonicalJson,sha256,signRequest,newId,CONTRACT_VERSION} from './protocol.js';
 export {validate} from './validate.js';
 export type * from './types.js';
+export {ArenaDeveloperClient} from './developer.js';
+export {PracticeAdmissionClient,signPracticeAdmission} from './admission.js';

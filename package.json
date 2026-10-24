@@ -1,15 +1,33 @@
 {
   "name": "@hybrid-chain/arena-sdk",
-  "version": "0.1.0-alpha.4",
+  "version": "0.1.0-alpha.5",
   "description": "Hybrid Arena game-provider SDK and local reference sandbox",
   "type": "module",
   "license": "MIT",
-  "engines": {"node": ">=22.13.0"},
+  "engines": {
+    "node": ">=22.13.0"
+  },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "exports": {".": {"types": "./dist/index.d.ts", "import": "./dist/index.js"}},
-  "bin": {"arena": "./scripts/arena.mjs"},
-  "files": ["dist", "contracts", "scripts/arena.mjs", "reference", "examples", "docs", "README.md", "LICENSE"],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "arena": "./scripts/arena.mjs"
+  },
+  "files": [
+    "dist",
+    "contracts",
+    "scripts/arena.mjs",
+    "reference",
+    "examples",
+    "docs",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "test:contracts": "node --test tests/contracts.test.mjs",
     "build": "tsc -p tsconfig.json",
@@ -18,7 +36,15 @@
     "sandbox": "node scripts/arena.mjs sandbox --demo",
     "prepack": "npm run build"
   },
-  "dependencies": {"ajv": "8.20.0"},
-  "devDependencies": {"@types/node": "22.19.19", "typescript": "5.9.3"},
-  "repository": {"type": "git", "url": "https://github.com/Hybrid-Chain/hybrid-arena-sdk.git"}
+  "dependencies": {
+    "ajv": "8.20.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.19",
+    "typescript": "5.9.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hybrid-Chain/hybrid-arena-sdk.git"
+  }
 }
