@@ -15,3 +15,7 @@ The full platform roadmap is in the Arena website repository at
 `docs/arena-developer-platform-strategy.md`.
 
 CP1–CP6 are tracked in Arena `docs/creator-platform-six-milestones.md`. The complete reference game is `examples/signal-rush`; `arena starter` generates editable files. Canonical guide: https://hybrid-arena.com/integrations/games/creator-platform-v1/README.md . Source-only SDK keys never authorize browser simulation, wallet or Mainnet submission.
+
+## Creator workflow extensions — October 24
+
+Alpha.5 adds scoped Node developer automation, optional source-clock admission, exact-manifest editable starters and a public independent pilot plan. Core source protocol remains 2026-10-23.2. Arena exposes current availability through its manifest; no source helper activates publication, wallets or funding. Independent creator/player and real-provider acceptance remain outstanding.
