@@ -1,0 +1,10 @@
+export type GamePackage={schema:'arena.managed-game.v1';blueprint:'signal-rush'|'drone-dash'|'robot-duel'|'core-control';version:string;duration_seconds:number;bot_difficulty:'easy'|'normal'|'hard';palette:'teal'|'orange'|'pink'};
+export const BLUEPRINT_VERSION:string;
+export const BLUEPRINTS:ReadonlyArray<{id:GamePackage['blueprint'];title:string;genre:string;description:string;cells:number;action:string}>;
+export function validateGamePackage(value:unknown):GamePackage;
+export function starterPackage(blueprint?:GamePackage['blueprint']):GamePackage;
+export type GameState={blueprint:GamePackage['blueprint'];phase:'waiting'|'live'|'completed'|'canceled';tick:number;duration:number;seed:number;target:number;selection:number;scores:number[];last_action:number;captures:number};
+export function createBlueprint(pkg:GamePackage,seed:number):GameState;
+export function blueprintCommand(value:GameState,action:'start'|'input',cell:number|null):{state:GameState;events:unknown[];accepted?:boolean};
+export function blueprintStep(value:GameState,pkg:GamePackage):{state:GameState;events:unknown[]};
+export function blueprintCancel(value:GameState):{state:GameState;events:unknown[]};

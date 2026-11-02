@@ -1,0 +1,8 @@
+{
+  "schema": "arena.managed-game.v1",
+  "blueprint": "signal-rush",
+  "version": "0.1.0",
+  "duration_seconds": 30,
+  "bot_difficulty": "normal",
+  "palette": "teal"
+}

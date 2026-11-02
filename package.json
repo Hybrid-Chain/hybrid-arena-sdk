@@ -1,6 +1,6 @@
 {
   "name": "@hybrid-chain/arena-sdk",
-  "version": "0.1.0-alpha.5",
+  "version": "0.1.0-alpha.6",
   "description": "Hybrid Arena game-provider SDK and local reference sandbox",
   "type": "module",
   "license": "MIT",
@@ -13,6 +13,10 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
+    },
+    "./blueprints": {
+      "types": "./contracts/managed-game-v1/blueprints.d.mts",
+      "import": "./contracts/managed-game-v1/blueprints.mjs"
     }
   },
   "bin": {

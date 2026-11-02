@@ -1,5 +1,6 @@
 name: SDK checks
-on: [push, pull_request]
+# Automatic paid runs paused by the repository owner; release checks run locally.
+on: [workflow_dispatch]
 permissions:
   contents: read
 jobs:

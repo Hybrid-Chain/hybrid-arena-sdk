@@ -64,3 +64,12 @@ Run `arena starter my-game` for an editable Signal Rush mini-game, or `arena min
 ## Creator workflow extensions (alpha.5)
 
 [Guided setup, scoped CLI access and optional source-clock admission](docs/creator-next.md). [Independent creator pilot](docs/creator-pilot.md). Node helpers are separate from original Node/Python game-source authority. No funding, wallet submission or Mainnet activation.
+
+## Managed browser-game packages (alpha.6)
+
+Four reviewed reaction/race/battle/control blueprints are available as declarative
+packages. `arena blueprint my-game --template drone-dash` creates a package and
+agent brief; `arena check-package my-game/arena-game.json` checks offline conformance.
+Upload through Studio's managed deployment workflow. No CLI command silently
+creates a hosted match or grants publishing/wallet authority. See
+[managed games](docs/managed-games.md) and the [package contract](contracts/managed-game-v1/README.md).

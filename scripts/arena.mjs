@@ -3,24 +3,29 @@ import {readFileSync,mkdirSync,writeFileSync,existsSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {ArenaClient,ArenaDeveloperClient,validate,newId,sha256,canonicalJson,CONTRACT_VERSION} from '../dist/index.js';
 import {createReferenceServer,demoKey,demoManifest} from '../reference/server.mjs';
+import{validateGamePackage,starterPackage,BLUEPRINTS,createBlueprint,blueprintCommand,blueprintStep}from'../contracts/managed-game-v1/blueprints.mjs';
 const [command,...args]=process.argv.slice(2);
 const help=`Hybrid Arena SDK — local reference preview
 
   arena sandbox --demo [--manifest FILE] [--state DIR] [--port 8789]
   arena demo --base-url http://127.0.0.1:8789 [--state DIR]
-  arena validate manifest.json
+  arena blueprint NEW_DIRECTORY [--template signal-rush|drone-dash|robot-duel|core-control]\n  arena check-package arena-game.json\n  arena validate manifest.json
   arena scaffold NEW_DIRECTORY
   arena starter NEW_DIRECTORY [--manifest EXACT_MANIFEST_FILE]
   arena minigame --config FILE --manifest FILE --state DIR [--port 8790]
   arena studio --access PRIVATE_FILE [--request ORIGINAL_JSON_FILE]
 
 Fixture credentials are public and usable only in a disposable loopback sandbox.
-No command deploys to Arena, signs a wallet action or publishes chain evidence.`;
+Package commands prepare files only. No command signs a wallet action or grants payout authority.`;
 const fixtures=new URL('../contracts/game-provider-v1/fixtures/',import.meta.url);
 const json=name=>JSON.parse(readFileSync(new URL(name,fixtures),'utf8'));
 try {
  if(!command||command==='--help'){console.log(help);}
- else if(command==='validate'){
+ else if(command==='blueprint'){
+  if(![1,3].includes(args.length)||args.length===3&&args[1]!=='--template')throw Error('Use arena blueprint NEW_DIRECTORY [--template BLUEPRINT]');const template=args[2]??'signal-rush',pkg=starterPackage(template),dir=resolve(args[0]);if(existsSync(dir))throw Error('Choose a new directory');mkdirSync(dir,{mode:0o700});writeFileSync(dir+'/arena-game.json',JSON.stringify(pkg,null,2)+'\n');writeFileSync(dir+'/README.md','# Arena managed game package\n\nUpload arena-game.json in Studio → Deploy. Change the immutable version for every new release. This is a declarative package for a reviewed Node/browser engine; arbitrary JavaScript and dependencies are not executed. No source key belongs in this directory.\n\nRun arena check-package arena-game.json, deploy, complete a match and wait for Testnet evidence before publishing. Actual independent player acceptance remains separate. No money or wallet submission.\n');writeFileSync(dir+'/AGENT-HANDOFF.md',readFileSync(new URL('../docs/managed-games.md',import.meta.url)));console.log(JSON.stringify({created:dir,blueprint:template,scope:'managed_blueprint_package',credentials_created:false,deployed:false}));
+ }else if(command==='check-package'){
+  if(args.length!==1)throw Error('Use arena check-package arena-game.json');const bytes=readFileSync(resolve(args[0]));if(bytes.length>16384)throw Error('Package exceeds 16 KB');const pkg=validateGamePackage(JSON.parse(bytes));let state=blueprintCommand(createBlueprint(pkg,237),'start',null).state,events=1;for(let i=0;i<pkg.duration_seconds*10;i++){const r=blueprintStep(state,pkg);state=r.state;events+=r.events.length;}if(state.phase!=='completed')throw Error('Terminal conformance failed');console.log(JSON.stringify({valid:true,blueprint:pkg.blueprint,package_sha256:sha256(canonicalJson(pkg)),scope:'offline_package_conformance',simulation_ms:state.tick*100,event_count:events,native_gameplay_acceptance:false,deployed:false,payout_authority:false}));
+ }else if(command==='validate'){
   if(args.length!==1)throw Error('Use arena validate manifest.json');
   const manifest=JSON.parse(readFileSync(resolve(args[0]),'utf8'));validate('GameManifest',manifest);canonicalJson(manifest);
   if(new Set(manifest.outcomes.map(o=>o.outcome_id)).size!==manifest.outcomes.length)throw Error('Duplicate outcomes');
