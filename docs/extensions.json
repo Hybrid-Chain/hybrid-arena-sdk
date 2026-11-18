@@ -1,6 +1,6 @@
 {
   "schema": "arena.sdk-extensions.v1",
-  "version": "2026-11-18.1",
+  "version": "2026-11-18.2",
   "core_source_contract": "2026-10-23.2",
   "canonical_origin": "https://hybrid-arena.com",
   "current_availability": "https://hybrid-arena.com/.well-known/arena.json",
@@ -43,6 +43,18 @@
       "node_entry": "@hybrid-chain/arena-sdk/pricing",
       "source_features": "starquest.pricing-features.v1",
       "model": "starquest-score-health-v1",
+      "calibrated": false,
+      "executable_quotes": false,
+      "financial_execution": false
+    },
+    {
+      "id": "offline_pricing_evaluation",
+      "status": "offline_tool_available",
+      "contract": "pricing-evaluation.md",
+      "node_entry": "@hybrid-chain/arena-sdk/pricing-evaluation",
+      "cli": "node scripts/evaluate-live-pricing.mjs input.json [new-report.json]",
+      "model": "starquest-score-health-v1",
+      "source_authenticity_verified": false,
       "calibrated": false,
       "executable_quotes": false,
       "financial_execution": false

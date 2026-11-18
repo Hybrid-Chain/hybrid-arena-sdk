@@ -1,0 +1,373 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Offline complete-match pricing evaluation v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "model_version",
+    "model_hash",
+    "matches"
+  ],
+  "properties": {
+    "schema": {
+      "const": "arena.pricing-evaluation-input.v1"
+    },
+    "model_version": {
+      "const": "starquest-score-health-v1"
+    },
+    "model_hash": {
+      "const": "43f490680d2b277e4dea1d4dfe56ffa6360f241a0fab6a4b23d14159a36dfa0b"
+    },
+    "matches": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 500,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "match_id",
+          "split",
+          "observations",
+          "terminal"
+        ],
+        "properties": {
+          "match_id": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{32}$"
+          },
+          "split": {
+            "enum": [
+              "development",
+              "evaluation"
+            ]
+          },
+          "observations": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 20000,
+            "items": {
+              "$ref": "#/$defs/features"
+            }
+          },
+          "terminal": {
+            "$ref": "#/$defs/features"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "features": {
+      "title": "Authoritative Star Quest aggregate pricing observations v1",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema",
+        "game",
+        "source_epoch",
+        "match_id",
+        "mode",
+        "ruleset",
+        "source_tick",
+        "observed_at",
+        "elapsed_ms",
+        "status",
+        "winner",
+        "completion_reason",
+        "time_limit_ms",
+        "idle_time_limit_ms",
+        "idle_time_limit_active",
+        "safe_radius_milli",
+        "capture_carrier_team",
+        "bomb_carrier_team",
+        "bomb_fuse_remaining_ms",
+        "outcomes",
+        "observation_hash"
+      ],
+      "properties": {
+        "schema": {
+          "const": "starquest.pricing-features.v1"
+        },
+        "game": {
+          "const": "starquest"
+        },
+        "source_epoch": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$"
+        },
+        "match_id": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{32}$"
+        },
+        "mode": {
+          "enum": [
+            "battlefield",
+            "bombing",
+            "capture",
+            "transport"
+          ]
+        },
+        "ruleset": {
+          "enum": [
+            "battlefield",
+            "battle_royale_v1",
+            "bombing",
+            "capture",
+            "transport"
+          ]
+        },
+        "source_tick": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000000
+        },
+        "observed_at": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "elapsed_ms": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000000
+        },
+        "status": {
+          "enum": [
+            "live",
+            "completed"
+          ]
+        },
+        "winner": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 3
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "completion_reason": {
+          "enum": [
+            null,
+            "time_limit"
+          ]
+        },
+        "time_limit_ms": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000000000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "idle_time_limit_ms": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000000000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "idle_time_limit_active": {
+          "type": "boolean"
+        },
+        "safe_radius_milli": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000000
+        },
+        "capture_carrier_team": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 3
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "bomb_carrier_team": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 3
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "bomb_fuse_remaining_ms": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000000000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "outcomes": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "outcome",
+              "score",
+              "station_hull_milli",
+              "station_max_hull_milli",
+              "station_destroyed",
+              "modules_alive",
+              "modules_total",
+              "fleet_alive",
+              "fleet_total",
+              "fleet_hull_milli",
+              "fleet_shield_milli",
+              "fleet_max_hull_milli",
+              "fleet_max_shield_milli",
+              "captures",
+              "transport_deliveries",
+              "transport_cargo_milli",
+              "transport_hull_milli",
+              "gameplay_active",
+              "terminal_winner"
+            ],
+            "properties": {
+              "outcome": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 3
+              },
+              "score": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1000000000
+              },
+              "station_hull_milli": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1000000000
+              },
+              "station_max_hull_milli": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1000000000
+              },
+              "station_destroyed": {
+                "type": "boolean"
+              },
+              "modules_alive": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1000000000
+              },
+              "modules_total": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1000000000
+              },
+              "fleet_alive": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1000000000
+              },
+              "fleet_total": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1000000000
+              },
+              "fleet_hull_milli": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1000000000
+              },
+              "fleet_shield_milli": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1000000000
+              },
+              "fleet_max_hull_milli": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1000000000
+              },
+              "fleet_max_shield_milli": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1000000000
+              },
+              "captures": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1000000000
+              },
+              "transport_deliveries": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1000000000
+              },
+              "transport_cargo_milli": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 1000
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "transport_hull_milli": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 1000000000
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "gameplay_active": {
+                "type": "boolean"
+              },
+              "terminal_winner": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "observation_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    }
+  }
+}

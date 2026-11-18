@@ -1,0 +1,26 @@
+import test from'node:test';import assert from'node:assert/strict';import{readFileSync}from'node:fs';
+import{MODEL_VERSION,MODEL_HASH,pricingHash,estimateStarQuestWin}from'../contracts/live-markets-v1/starquest-model.mjs';import{evaluateStarQuestHistory}from'../contracts/live-markets-v1/evaluate.mjs';
+const fixtures=JSON.parse(readFileSync(new URL('../contracts/live-markets-v1/fixtures/starquest-features.json',import.meta.url))).fixtures;
+const rehash=v=>{delete v.observation_hash;v.observation_hash=pricingHash(v);return v;};
+function match(id='a'.repeat(32),winner=0,frames=1){const first=structuredClone(fixtures[0].snapshot);first.match_id=id;const observations=Array.from({length:frames},(_,i)=>rehash({...structuredClone(first),source_tick:i*60,elapsed_ms:i*1000,observed_at:1000000+i*1000}));const terminal=rehash({...structuredClone(first),status:'completed',winner,source_tick:frames*60,elapsed_ms:frames*1000,observed_at:1000000+frames*1000,outcomes:first.outcomes.map(o=>({...o,terminal_winner:o.outcome===winner}))});return{match_id:id,split:'evaluation',observations,terminal};}
+const dataset=matches=>({schema:'arena.pricing-evaluation-input.v1',model_version:MODEL_VERSION,model_hash:MODEL_HASH,matches});
+test('offline whole-match evaluation reports exact equal-prior baseline without claiming authenticity or calibration',()=>{
+ const r=evaluateStarQuestHistory(dataset([match()]));assert.equal(r.metrics.matches,1);assert.equal(r.metrics.brier,.75);assert.equal(r.metrics.log_loss,-Math.log(.25));assert.equal(r.source_authenticity_verified,false);assert.equal(r.calibrated,false);assert.equal(r.parameter_fit_performed,false);assert.equal(r.executable_quote,false);assert.equal(r.financial_execution,false);assert(!JSON.stringify(r).includes('a'.repeat(32)));
+ assert.equal(r.calibration_buckets.reduce((s,b)=>s+b.weight,0),1);
+});
+test('long matches cannot dominate shorter matches and calibration uses the same equal-match weighting',()=>{
+ const short=match('a'.repeat(32),0,1),long=match('b'.repeat(32),1,10);for(const f of long.observations){f.outcomes[1].score=100;rehash(f);}
+ const a=evaluateStarQuestHistory(dataset([short])),b=evaluateStarQuestHistory(dataset([long])),both=evaluateStarQuestHistory(dataset([short,long]));assert.equal(both.metrics.brier,(a.metrics.brier+b.metrics.brier)/2);assert.equal(both.metrics.log_loss,(a.metrics.log_loss+b.metrics.log_loss)/2);assert(Math.abs(both.calibration_buckets.reduce((s,x)=>s+x.weight,0)-1)<1e-12);
+});
+test('development samples and draws are explicit exclusions and the report contains no raw match history',()=>{
+ const development={...match('c'.repeat(32)),split:'development'},draw=match('d'.repeat(32),null);const r=evaluateStarQuestHistory(dataset([development,draw]));assert.equal(r.metrics,null);assert.equal(r.development_matches_excluded,1);assert.equal(r.drawn_matches_excluded,1);assert.equal(r.evaluation_observations,1);assert(!JSON.stringify(r).includes('source_epoch'));
+});
+test('duplicate matches, cross-split leakage, rewinds, changed rules, epochs, future/terminal observations and private fields refuse',()=>{
+ for(const mutate of [d=>d.matches.push({...d.matches[0],split:'development'}),d=>d.matches[0].observations.push(d.matches[0].observations[0]),d=>{d.matches[0].observations[0].source_epoch='22222222-2222-4222-8222-222222222222';rehash(d.matches[0].observations[0]);},d=>d.matches[0].terminal.status='live',d=>{d.matches[0].observations[0].time_limit_ms=1000;rehash(d.matches[0].observations[0]);},d=>d.matches[0].observations[0].player='private',d=>d.model_hash='0'.repeat(64)]){const d=dataset([match()]);mutate(d);assert.throws(()=>evaluateStarQuestHistory(d));}
+});
+test('evaluation schema, packaged export and offline CLI preserve reproducible bytes and refuse overwrite',async()=>{
+ const{default:Ajv}=await import('ajv');const{mkdtempSync,writeFileSync,rmSync,statSync}=await import('node:fs');const{tmpdir}=await import('node:os');const{join}=await import('node:path');const{spawnSync}=await import('node:child_process');
+ const schema=JSON.parse(readFileSync(new URL('../contracts/live-markets-v1/evaluation.schema.json',import.meta.url))),input=JSON.parse(readFileSync(new URL('../contracts/live-markets-v1/fixtures/evaluation-input.json',import.meta.url))),expected=JSON.parse(readFileSync(new URL('../contracts/live-markets-v1/fixtures/evaluation-report.json',import.meta.url))).report;
+ assert(new Ajv({strict:true}).compile(schema)(input));assert.deepEqual((await import('@hybrid-chain/arena-sdk/pricing-evaluation')).evaluateStarQuestHistory(input),expected);
+ const dir=mkdtempSync(join(tmpdir(),'arena-offline-evaluation-'));try{const source=join(dir,'input.json'),report=join(dir,'report.json');writeFileSync(source,JSON.stringify(input));const args=['scripts/evaluate-live-pricing.mjs',source,report];const first=spawnSync(process.execPath,args,{encoding:'utf8'});assert.equal(first.status,0,first.stderr);const bytes=readFileSync(report,'utf8');assert.deepEqual(JSON.parse(bytes),expected);assert.equal(statSync(report).mode&0o777,0o600);assert.equal(spawnSync(process.execPath,args,{encoding:'utf8'}).status,1);assert.equal(readFileSync(report,'utf8'),bytes);}finally{rmSync(dir,{recursive:true});}
+});

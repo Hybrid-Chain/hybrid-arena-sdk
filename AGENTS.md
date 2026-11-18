@@ -16,3 +16,5 @@
   participant IDs are fixture authority, never provisioned on a live service.
 - Use US English. SDK packages, schemas, examples, agent context and release
   manifests must agree on contract version and artifact checksums.
+
+- Alpha.8 adds offline `pricing-evaluation` only. Frozen Star Quest model/policy bytes and hash remain identical. Evaluation splits complete original matches, weights matches equally, excludes draws and decisive awaiting-result frames, and never certifies source authenticity/calibration or creates quotes. Real-data evaluation and source PR14/15 deployment remain pending. Do not import historical-mode evaluation into live request paths.

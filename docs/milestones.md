@@ -19,3 +19,7 @@ CP1–CP6 are tracked in Arena `docs/creator-platform-six-milestones.md`. The co
 ## Creator workflow extensions — October 24
 
 Alpha.5 adds scoped Node developer automation, optional source-clock admission, exact-manifest editable starters and a public independent pilot plan. Core source protocol remains 2026-10-23.2. Arena exposes current availability through its manifest; no source helper activates publication, wallets or funding. Independent creator/player and real-provider acceptance remain outstanding.
+
+## Offline model evaluation — alpha.8
+
+The pricing evaluation helper and explicit offline CLI are available. TypeScript, 46 Node cases, five Python compatibility cases and a clean offline install of the actual Node tarball passed. Whole-match privacy, original clock/rule binding, duplicate/cross-split refusal, equal-match metrics, source-unverified limitations, strict schema and report overwrite refusal are covered. Live model and policy bytes/hash remain unchanged. Synthetic fixture reports do not establish real-data accuracy, calibration, live source deployment, quote acceptance or the second creator adapter.

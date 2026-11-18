@@ -77,3 +77,7 @@ creates a hosted match or grants publishing/wallet authority. See
 ## Live pricing features (alpha.7)
 
 The optional server-side `@hybrid-chain/arena-sdk/pricing` entry validates aggregate Star Quest observations and computes deterministic, versioned experimental Testnet estimates. It has no order, credit or payout authority. [Source, model, freshness and deployment boundaries](contracts/live-markets-v1/README.md). Existing game-provider delivery is unchanged; additional game execution requires separate adapters and acceptance.
+
+## Offline forecast evaluation (alpha.8)
+
+`@hybrid-chain/arena-sdk/pricing-evaluation` replays the unchanged pinned Star Quest model over complete original matches and reports equal-match Brier/log-loss, equal-prior baselines and calibration buckets. `node scripts/evaluate-live-pricing.mjs dataset.json [new-report.json]` runs entirely offline and refuses to overwrite a report. It does not certify input authenticity, calibrate/fine-tune a model, publish quotes or activate markets. [Dataset, holdout and trust requirements](docs/pricing-evaluation.md).

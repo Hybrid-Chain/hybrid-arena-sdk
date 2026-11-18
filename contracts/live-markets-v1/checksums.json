@@ -1,9 +1,14 @@
 {
   "schema": "arena.contract-checksums.v1",
-  "version": "2026-11-18.1",
+  "version": "2026-11-18.2",
   "files": {
-    "README.md": "c2b571a302cd08d9c6286b17322eb61e49eb49cfb808c015803ccbc140656725",
+    "README.md": "eec0a384a14ad71c331c027c67ce7f2162ec5edf12cb912895235e041592e8c3",
+    "evaluate.d.mts": "81094a9495e71c2c2b14cb1a24bdebea0a458bb8dad4e52967ea59f07f05bb4d",
+    "evaluate.mjs": "c730a4cec191c58a6d508952ce48d3e6edf0e3c7dcfa117d7e5846d353529dc9",
+    "evaluation.schema.json": "ce27beccd9ee8662ac9459aaa49caf884311a16ba579e6dbd3737faccd821e8b",
     "features.schema.json": "8343e962a8713cdac69c411464c0b88b714b382d2f72c788c589c69845ff0e62",
+    "fixtures/evaluation-input.json": "d2775372bc1c49f2a590f902e9a06a99e07bd5abab36e8bc9400f32a296aecca",
+    "fixtures/evaluation-report.json": "0c9deffb7029da75c5c8657d87af19fa720f8916b6968d0b7b3506449e904579",
     "fixtures/model-golden.json": "31e8fb5285db22617712c6f1f08b10f2eaef12a0b1ff8352198a3eef17e54bcc",
     "fixtures/starquest-features.json": "e2916772054dfc4c0ed67c52944e8516c191cc5785150dd1e1c72475478834b0",
     "model-policy.json": "53bf7b1615f604d57719c6496e480a2d9c3ecec97d92194effa2260300990ed0",

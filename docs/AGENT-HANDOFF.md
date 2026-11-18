@@ -48,3 +48,7 @@ Alpha.5 adds a separately scoped Node ArenaDeveloperClient and `arena studio` CL
 ## Live Testnet pricing extension — November 18
 
 Alpha.7 adds the server-side pricing helper and canonical source fixtures under `contracts/live-markets-v1`. This is an experimental uncalibrated model, not executable liquidity. Source PRs 14/15 still require deployment. Never pass historical-mode options into a live request path, accept browser-supplied observations as authority, or describe a model estimate as an accepted order or wallet payout. Existing core source contract remains 2026-10-23.2.
+
+## Offline evaluation — alpha.8
+
+Use docs/pricing-evaluation.md and the immutable live-markets-v1 evaluation schema before reporting model quality. The helper uses complete original matches with explicit development/evaluation splits, rejects duplicate match identities across splits, and weights matches equally. Unknown or private fields, rewinds, changed epochs/rules and terminal leakage refuse. All output remains source_authenticity_verified=false and calibrated=false. The model/policy bytes and hash are unchanged. This offline tool cannot unblock source PRs 14/15 or establish live quote/trade acceptance.
