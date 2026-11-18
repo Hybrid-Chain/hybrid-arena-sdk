@@ -1,0 +1,21 @@
+# Creator market-state contract v1 — source preview
+
+This contract is the first creator-market adapter slice. It projects the existing reviewed managed games' **two genuine outcomes**, exact immutable manifest/package binding, source match/epoch/tick, accepted event sequence, simulation time, scores and terminal result. It does not pad a binary game with fake outcomes or place it into Star Quest's four-house rulebook.
+
+`state.mjs` and `model.mjs` are server-side contract source for the bounded `timed_score_v1` family. It has no hosted intake route, common-Testnet market activation, published package entry or quote/order/ledger authority yet. Existing creator sandbox unit markets and source admissions retain their original rules and balances. A source preview is not completion of the second-game market integration.
+
+`projectManagedMarketState` accepts an original server-owned blueprint state and the exact registered manifest. It checks the real 10 Hz/100 ms clock and package duration, computes terminal winners from actual source scores only after completion and preserves draws as null. It excludes seed, target, selections, input history, private names, account/seat identifiers and source credentials. An accepted sequence is an original source receipt reference, never a forecast confidence or fresh admission by itself.
+
+`validateCreatorMarketState` rejects unknown fields, wrong publisher/game/release hash, changed outcome mapping, malformed clocks, invalid phases, fabricated early terminal states and incorrect hashes. The manifest hash is a content binding, not approval of that release or proof of public publication. Browser-supplied state is never source authority. The receiving adapter must independently authenticate the source, pin the exact approved release, enforce durable epoch/sequence/clock/result continuity and recheck current source admission before an actual order.
+
+Required next slices: held-out real-game evaluation of the new experimental pricing policy, genuine two-outcome collateral/void/conservation support in the isolated common-Testnet matcher, authenticated accepted-state intake and source admission, Studio release eligibility, finite identified maker coverage and an actual second-game buy/exit/settlement/evidence run. The common Testnet allocation must remain separate from existing developer-lab units and legacy points. Mainnet and real-value funding/payouts remain unavailable.
+
+## Experimental creator score model
+
+`creator-timed-score-v1` normalizes actual source scores with an explicit symmetric prior and increases score weight as the fixed game duration approaches. It uses only deterministic integer arithmetic, a fixed live probability floor and a million-part largest-remainder partition over the **actual declared outcomes**. It is uncalibrated and does not model player strategy or certify game fairness. Its policy commitment is `0a398bbf89b1ddce8f28456ee10d75326a4476ebbf1a342d20baede5ec4ecbfc`.
+
+The helper accepts fresh validated live source states by default (three-second maximum age and 500 ms future tolerance). Waiting, held and canceled states yield no forecast. Completed games return their validated source result only; drawn outcomes remain null. A terminal result is separate from a quote and from any accepted settlement. Historical evaluation must be an explicit offline caller option and cannot be chosen by a browser trading request.
+
+The generic data/model contract can express 2–16 declared outcomes, as the existing game-provider manifest permits. The managed adapter emits exactly two. This does **not** mean the matching engine supports those counts or that every declared release may trade; existing engine activation remains four-outcome Star Quest only. Binary collateral, void payouts, common-Testnet source admission and Studio eligibility are still next integration work. Never fake additional outcomes to pass a four-outcome parser.
+
+Before runtime integration, independently match both manifest and package hashes to the approved deployment; the data alone cannot approve itself. Outcome IDs must be public game outcomes, never private account/Steam/seat mappings. A state hash, a caller-supplied accepted sequence or a successful conformance test cannot establish source truth, external human acceptance, native finality or payout authority.

@@ -81,3 +81,7 @@ The optional server-side `@hybrid-chain/arena-sdk/pricing` entry validates aggre
 ## Offline forecast evaluation (alpha.8)
 
 `@hybrid-chain/arena-sdk/pricing-evaluation` replays the unchanged pinned Star Quest model over complete original matches and reports equal-match Brier/log-loss, equal-prior baselines and calibration buckets. `node scripts/evaluate-live-pricing.mjs dataset.json [new-report.json]` runs entirely offline and refuses to overwrite a report. It does not certify input authenticity, calibrate/fine-tune a model, publish quotes or activate markets. [Dataset, holdout and trust requirements](docs/pricing-evaluation.md).
+
+## Creator market adapter source preview
+
+The [creator market-state contract](contracts/creator-markets-v1/README.md) projects the four actual managed game engines with their two real outcomes and immutable manifest/package/clock bindings. A versioned experimental timed-score model and exact synthetic source fixtures are included in repository source. This is not a published package entry, hosted market intake or activated common-Testnet integration. Binary matching, source admission and second-game acceptance remain next work.

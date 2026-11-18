@@ -18,3 +18,5 @@
   manifests must agree on contract version and artifact checksums.
 
 - Alpha.8 adds offline `pricing-evaluation` only. Frozen Star Quest model/policy bytes and hash remain identical. Evaluation splits complete original matches, weights matches equally, excludes draws and decisive awaiting-result frames, and never certifies source authenticity/calibration or creates quotes. Real-data evaluation and source PR14/15 deployment remain pending. Do not import historical-mode evaluation into live request paths.
+
+- Creator-markets-v1 source preview projects all four actual managed engines into their two genuine outcomes, exact manifest/package hashes and 10 Hz clock, with strict timed-score terminal semantics. The new creator-timed-score-v1 policy hash is 0a398bbf89b1ddce8f28456ee10d75326a4476ebbf1a342d20baede5ec4ecbfc; it is uncalibrated/non-executable. No package entry, hosted intake, engine market, key, balance, source activation or common-Testnet trading is provided by this slice. Preserve the separate four-house Star Quest policy and legacy ledgers. Binary matcher/conservation/void/source-admission and real second-game acceptance still required.

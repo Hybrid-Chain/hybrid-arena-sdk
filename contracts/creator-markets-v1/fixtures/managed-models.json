@@ -1,0 +1,1061 @@
+{
+  "provenance": "Deterministic existing managed-game engines, disposable in-memory games and synthetic accepted event sequences. Not live source receipts, quotes, human acceptance or calibration.",
+  "fixtures": [
+    {
+      "name": "signal-rush-0",
+      "manifest": {
+        "schema": "arena.game.manifest.v1",
+        "publisher_id": "demo-studio",
+        "game_id": "demo-duel",
+        "game_version": "0.1.0",
+        "ruleset_id": "signal-rush",
+        "ruleset_version": "1.0.0",
+        "outcomes": [
+          {
+            "outcome_id": "a",
+            "label": "Team A"
+          },
+          {
+            "outcome_id": "b",
+            "label": "Team B"
+          }
+        ],
+        "capabilities": {
+          "spectate": false,
+          "join": false,
+          "replays": false
+        },
+        "clock": {
+          "kind": "simulation",
+          "precision_ms": 100,
+          "tick_rate_hz": 10
+        }
+      },
+      "game_package": {
+        "schema": "arena.managed-game.v1",
+        "blueprint": "signal-rush",
+        "version": "0.1.0",
+        "duration_seconds": 20,
+        "bot_difficulty": "normal",
+        "palette": "teal"
+      },
+      "snapshot": {
+        "schema": "arena.creator-market-state.v1",
+        "rule_family": "timed_score_v1",
+        "publisher_id": "demo-studio",
+        "game_id": "demo-duel",
+        "manifest_sha256": "1ea6b7b6ba1b3a1acd3c81b1f3da6c992a6f6d7fdfb62ff5a4db2760f4a47d3f",
+        "package_sha256": "ad06886222b0ab20578da076c35cc723f66f20ea697ce4fa4c1affd5574285f2",
+        "match_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "epoch": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "accepted_sequence": 1,
+        "source_tick": 0,
+        "game_time_ms": 0,
+        "observed_at": 1000000,
+        "status": "live",
+        "duration_ms": 20000,
+        "outcomes": [
+          {
+            "outcome_id": "a",
+            "score": 0
+          },
+          {
+            "outcome_id": "b",
+            "score": 0
+          }
+        ],
+        "winner": null,
+        "state_hash": "9b8682db3a3daacb93823b13c00e328d1129024ec3d7a4c931be8d925609d568"
+      },
+      "estimate": {
+        "schema": "arena.creator-win-estimate.v1",
+        "model_version": "creator-timed-score-v1",
+        "model_hash": "0a398bbf89b1ddce8f28456ee10d75326a4476ebbf1a342d20baede5ec4ecbfc",
+        "feature_hash": "9b8682db3a3daacb93823b13c00e328d1129024ec3d7a4c931be8d925609d568",
+        "manifest_sha256": "1ea6b7b6ba1b3a1acd3c81b1f3da6c992a6f6d7fdfb62ff5a4db2760f4a47d3f",
+        "package_sha256": "ad06886222b0ab20578da076c35cc723f66f20ea697ce4fa4c1affd5574285f2",
+        "source_epoch": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "source_sequence": 1,
+        "source_tick": 0,
+        "observed_at": 1000000,
+        "probability_scale": 1000000,
+        "calibration": "experimental_not_calibrated",
+        "executable_quote": false,
+        "state": "live",
+        "probabilities_ppm": [
+          500000,
+          500000
+        ],
+        "winner": null
+      }
+    },
+    {
+      "name": "signal-rush-100",
+      "manifest": {
+        "schema": "arena.game.manifest.v1",
+        "publisher_id": "demo-studio",
+        "game_id": "demo-duel",
+        "game_version": "0.1.0",
+        "ruleset_id": "signal-rush",
+        "ruleset_version": "1.0.0",
+        "outcomes": [
+          {
+            "outcome_id": "a",
+            "label": "Team A"
+          },
+          {
+            "outcome_id": "b",
+            "label": "Team B"
+          }
+        ],
+        "capabilities": {
+          "spectate": false,
+          "join": false,
+          "replays": false
+        },
+        "clock": {
+          "kind": "simulation",
+          "precision_ms": 100,
+          "tick_rate_hz": 10
+        }
+      },
+      "game_package": {
+        "schema": "arena.managed-game.v1",
+        "blueprint": "signal-rush",
+        "version": "0.1.0",
+        "duration_seconds": 20,
+        "bot_difficulty": "normal",
+        "palette": "teal"
+      },
+      "snapshot": {
+        "schema": "arena.creator-market-state.v1",
+        "rule_family": "timed_score_v1",
+        "publisher_id": "demo-studio",
+        "game_id": "demo-duel",
+        "manifest_sha256": "1ea6b7b6ba1b3a1acd3c81b1f3da6c992a6f6d7fdfb62ff5a4db2760f4a47d3f",
+        "package_sha256": "ad06886222b0ab20578da076c35cc723f66f20ea697ce4fa4c1affd5574285f2",
+        "match_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "epoch": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "accepted_sequence": 18,
+        "source_tick": 100,
+        "game_time_ms": 10000,
+        "observed_at": 1010000,
+        "status": "live",
+        "duration_ms": 20000,
+        "outcomes": [
+          {
+            "outcome_id": "a",
+            "score": 0
+          },
+          {
+            "outcome_id": "b",
+            "score": 6
+          }
+        ],
+        "winner": null,
+        "state_hash": "c546d4e6a8ca357c462093abb1653eb9bfebaa2288f3234005a2202827c5210a"
+      },
+      "estimate": {
+        "schema": "arena.creator-win-estimate.v1",
+        "model_version": "creator-timed-score-v1",
+        "model_hash": "0a398bbf89b1ddce8f28456ee10d75326a4476ebbf1a342d20baede5ec4ecbfc",
+        "feature_hash": "c546d4e6a8ca357c462093abb1653eb9bfebaa2288f3234005a2202827c5210a",
+        "manifest_sha256": "1ea6b7b6ba1b3a1acd3c81b1f3da6c992a6f6d7fdfb62ff5a4db2760f4a47d3f",
+        "package_sha256": "ad06886222b0ab20578da076c35cc723f66f20ea697ce4fa4c1affd5574285f2",
+        "source_epoch": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "source_sequence": 18,
+        "source_tick": 100,
+        "observed_at": 1010000,
+        "probability_scale": 1000000,
+        "calibration": "experimental_not_calibrated",
+        "executable_quote": false,
+        "state": "live",
+        "probabilities_ppm": [
+          199180,
+          800820
+        ],
+        "winner": null
+      }
+    },
+    {
+      "name": "signal-rush-200",
+      "manifest": {
+        "schema": "arena.game.manifest.v1",
+        "publisher_id": "demo-studio",
+        "game_id": "demo-duel",
+        "game_version": "0.1.0",
+        "ruleset_id": "signal-rush",
+        "ruleset_version": "1.0.0",
+        "outcomes": [
+          {
+            "outcome_id": "a",
+            "label": "Team A"
+          },
+          {
+            "outcome_id": "b",
+            "label": "Team B"
+          }
+        ],
+        "capabilities": {
+          "spectate": false,
+          "join": false,
+          "replays": false
+        },
+        "clock": {
+          "kind": "simulation",
+          "precision_ms": 100,
+          "tick_rate_hz": 10
+        }
+      },
+      "game_package": {
+        "schema": "arena.managed-game.v1",
+        "blueprint": "signal-rush",
+        "version": "0.1.0",
+        "duration_seconds": 20,
+        "bot_difficulty": "normal",
+        "palette": "teal"
+      },
+      "snapshot": {
+        "schema": "arena.creator-market-state.v1",
+        "rule_family": "timed_score_v1",
+        "publisher_id": "demo-studio",
+        "game_id": "demo-duel",
+        "manifest_sha256": "1ea6b7b6ba1b3a1acd3c81b1f3da6c992a6f6d7fdfb62ff5a4db2760f4a47d3f",
+        "package_sha256": "ad06886222b0ab20578da076c35cc723f66f20ea697ce4fa4c1affd5574285f2",
+        "match_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "epoch": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "accepted_sequence": 31,
+        "source_tick": 200,
+        "game_time_ms": 20000,
+        "observed_at": 1020000,
+        "status": "completed",
+        "duration_ms": 20000,
+        "outcomes": [
+          {
+            "outcome_id": "a",
+            "score": 0
+          },
+          {
+            "outcome_id": "b",
+            "score": 9
+          }
+        ],
+        "winner": "b",
+        "state_hash": "cab19033c226b92e5342ba29017d913863d6ca1dbc3da7d180586fa0333c1c45"
+      },
+      "estimate": {
+        "schema": "arena.creator-win-estimate.v1",
+        "model_version": "creator-timed-score-v1",
+        "model_hash": "0a398bbf89b1ddce8f28456ee10d75326a4476ebbf1a342d20baede5ec4ecbfc",
+        "feature_hash": "cab19033c226b92e5342ba29017d913863d6ca1dbc3da7d180586fa0333c1c45",
+        "manifest_sha256": "1ea6b7b6ba1b3a1acd3c81b1f3da6c992a6f6d7fdfb62ff5a4db2760f4a47d3f",
+        "package_sha256": "ad06886222b0ab20578da076c35cc723f66f20ea697ce4fa4c1affd5574285f2",
+        "source_epoch": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "source_sequence": 31,
+        "source_tick": 200,
+        "observed_at": 1020000,
+        "probability_scale": 1000000,
+        "calibration": "experimental_not_calibrated",
+        "executable_quote": false,
+        "state": "completed",
+        "probabilities_ppm": [
+          0,
+          1000000
+        ],
+        "winner": "b"
+      }
+    },
+    {
+      "name": "drone-dash-0",
+      "manifest": {
+        "schema": "arena.game.manifest.v1",
+        "publisher_id": "demo-studio",
+        "game_id": "demo-duel",
+        "game_version": "0.1.0",
+        "ruleset_id": "drone-dash",
+        "ruleset_version": "1.0.0",
+        "outcomes": [
+          {
+            "outcome_id": "a",
+            "label": "Team A"
+          },
+          {
+            "outcome_id": "b",
+            "label": "Team B"
+          }
+        ],
+        "capabilities": {
+          "spectate": false,
+          "join": false,
+          "replays": false
+        },
+        "clock": {
+          "kind": "simulation",
+          "precision_ms": 100,
+          "tick_rate_hz": 10
+        }
+      },
+      "game_package": {
+        "schema": "arena.managed-game.v1",
+        "blueprint": "drone-dash",
+        "version": "0.1.0",
+        "duration_seconds": 20,
+        "bot_difficulty": "normal",
+        "palette": "teal"
+      },
+      "snapshot": {
+        "schema": "arena.creator-market-state.v1",
+        "rule_family": "timed_score_v1",
+        "publisher_id": "demo-studio",
+        "game_id": "demo-duel",
+        "manifest_sha256": "d70a2cc35a16437e06f5509f974918757b4c33ce9580715bb1ee86e8aa889bcd",
+        "package_sha256": "8f2c8e171d595ffc2cc179870c48f10049b6d5ad537423f2ba162178ca1cbd25",
+        "match_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "epoch": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "accepted_sequence": 1,
+        "source_tick": 0,
+        "game_time_ms": 0,
+        "observed_at": 1000000,
+        "status": "live",
+        "duration_ms": 20000,
+        "outcomes": [
+          {
+            "outcome_id": "a",
+            "score": 0
+          },
+          {
+            "outcome_id": "b",
+            "score": 0
+          }
+        ],
+        "winner": null,
+        "state_hash": "881b8b67369bf2e1c2ba87d111e219046a41a832846486068601c7e2f1c8ccfe"
+      },
+      "estimate": {
+        "schema": "arena.creator-win-estimate.v1",
+        "model_version": "creator-timed-score-v1",
+        "model_hash": "0a398bbf89b1ddce8f28456ee10d75326a4476ebbf1a342d20baede5ec4ecbfc",
+        "feature_hash": "881b8b67369bf2e1c2ba87d111e219046a41a832846486068601c7e2f1c8ccfe",
+        "manifest_sha256": "d70a2cc35a16437e06f5509f974918757b4c33ce9580715bb1ee86e8aa889bcd",
+        "package_sha256": "8f2c8e171d595ffc2cc179870c48f10049b6d5ad537423f2ba162178ca1cbd25",
+        "source_epoch": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "source_sequence": 1,
+        "source_tick": 0,
+        "observed_at": 1000000,
+        "probability_scale": 1000000,
+        "calibration": "experimental_not_calibrated",
+        "executable_quote": false,
+        "state": "live",
+        "probabilities_ppm": [
+          500000,
+          500000
+        ],
+        "winner": null
+      }
+    },
+    {
+      "name": "drone-dash-100",
+      "manifest": {
+        "schema": "arena.game.manifest.v1",
+        "publisher_id": "demo-studio",
+        "game_id": "demo-duel",
+        "game_version": "0.1.0",
+        "ruleset_id": "drone-dash",
+        "ruleset_version": "1.0.0",
+        "outcomes": [
+          {
+            "outcome_id": "a",
+            "label": "Team A"
+          },
+          {
+            "outcome_id": "b",
+            "label": "Team B"
+          }
+        ],
+        "capabilities": {
+          "spectate": false,
+          "join": false,
+          "replays": false
+        },
+        "clock": {
+          "kind": "simulation",
+          "precision_ms": 100,
+          "tick_rate_hz": 10
+        }
+      },
+      "game_package": {
+        "schema": "arena.managed-game.v1",
+        "blueprint": "drone-dash",
+        "version": "0.1.0",
+        "duration_seconds": 20,
+        "bot_difficulty": "normal",
+        "palette": "teal"
+      },
+      "snapshot": {
+        "schema": "arena.creator-market-state.v1",
+        "rule_family": "timed_score_v1",
+        "publisher_id": "demo-studio",
+        "game_id": "demo-duel",
+        "manifest_sha256": "d70a2cc35a16437e06f5509f974918757b4c33ce9580715bb1ee86e8aa889bcd",
+        "package_sha256": "8f2c8e171d595ffc2cc179870c48f10049b6d5ad537423f2ba162178ca1cbd25",
+        "match_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "epoch": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "accepted_sequence": 18,
+        "source_tick": 100,
+        "game_time_ms": 10000,
+        "observed_at": 1010000,
+        "status": "live",
+        "duration_ms": 20000,
+        "outcomes": [
+          {
+            "outcome_id": "a",
+            "score": 0
+          },
+          {
+            "outcome_id": "b",
+            "score": 6
+          }
+        ],
+        "winner": null,
+        "state_hash": "513b1d7fec9947ff70b7ba20791aea32b1f7124c5f784d7b0c3fc73dede27955"
+      },
+      "estimate": {
+        "schema": "arena.creator-win-estimate.v1",
+        "model_version": "creator-timed-score-v1",
+        "model_hash": "0a398bbf89b1ddce8f28456ee10d75326a4476ebbf1a342d20baede5ec4ecbfc",
+        "feature_hash": "513b1d7fec9947ff70b7ba20791aea32b1f7124c5f784d7b0c3fc73dede27955",
+        "manifest_sha256": "d70a2cc35a16437e06f5509f974918757b4c33ce9580715bb1ee86e8aa889bcd",
+        "package_sha256": "8f2c8e171d595ffc2cc179870c48f10049b6d5ad537423f2ba162178ca1cbd25",
+        "source_epoch": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "source_sequence": 18,
+        "source_tick": 100,
+        "observed_at": 1010000,
+        "probability_scale": 1000000,
+        "calibration": "experimental_not_calibrated",
+        "executable_quote": false,
+        "state": "live",
+        "probabilities_ppm": [
+          199180,
+          800820
+        ],
+        "winner": null
+      }
+    },
+    {
+      "name": "drone-dash-200",
+      "manifest": {
+        "schema": "arena.game.manifest.v1",
+        "publisher_id": "demo-studio",
+        "game_id": "demo-duel",
+        "game_version": "0.1.0",
+        "ruleset_id": "drone-dash",
+        "ruleset_version": "1.0.0",
+        "outcomes": [
+          {
+            "outcome_id": "a",
+            "label": "Team A"
+          },
+          {
+            "outcome_id": "b",
+            "label": "Team B"
+          }
+        ],
+        "capabilities": {
+          "spectate": false,
+          "join": false,
+          "replays": false
+        },
+        "clock": {
+          "kind": "simulation",
+          "precision_ms": 100,
+          "tick_rate_hz": 10
+        }
+      },
+      "game_package": {
+        "schema": "arena.managed-game.v1",
+        "blueprint": "drone-dash",
+        "version": "0.1.0",
+        "duration_seconds": 20,
+        "bot_difficulty": "normal",
+        "palette": "teal"
+      },
+      "snapshot": {
+        "schema": "arena.creator-market-state.v1",
+        "rule_family": "timed_score_v1",
+        "publisher_id": "demo-studio",
+        "game_id": "demo-duel",
+        "manifest_sha256": "d70a2cc35a16437e06f5509f974918757b4c33ce9580715bb1ee86e8aa889bcd",
+        "package_sha256": "8f2c8e171d595ffc2cc179870c48f10049b6d5ad537423f2ba162178ca1cbd25",
+        "match_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "epoch": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "accepted_sequence": 31,
+        "source_tick": 200,
+        "game_time_ms": 20000,
+        "observed_at": 1020000,
+        "status": "completed",
+        "duration_ms": 20000,
+        "outcomes": [
+          {
+            "outcome_id": "a",
+            "score": 0
+          },
+          {
+            "outcome_id": "b",
+            "score": 9
+          }
+        ],
+        "winner": "b",
+        "state_hash": "3c11c6c0ddc810f22af8dcbf12f759d468767fbff7299f6f57dca627918c7c9f"
+      },
+      "estimate": {
+        "schema": "arena.creator-win-estimate.v1",
+        "model_version": "creator-timed-score-v1",
+        "model_hash": "0a398bbf89b1ddce8f28456ee10d75326a4476ebbf1a342d20baede5ec4ecbfc",
+        "feature_hash": "3c11c6c0ddc810f22af8dcbf12f759d468767fbff7299f6f57dca627918c7c9f",
+        "manifest_sha256": "d70a2cc35a16437e06f5509f974918757b4c33ce9580715bb1ee86e8aa889bcd",
+        "package_sha256": "8f2c8e171d595ffc2cc179870c48f10049b6d5ad537423f2ba162178ca1cbd25",
+        "source_epoch": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "source_sequence": 31,
+        "source_tick": 200,
+        "observed_at": 1020000,
+        "probability_scale": 1000000,
+        "calibration": "experimental_not_calibrated",
+        "executable_quote": false,
+        "state": "completed",
+        "probabilities_ppm": [
+          0,
+          1000000
+        ],
+        "winner": "b"
+      }
+    },
+    {
+      "name": "robot-duel-0",
+      "manifest": {
+        "schema": "arena.game.manifest.v1",
+        "publisher_id": "demo-studio",
+        "game_id": "demo-duel",
+        "game_version": "0.1.0",
+        "ruleset_id": "robot-duel",
+        "ruleset_version": "1.0.0",
+        "outcomes": [
+          {
+            "outcome_id": "a",
+            "label": "Team A"
+          },
+          {
+            "outcome_id": "b",
+            "label": "Team B"
+          }
+        ],
+        "capabilities": {
+          "spectate": false,
+          "join": false,
+          "replays": false
+        },
+        "clock": {
+          "kind": "simulation",
+          "precision_ms": 100,
+          "tick_rate_hz": 10
+        }
+      },
+      "game_package": {
+        "schema": "arena.managed-game.v1",
+        "blueprint": "robot-duel",
+        "version": "0.1.0",
+        "duration_seconds": 20,
+        "bot_difficulty": "normal",
+        "palette": "teal"
+      },
+      "snapshot": {
+        "schema": "arena.creator-market-state.v1",
+        "rule_family": "timed_score_v1",
+        "publisher_id": "demo-studio",
+        "game_id": "demo-duel",
+        "manifest_sha256": "157f823ad18dbde3d9ac5b0b520f1a322bdd64750a85d2d570b580af858ea56b",
+        "package_sha256": "1104e1a3fc2788537f5c1300b94395668d0ae5ce9092b16011e9ff63311ca593",
+        "match_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "epoch": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "accepted_sequence": 1,
+        "source_tick": 0,
+        "game_time_ms": 0,
+        "observed_at": 1000000,
+        "status": "live",
+        "duration_ms": 20000,
+        "outcomes": [
+          {
+            "outcome_id": "a",
+            "score": 0
+          },
+          {
+            "outcome_id": "b",
+            "score": 0
+          }
+        ],
+        "winner": null,
+        "state_hash": "74b1c88226ba882b68b71880f8d9a4d1db4dbf632c79e4fdd4dc1e1b779a36f2"
+      },
+      "estimate": {
+        "schema": "arena.creator-win-estimate.v1",
+        "model_version": "creator-timed-score-v1",
+        "model_hash": "0a398bbf89b1ddce8f28456ee10d75326a4476ebbf1a342d20baede5ec4ecbfc",
+        "feature_hash": "74b1c88226ba882b68b71880f8d9a4d1db4dbf632c79e4fdd4dc1e1b779a36f2",
+        "manifest_sha256": "157f823ad18dbde3d9ac5b0b520f1a322bdd64750a85d2d570b580af858ea56b",
+        "package_sha256": "1104e1a3fc2788537f5c1300b94395668d0ae5ce9092b16011e9ff63311ca593",
+        "source_epoch": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "source_sequence": 1,
+        "source_tick": 0,
+        "observed_at": 1000000,
+        "probability_scale": 1000000,
+        "calibration": "experimental_not_calibrated",
+        "executable_quote": false,
+        "state": "live",
+        "probabilities_ppm": [
+          500000,
+          500000
+        ],
+        "winner": null
+      }
+    },
+    {
+      "name": "robot-duel-100",
+      "manifest": {
+        "schema": "arena.game.manifest.v1",
+        "publisher_id": "demo-studio",
+        "game_id": "demo-duel",
+        "game_version": "0.1.0",
+        "ruleset_id": "robot-duel",
+        "ruleset_version": "1.0.0",
+        "outcomes": [
+          {
+            "outcome_id": "a",
+            "label": "Team A"
+          },
+          {
+            "outcome_id": "b",
+            "label": "Team B"
+          }
+        ],
+        "capabilities": {
+          "spectate": false,
+          "join": false,
+          "replays": false
+        },
+        "clock": {
+          "kind": "simulation",
+          "precision_ms": 100,
+          "tick_rate_hz": 10
+        }
+      },
+      "game_package": {
+        "schema": "arena.managed-game.v1",
+        "blueprint": "robot-duel",
+        "version": "0.1.0",
+        "duration_seconds": 20,
+        "bot_difficulty": "normal",
+        "palette": "teal"
+      },
+      "snapshot": {
+        "schema": "arena.creator-market-state.v1",
+        "rule_family": "timed_score_v1",
+        "publisher_id": "demo-studio",
+        "game_id": "demo-duel",
+        "manifest_sha256": "157f823ad18dbde3d9ac5b0b520f1a322bdd64750a85d2d570b580af858ea56b",
+        "package_sha256": "1104e1a3fc2788537f5c1300b94395668d0ae5ce9092b16011e9ff63311ca593",
+        "match_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "epoch": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "accepted_sequence": 18,
+        "source_tick": 100,
+        "game_time_ms": 10000,
+        "observed_at": 1010000,
+        "status": "live",
+        "duration_ms": 20000,
+        "outcomes": [
+          {
+            "outcome_id": "a",
+            "score": 0
+          },
+          {
+            "outcome_id": "b",
+            "score": 18
+          }
+        ],
+        "winner": null,
+        "state_hash": "c4e0a5b5aa00d6fda948e34d6f6e99aa2566bf478a91413a29b38cd1c009ec0e"
+      },
+      "estimate": {
+        "schema": "arena.creator-win-estimate.v1",
+        "model_version": "creator-timed-score-v1",
+        "model_hash": "0a398bbf89b1ddce8f28456ee10d75326a4476ebbf1a342d20baede5ec4ecbfc",
+        "feature_hash": "c4e0a5b5aa00d6fda948e34d6f6e99aa2566bf478a91413a29b38cd1c009ec0e",
+        "manifest_sha256": "157f823ad18dbde3d9ac5b0b520f1a322bdd64750a85d2d570b580af858ea56b",
+        "package_sha256": "1104e1a3fc2788537f5c1300b94395668d0ae5ce9092b16011e9ff63311ca593",
+        "source_epoch": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "source_sequence": 18,
+        "source_tick": 100,
+        "observed_at": 1010000,
+        "probability_scale": 1000000,
+        "calibration": "experimental_not_calibrated",
+        "executable_quote": false,
+        "state": "live",
+        "probabilities_ppm": [
+          69260,
+          930740
+        ],
+        "winner": null
+      }
+    },
+    {
+      "name": "robot-duel-200",
+      "manifest": {
+        "schema": "arena.game.manifest.v1",
+        "publisher_id": "demo-studio",
+        "game_id": "demo-duel",
+        "game_version": "0.1.0",
+        "ruleset_id": "robot-duel",
+        "ruleset_version": "1.0.0",
+        "outcomes": [
+          {
+            "outcome_id": "a",
+            "label": "Team A"
+          },
+          {
+            "outcome_id": "b",
+            "label": "Team B"
+          }
+        ],
+        "capabilities": {
+          "spectate": false,
+          "join": false,
+          "replays": false
+        },
+        "clock": {
+          "kind": "simulation",
+          "precision_ms": 100,
+          "tick_rate_hz": 10
+        }
+      },
+      "game_package": {
+        "schema": "arena.managed-game.v1",
+        "blueprint": "robot-duel",
+        "version": "0.1.0",
+        "duration_seconds": 20,
+        "bot_difficulty": "normal",
+        "palette": "teal"
+      },
+      "snapshot": {
+        "schema": "arena.creator-market-state.v1",
+        "rule_family": "timed_score_v1",
+        "publisher_id": "demo-studio",
+        "game_id": "demo-duel",
+        "manifest_sha256": "157f823ad18dbde3d9ac5b0b520f1a322bdd64750a85d2d570b580af858ea56b",
+        "package_sha256": "1104e1a3fc2788537f5c1300b94395668d0ae5ce9092b16011e9ff63311ca593",
+        "match_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "epoch": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "accepted_sequence": 31,
+        "source_tick": 200,
+        "game_time_ms": 20000,
+        "observed_at": 1020000,
+        "status": "completed",
+        "duration_ms": 20000,
+        "outcomes": [
+          {
+            "outcome_id": "a",
+            "score": 0
+          },
+          {
+            "outcome_id": "b",
+            "score": 27
+          }
+        ],
+        "winner": "b",
+        "state_hash": "461984ff31cede078392f6cd50476b4db78a15f67ff0a42bf9d8ba5f8a7e5f54"
+      },
+      "estimate": {
+        "schema": "arena.creator-win-estimate.v1",
+        "model_version": "creator-timed-score-v1",
+        "model_hash": "0a398bbf89b1ddce8f28456ee10d75326a4476ebbf1a342d20baede5ec4ecbfc",
+        "feature_hash": "461984ff31cede078392f6cd50476b4db78a15f67ff0a42bf9d8ba5f8a7e5f54",
+        "manifest_sha256": "157f823ad18dbde3d9ac5b0b520f1a322bdd64750a85d2d570b580af858ea56b",
+        "package_sha256": "1104e1a3fc2788537f5c1300b94395668d0ae5ce9092b16011e9ff63311ca593",
+        "source_epoch": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "source_sequence": 31,
+        "source_tick": 200,
+        "observed_at": 1020000,
+        "probability_scale": 1000000,
+        "calibration": "experimental_not_calibrated",
+        "executable_quote": false,
+        "state": "completed",
+        "probabilities_ppm": [
+          0,
+          1000000
+        ],
+        "winner": "b"
+      }
+    },
+    {
+      "name": "core-control-0",
+      "manifest": {
+        "schema": "arena.game.manifest.v1",
+        "publisher_id": "demo-studio",
+        "game_id": "demo-duel",
+        "game_version": "0.1.0",
+        "ruleset_id": "core-control",
+        "ruleset_version": "1.0.0",
+        "outcomes": [
+          {
+            "outcome_id": "a",
+            "label": "Team A"
+          },
+          {
+            "outcome_id": "b",
+            "label": "Team B"
+          }
+        ],
+        "capabilities": {
+          "spectate": false,
+          "join": false,
+          "replays": false
+        },
+        "clock": {
+          "kind": "simulation",
+          "precision_ms": 100,
+          "tick_rate_hz": 10
+        }
+      },
+      "game_package": {
+        "schema": "arena.managed-game.v1",
+        "blueprint": "core-control",
+        "version": "0.1.0",
+        "duration_seconds": 20,
+        "bot_difficulty": "normal",
+        "palette": "teal"
+      },
+      "snapshot": {
+        "schema": "arena.creator-market-state.v1",
+        "rule_family": "timed_score_v1",
+        "publisher_id": "demo-studio",
+        "game_id": "demo-duel",
+        "manifest_sha256": "dc3493cc38dc6d6d405a85b980ce73602410f8b5db1865d485f0bf80e64721b9",
+        "package_sha256": "03dbad2444e269242ceb676dd33a88809c5e21e9022a48f12b205eaf3ef5bf23",
+        "match_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "epoch": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "accepted_sequence": 1,
+        "source_tick": 0,
+        "game_time_ms": 0,
+        "observed_at": 1000000,
+        "status": "live",
+        "duration_ms": 20000,
+        "outcomes": [
+          {
+            "outcome_id": "a",
+            "score": 0
+          },
+          {
+            "outcome_id": "b",
+            "score": 0
+          }
+        ],
+        "winner": null,
+        "state_hash": "2ba4cd8dd96376cdf67f0c540f931761360fed74f1549ce7fdb640786dbaa4a5"
+      },
+      "estimate": {
+        "schema": "arena.creator-win-estimate.v1",
+        "model_version": "creator-timed-score-v1",
+        "model_hash": "0a398bbf89b1ddce8f28456ee10d75326a4476ebbf1a342d20baede5ec4ecbfc",
+        "feature_hash": "2ba4cd8dd96376cdf67f0c540f931761360fed74f1549ce7fdb640786dbaa4a5",
+        "manifest_sha256": "dc3493cc38dc6d6d405a85b980ce73602410f8b5db1865d485f0bf80e64721b9",
+        "package_sha256": "03dbad2444e269242ceb676dd33a88809c5e21e9022a48f12b205eaf3ef5bf23",
+        "source_epoch": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "source_sequence": 1,
+        "source_tick": 0,
+        "observed_at": 1000000,
+        "probability_scale": 1000000,
+        "calibration": "experimental_not_calibrated",
+        "executable_quote": false,
+        "state": "live",
+        "probabilities_ppm": [
+          500000,
+          500000
+        ],
+        "winner": null
+      }
+    },
+    {
+      "name": "core-control-100",
+      "manifest": {
+        "schema": "arena.game.manifest.v1",
+        "publisher_id": "demo-studio",
+        "game_id": "demo-duel",
+        "game_version": "0.1.0",
+        "ruleset_id": "core-control",
+        "ruleset_version": "1.0.0",
+        "outcomes": [
+          {
+            "outcome_id": "a",
+            "label": "Team A"
+          },
+          {
+            "outcome_id": "b",
+            "label": "Team B"
+          }
+        ],
+        "capabilities": {
+          "spectate": false,
+          "join": false,
+          "replays": false
+        },
+        "clock": {
+          "kind": "simulation",
+          "precision_ms": 100,
+          "tick_rate_hz": 10
+        }
+      },
+      "game_package": {
+        "schema": "arena.managed-game.v1",
+        "blueprint": "core-control",
+        "version": "0.1.0",
+        "duration_seconds": 20,
+        "bot_difficulty": "normal",
+        "palette": "teal"
+      },
+      "snapshot": {
+        "schema": "arena.creator-market-state.v1",
+        "rule_family": "timed_score_v1",
+        "publisher_id": "demo-studio",
+        "game_id": "demo-duel",
+        "manifest_sha256": "dc3493cc38dc6d6d405a85b980ce73602410f8b5db1865d485f0bf80e64721b9",
+        "package_sha256": "03dbad2444e269242ceb676dd33a88809c5e21e9022a48f12b205eaf3ef5bf23",
+        "match_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "epoch": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "accepted_sequence": 16,
+        "source_tick": 100,
+        "game_time_ms": 10000,
+        "observed_at": 1010000,
+        "status": "live",
+        "duration_ms": 20000,
+        "outcomes": [
+          {
+            "outcome_id": "a",
+            "score": 0
+          },
+          {
+            "outcome_id": "b",
+            "score": 5
+          }
+        ],
+        "winner": null,
+        "state_hash": "2fdcec92a8b594ff7bea322ac4b59c87713db90d3dc704a1da4503c4cb40d08e"
+      },
+      "estimate": {
+        "schema": "arena.creator-win-estimate.v1",
+        "model_version": "creator-timed-score-v1",
+        "model_hash": "0a398bbf89b1ddce8f28456ee10d75326a4476ebbf1a342d20baede5ec4ecbfc",
+        "feature_hash": "2fdcec92a8b594ff7bea322ac4b59c87713db90d3dc704a1da4503c4cb40d08e",
+        "manifest_sha256": "dc3493cc38dc6d6d405a85b980ce73602410f8b5db1865d485f0bf80e64721b9",
+        "package_sha256": "03dbad2444e269242ceb676dd33a88809c5e21e9022a48f12b205eaf3ef5bf23",
+        "source_epoch": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "source_sequence": 16,
+        "source_tick": 100,
+        "observed_at": 1010000,
+        "probability_scale": 1000000,
+        "calibration": "experimental_not_calibrated",
+        "executable_quote": false,
+        "state": "live",
+        "probabilities_ppm": [
+          226777,
+          773223
+        ],
+        "winner": null
+      }
+    },
+    {
+      "name": "core-control-200",
+      "manifest": {
+        "schema": "arena.game.manifest.v1",
+        "publisher_id": "demo-studio",
+        "game_id": "demo-duel",
+        "game_version": "0.1.0",
+        "ruleset_id": "core-control",
+        "ruleset_version": "1.0.0",
+        "outcomes": [
+          {
+            "outcome_id": "a",
+            "label": "Team A"
+          },
+          {
+            "outcome_id": "b",
+            "label": "Team B"
+          }
+        ],
+        "capabilities": {
+          "spectate": false,
+          "join": false,
+          "replays": false
+        },
+        "clock": {
+          "kind": "simulation",
+          "precision_ms": 100,
+          "tick_rate_hz": 10
+        }
+      },
+      "game_package": {
+        "schema": "arena.managed-game.v1",
+        "blueprint": "core-control",
+        "version": "0.1.0",
+        "duration_seconds": 20,
+        "bot_difficulty": "normal",
+        "palette": "teal"
+      },
+      "snapshot": {
+        "schema": "arena.creator-market-state.v1",
+        "rule_family": "timed_score_v1",
+        "publisher_id": "demo-studio",
+        "game_id": "demo-duel",
+        "manifest_sha256": "dc3493cc38dc6d6d405a85b980ce73602410f8b5db1865d485f0bf80e64721b9",
+        "package_sha256": "03dbad2444e269242ceb676dd33a88809c5e21e9022a48f12b205eaf3ef5bf23",
+        "match_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "epoch": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "accepted_sequence": 31,
+        "source_tick": 200,
+        "game_time_ms": 20000,
+        "observed_at": 1020000,
+        "status": "completed",
+        "duration_ms": 20000,
+        "outcomes": [
+          {
+            "outcome_id": "a",
+            "score": 0
+          },
+          {
+            "outcome_id": "b",
+            "score": 9
+          }
+        ],
+        "winner": "b",
+        "state_hash": "b492353492e4deed0c394d5820fff6225479d75ff052c992ec1942905820fef4"
+      },
+      "estimate": {
+        "schema": "arena.creator-win-estimate.v1",
+        "model_version": "creator-timed-score-v1",
+        "model_hash": "0a398bbf89b1ddce8f28456ee10d75326a4476ebbf1a342d20baede5ec4ecbfc",
+        "feature_hash": "b492353492e4deed0c394d5820fff6225479d75ff052c992ec1942905820fef4",
+        "manifest_sha256": "dc3493cc38dc6d6d405a85b980ce73602410f8b5db1865d485f0bf80e64721b9",
+        "package_sha256": "03dbad2444e269242ceb676dd33a88809c5e21e9022a48f12b205eaf3ef5bf23",
+        "source_epoch": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "source_sequence": 31,
+        "source_tick": 200,
+        "observed_at": 1020000,
+        "probability_scale": 1000000,
+        "calibration": "experimental_not_calibrated",
+        "executable_quote": false,
+        "state": "completed",
+        "probabilities_ppm": [
+          0,
+          1000000
+        ],
+        "winner": "b"
+      }
+    }
+  ]
+}

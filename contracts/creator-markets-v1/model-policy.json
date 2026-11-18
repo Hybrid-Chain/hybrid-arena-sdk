@@ -1,0 +1,16 @@
+{
+  "policy": {
+    "schema": "arena.creator-score-policy.v1",
+    "version": "creator-timed-score-v1",
+    "probability_scale": 1000000,
+    "probability_floor": 2500,
+    "score_prior": 5,
+    "utility_base": 1000,
+    "early_score_weight": 5000,
+    "late_score_weight": 30000,
+    "power": 2,
+    "max_source_age_ms": 3000,
+    "max_future_skew_ms": 500
+  },
+  "sha256": "0a398bbf89b1ddce8f28456ee10d75326a4476ebbf1a342d20baede5ec4ecbfc"
+}

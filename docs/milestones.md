@@ -23,3 +23,7 @@ Alpha.5 adds scoped Node developer automation, optional source-clock admission, 
 ## Offline model evaluation — alpha.8
 
 The pricing evaluation helper and explicit offline CLI are available. TypeScript, 46 Node cases, five Python compatibility cases and a clean offline install of the actual Node tarball passed. Whole-match privacy, original clock/rule binding, duplicate/cross-split refusal, equal-match metrics, source-unverified limitations, strict schema and report overwrite refusal are covered. Live model and policy bytes/hash remain unchanged. Synthetic fixture reports do not establish real-data accuracy, calibration, live source deployment, quote acceptance or the second creator adapter.
+
+## Live Testnet M11 source contract
+
+The creator market-state and model source preview is implemented with exact schema/byte pins and twelve deterministic fixtures from all four existing managed engines. The model keeps real outcome cardinality (the managed adapter emits two), original manifest/package/clock/result bindings and explicit uncalibrated/non-executable output. This is the first SDK slice of M11, not its completion. Hosted state intake, binary collateral and void accounting, current source admission, Studio eligibility, finite maker integration and an actual second-game market trial remain outstanding. Core provider, original Star Quest model and published alpha.8 assets are unchanged.

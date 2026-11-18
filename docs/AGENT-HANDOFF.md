@@ -52,3 +52,7 @@ Alpha.7 adds the server-side pricing helper and canonical source fixtures under 
 ## Offline evaluation — alpha.8
 
 Use docs/pricing-evaluation.md and the immutable live-markets-v1 evaluation schema before reporting model quality. The helper uses complete original matches with explicit development/evaluation splits, rejects duplicate match identities across splits, and weights matches equally. Unknown or private fields, rewinds, changed epochs/rules and terminal leakage refuse. All output remains source_authenticity_verified=false and calibrated=false. The model/policy bytes and hash are unchanged. This offline tool cannot unblock source PRs 14/15 or establish live quote/trade acceptance.
+
+## Creator-market source preview
+
+Read contracts/creator-markets-v1/README.md before using the new state/model files from repository source. Projection uses actual reviewed blueprint engines, two original outcomes, exact manifest and package hashes, original accepted event sequence and source-owned clocks. Timed-score completion requires the real duration and a unique score leader; draws/cancellation are distinct. No fake outcomes, price liquidity, source authentication, native proof or settlement is inferred. No new published package entry or hosted intake exists. The next integration must add genuine binary collateral/void accounting and independent current source admission in the common-Testnet lane before enabling any orders.

@@ -1,6 +1,6 @@
 {
   "schema": "arena.sdk-extensions.v1",
-  "version": "2026-11-18.2",
+  "version": "2026-11-18.3",
   "core_source_contract": "2026-10-23.2",
   "canonical_origin": "https://hybrid-arena.com",
   "current_availability": "https://hybrid-arena.com/.well-known/arena.json",
@@ -57,6 +57,21 @@
       "source_authenticity_verified": false,
       "calibrated": false,
       "executable_quotes": false,
+      "financial_execution": false
+    },
+    {
+      "id": "creator_market_state",
+      "status": "source_contract_preview",
+      "contract": "../contracts/creator-markets-v1/README.md",
+      "source_state": "arena.creator-market-state.v1",
+      "rule_family": "timed_score_v1",
+      "managed_source_outcomes": 2,
+      "source_model": "creator-timed-score-v1",
+      "model_hash": "0a398bbf89b1ddce8f28456ee10d75326a4476ebbf1a342d20baede5ec4ecbfc",
+      "hosted_intake_available": false,
+      "published_package_entry": false,
+      "common_testnet_execution_available": false,
+      "calibrated": false,
       "financial_execution": false
     }
   ],
