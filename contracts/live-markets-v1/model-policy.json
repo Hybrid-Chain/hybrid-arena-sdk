@@ -1,0 +1,49 @@
+{
+  "policy": {
+    "schema": "arena.win-model-policy.v1",
+    "version": "starquest-score-health-v1",
+    "probability_scale": 1000000,
+    "probability_floor": 2500,
+    "utility_base": 1000,
+    "power": 3,
+    "score_prior": 100,
+    "objective_prior_milli": 1000,
+    "max_source_age_ms": 3000,
+    "max_future_skew_ms": 500,
+    "weights": {
+      "battlefield": [
+        3500,
+        2000,
+        500,
+        500,
+        2500,
+        1000
+      ],
+      "bombing": [
+        3000,
+        1800,
+        300,
+        400,
+        2200,
+        2300
+      ],
+      "capture": [
+        2200,
+        1500,
+        300,
+        500,
+        2500,
+        3000
+      ],
+      "transport": [
+        2800,
+        1800,
+        400,
+        1000,
+        2000,
+        2000
+      ]
+    }
+  },
+  "sha256": "43f490680d2b277e4dea1d4dfe56ffa6360f241a0fab6a4b23d14159a36dfa0b"
+}

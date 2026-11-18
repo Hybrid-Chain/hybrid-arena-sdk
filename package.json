@@ -1,6 +1,6 @@
 {
   "name": "@hybrid-chain/arena-sdk",
-  "version": "0.1.0-alpha.6",
+  "version": "0.1.0-alpha.7",
   "description": "Hybrid Arena game-provider SDK and local reference sandbox",
   "type": "module",
   "license": "MIT",
@@ -17,6 +17,10 @@
     "./blueprints": {
       "types": "./contracts/managed-game-v1/blueprints.d.mts",
       "import": "./contracts/managed-game-v1/blueprints.mjs"
+    },
+    "./pricing": {
+      "types": "./contracts/live-markets-v1/starquest-model.d.mts",
+      "import": "./contracts/live-markets-v1/starquest-model.mjs"
     }
   },
   "bin": {

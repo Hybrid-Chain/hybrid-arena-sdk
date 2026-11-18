@@ -1,0 +1,189 @@
+{
+  "provenance": "Actual disposable authoritative Room snapshots. Synthetic fixture games; not production observations or acceptance.",
+  "models": [
+    {
+      "name": "battlefield-initial",
+      "estimate": {
+        "schema": "arena.win-estimate.v1",
+        "model_version": "starquest-score-health-v1",
+        "model_hash": "43f490680d2b277e4dea1d4dfe56ffa6360f241a0fab6a4b23d14159a36dfa0b",
+        "feature_hash": "aa79c2d875f3ea516c17257212fc78444707dcbd6a4393fb7d78681038078026",
+        "source_epoch": "11111111-1111-4111-8111-111111111111",
+        "source_tick": 0,
+        "observed_at": 1000000,
+        "probability_scale": 1000000,
+        "calibration": "experimental_not_calibrated",
+        "executable_quote": false,
+        "state": "live",
+        "probabilities_ppm": [
+          250000,
+          250000,
+          250000,
+          250000
+        ],
+        "winner": null
+      }
+    },
+    {
+      "name": "battlefield-red-damaged",
+      "estimate": {
+        "schema": "arena.win-estimate.v1",
+        "model_version": "starquest-score-health-v1",
+        "model_hash": "43f490680d2b277e4dea1d4dfe56ffa6360f241a0fab6a4b23d14159a36dfa0b",
+        "feature_hash": "65562059b435c626825c849684567980198acfa3b4bb2b81761d5a06ab20216a",
+        "source_epoch": "11111111-1111-4111-8111-111111111111",
+        "source_tick": 18000,
+        "observed_at": 1001000,
+        "probability_scale": 1000000,
+        "calibration": "experimental_not_calibrated",
+        "executable_quote": false,
+        "state": "live",
+        "probabilities_ppm": [
+          321994,
+          34020,
+          321993,
+          321993
+        ],
+        "winner": null
+      }
+    },
+    {
+      "name": "bombing-initial",
+      "estimate": {
+        "schema": "arena.win-estimate.v1",
+        "model_version": "starquest-score-health-v1",
+        "model_hash": "43f490680d2b277e4dea1d4dfe56ffa6360f241a0fab6a4b23d14159a36dfa0b",
+        "feature_hash": "bff73ed8b01b258422e9bd3da6b636882e6916f1ee89a87df4de63e03449af9f",
+        "source_epoch": "11111111-1111-4111-8111-111111111111",
+        "source_tick": 0,
+        "observed_at": 1000000,
+        "probability_scale": 1000000,
+        "calibration": "experimental_not_calibrated",
+        "executable_quote": false,
+        "state": "live",
+        "probabilities_ppm": [
+          250000,
+          250000,
+          250000,
+          250000
+        ],
+        "winner": null
+      }
+    },
+    {
+      "name": "bombing-red-damaged",
+      "estimate": {
+        "schema": "arena.win-estimate.v1",
+        "model_version": "starquest-score-health-v1",
+        "model_hash": "43f490680d2b277e4dea1d4dfe56ffa6360f241a0fab6a4b23d14159a36dfa0b",
+        "feature_hash": "c83ad3bc82917adc1f8c07508119db31857285ccc93c52d84a7bd375a281831f",
+        "source_epoch": "11111111-1111-4111-8111-111111111111",
+        "source_tick": 18000,
+        "observed_at": 1001000,
+        "probability_scale": 1000000,
+        "calibration": "experimental_not_calibrated",
+        "executable_quote": false,
+        "state": "live",
+        "probabilities_ppm": [
+          315481,
+          53557,
+          315481,
+          315481
+        ],
+        "winner": null
+      }
+    },
+    {
+      "name": "capture-initial",
+      "estimate": {
+        "schema": "arena.win-estimate.v1",
+        "model_version": "starquest-score-health-v1",
+        "model_hash": "43f490680d2b277e4dea1d4dfe56ffa6360f241a0fab6a4b23d14159a36dfa0b",
+        "feature_hash": "60cd7612f0e7967b91644e129a2db58748cafda3edc9f8041c2d938460ca89a7",
+        "source_epoch": "11111111-1111-4111-8111-111111111111",
+        "source_tick": 0,
+        "observed_at": 1000000,
+        "probability_scale": 1000000,
+        "calibration": "experimental_not_calibrated",
+        "executable_quote": false,
+        "state": "live",
+        "probabilities_ppm": [
+          250000,
+          250000,
+          250000,
+          250000
+        ],
+        "winner": null
+      }
+    },
+    {
+      "name": "capture-red-damaged",
+      "estimate": {
+        "schema": "arena.win-estimate.v1",
+        "model_version": "starquest-score-health-v1",
+        "model_hash": "43f490680d2b277e4dea1d4dfe56ffa6360f241a0fab6a4b23d14159a36dfa0b",
+        "feature_hash": "c6200b69d06aa8f14b712d71095317b68e148f5435fd7f1a906c771ef0d3174f",
+        "source_epoch": "11111111-1111-4111-8111-111111111111",
+        "source_tick": 18000,
+        "observed_at": 1001000,
+        "probability_scale": 1000000,
+        "calibration": "experimental_not_calibrated",
+        "executable_quote": false,
+        "state": "live",
+        "probabilities_ppm": [
+          307330,
+          78010,
+          307330,
+          307330
+        ],
+        "winner": null
+      }
+    },
+    {
+      "name": "transport-initial",
+      "estimate": {
+        "schema": "arena.win-estimate.v1",
+        "model_version": "starquest-score-health-v1",
+        "model_hash": "43f490680d2b277e4dea1d4dfe56ffa6360f241a0fab6a4b23d14159a36dfa0b",
+        "feature_hash": "e39d0c56f5dc20ba2bc330e80aee132a1b41e2be5472d8fede9f3cef9afc4a4b",
+        "source_epoch": "11111111-1111-4111-8111-111111111111",
+        "source_tick": 0,
+        "observed_at": 1000000,
+        "probability_scale": 1000000,
+        "calibration": "experimental_not_calibrated",
+        "executable_quote": false,
+        "state": "live",
+        "probabilities_ppm": [
+          250000,
+          250000,
+          250000,
+          250000
+        ],
+        "winner": null
+      }
+    },
+    {
+      "name": "transport-red-damaged",
+      "estimate": {
+        "schema": "arena.win-estimate.v1",
+        "model_version": "starquest-score-health-v1",
+        "model_hash": "43f490680d2b277e4dea1d4dfe56ffa6360f241a0fab6a4b23d14159a36dfa0b",
+        "feature_hash": "bf689ccd5f911ccb4ac5abafc01b2a03bc0f840fa4c6193719d2bbb6b5aeec56",
+        "source_epoch": "11111111-1111-4111-8111-111111111111",
+        "source_tick": 18000,
+        "observed_at": 1001000,
+        "probability_scale": 1000000,
+        "calibration": "experimental_not_calibrated",
+        "executable_quote": false,
+        "state": "live",
+        "probabilities_ppm": [
+          314682,
+          55954,
+          314682,
+          314682
+        ],
+        "winner": null
+      }
+    }
+  ]
+}

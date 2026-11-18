@@ -1,14 +1,58 @@
 {
   "schema": "arena.sdk-extensions.v1",
-  "version": "2026-10-24.1",
+  "version": "2026-11-18.1",
   "core_source_contract": "2026-10-23.2",
   "canonical_origin": "https://hybrid-arena.com",
   "current_availability": "https://hybrid-arena.com/.well-known/arena.json",
   "extensions": [
-    {"id":"scoped_developer_automation","path":"/api/studio/automation","methods":["GET","POST"],"authority":"developer_bearer","scopes":["integration:read","release:create","outcome:create"],"publishing":false,"source_authority":false,"financial_execution":false},
-    {"id":"practice_source_admission","path":"/v1/practice-admissions","methods":["GET","POST"],"authority":"ARENA-PRACTICE-ADMISSION-V1","game_source_key":true,"optional_new_market_policy":"source_confirmed_v1","immediate_orders_only":true,"native_pretrade_admission":false,"financial_execution":false}
+    {
+      "id": "scoped_developer_automation",
+      "path": "/api/studio/automation",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "authority": "developer_bearer",
+      "scopes": [
+        "integration:read",
+        "release:create",
+        "outcome:create"
+      ],
+      "publishing": false,
+      "source_authority": false,
+      "financial_execution": false
+    },
+    {
+      "id": "practice_source_admission",
+      "path": "/v1/practice-admissions",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "authority": "ARENA-PRACTICE-ADMISSION-V1",
+      "game_source_key": true,
+      "optional_new_market_policy": "source_confirmed_v1",
+      "immediate_orders_only": true,
+      "native_pretrade_admission": false,
+      "financial_execution": false
+    },
+    {
+      "id": "live_game_pricing",
+      "status": "source_available_deployment_pending",
+      "contract": "../contracts/live-markets-v1/README.md",
+      "node_entry": "@hybrid-chain/arena-sdk/pricing",
+      "source_features": "starquest.pricing-features.v1",
+      "model": "starquest-score-health-v1",
+      "calibrated": false,
+      "executable_quotes": false,
+      "financial_execution": false
+    }
   ],
-  "node_helpers": ["ArenaDeveloperClient","PracticeAdmissionClient","signPracticeAdmission"],
+  "node_helpers": [
+    "ArenaDeveloperClient",
+    "PracticeAdmissionClient",
+    "signPracticeAdmission"
+  ],
   "python_extension_helpers": false,
   "testnet_wallet_submission": false,
   "mainnet_deployment": false

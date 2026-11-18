@@ -44,3 +44,7 @@ CP1–CP6 are deployed on Arena23db9a6. Review the current108-operation website 
 ## Scoped automation and optional source admission
 
 Alpha.5 adds a separately scoped Node ArenaDeveloperClient and `arena studio` CLI, and PracticeAdmissionClient for optional source-clock approval. See docs/creator-next.md for exact domains, limits and recovery. No Python automation/admission helper is packaged in this release; the original Python source client is unchanged. New developer tokens cannot sign source facts, publish releases, trade or access wallets. `arena starter DIR --manifest FILE` binds the editable reference to a downloaded exact manifest. Pilot self-reports are unverified; Testnet settlement receipts are nonspendable fixtures, not crypto payments.
+
+## Live Testnet pricing extension — November 18
+
+Alpha.7 adds the server-side pricing helper and canonical source fixtures under `contracts/live-markets-v1`. This is an experimental uncalibrated model, not executable liquidity. Source PRs 14/15 still require deployment. Never pass historical-mode options into a live request path, accept browser-supplied observations as authority, or describe a model estimate as an accepted order or wallet payout. Existing core source contract remains 2026-10-23.2.

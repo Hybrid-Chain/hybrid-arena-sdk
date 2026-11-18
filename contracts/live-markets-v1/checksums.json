@@ -1,0 +1,13 @@
+{
+  "schema": "arena.contract-checksums.v1",
+  "version": "2026-11-18.1",
+  "files": {
+    "README.md": "c2b571a302cd08d9c6286b17322eb61e49eb49cfb808c015803ccbc140656725",
+    "features.schema.json": "8343e962a8713cdac69c411464c0b88b714b382d2f72c788c589c69845ff0e62",
+    "fixtures/model-golden.json": "31e8fb5285db22617712c6f1f08b10f2eaef12a0b1ff8352198a3eef17e54bcc",
+    "fixtures/starquest-features.json": "e2916772054dfc4c0ed67c52944e8516c191cc5785150dd1e1c72475478834b0",
+    "model-policy.json": "53bf7b1615f604d57719c6496e480a2d9c3ecec97d92194effa2260300990ed0",
+    "starquest-model.d.mts": "7936fa0e8fec7e8b357a09970be1b9c2f1c5a7715348d2e9910a89f378c62f94",
+    "starquest-model.mjs": "0805691540259c6026e04ca5ee555a9c4f0f7a0b9cda4a62cde2b3c03af47095"
+  }
+}

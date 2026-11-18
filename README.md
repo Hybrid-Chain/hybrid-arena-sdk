@@ -73,3 +73,7 @@ agent brief; `arena check-package my-game/arena-game.json` checks offline confor
 Upload through Studio's managed deployment workflow. No CLI command silently
 creates a hosted match or grants publishing/wallet authority. See
 [managed games](docs/managed-games.md) and the [package contract](contracts/managed-game-v1/README.md).
+
+## Live pricing features (alpha.7)
+
+The optional server-side `@hybrid-chain/arena-sdk/pricing` entry validates aggregate Star Quest observations and computes deterministic, versioned experimental Testnet estimates. It has no order, credit or payout authority. [Source, model, freshness and deployment boundaries](contracts/live-markets-v1/README.md). Existing game-provider delivery is unchanged; additional game execution requires separate adapters and acceptance.
