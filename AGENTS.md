@@ -1,3 +1,8 @@
+# Native creator Testnet rollout — November19 UTC
+
+- Current hosted native2 flow is implemented and commissioned separately from this source-only SDK package. Website8773264 / enginee164a85, current native guide and player API describe common fixed Testnet credits, finite maker depth, original UUID recovery and accepted-result settlement. A live operator/synthetic Core game supplied36 fresh observations/eight complete two-way samples/four distinct quote sets and final settlement, without participant orders or grants. Depth is finite and not continuously guaranteed; independent humans and sustained coverage remain unfinished.
+- This documentation-only update changes the README digest/version together. Original model/state/policy and alpha.9 published artifacts stay immutable; package install grants no source/market/account/order/wallet authority. Historical source-preview notes below remain dated history. External games need their reviewed adapter and Studio approval; native managed activation is not universal financial intake. Mainnet/real funds/wallet payouts and separate proof-window repair remain gated.
+
 # Alpha.9 creator helpers — November 19, 2026
 
 - `./creator-markets` packages the original `288f0f4` state/model/policy bytes without changing commitments. Website `1e7306c` supplies a public existing-store read-only source projection. Engine `e9da8e0` has inactive binary collateral/conservation/void accounting. Keep their separate delivered and unaccepted boundaries accurate; older source-preview notes below describe the historical first slice.

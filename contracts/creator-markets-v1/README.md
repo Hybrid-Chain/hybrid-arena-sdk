@@ -1,38 +1,92 @@
 # Creator market-state contract v1 — alpha.9
 
-The server-side `@hybrid-chain/arena-sdk/creator-markets` entry exports `projectManagedMarketState`, `validateCreatorMarketState`, `marketStateHash`, `estimateCreatorScoreWin` and the pinned model-policy constants. These are data/model helpers, with no hosted source credential, market-registration, ledger or payout authority.
+## Current hosted integration — November 19, 2026
 
-The managed adapter projects the four reviewed game engines' **two genuine outcomes**, exact immutable manifest/package binding, original source match/epoch/tick, accepted event sequence, simulation time, source occurrence time, scores and terminal result. It excludes seed, targets, selections, input history, private names and account/seat/Steam identity. Do not pad a binary game with invented outcomes.
+Arena's reviewed managed blueprints now connect actual game state to native binary
+Testnet contracts: live finite bids/asks, reviewed orders, partial exits, original
+request recovery, account-owned positions and accepted-result settlement.
+The [player API and native guide](https://hybrid-arena.com/integrations/markets/creator-pricing-v1/native-admission.md)
+and [Arena agent manifest](https://hybrid-arena.com/.well-known/agent.json) describe
+current browser routes and availability. Browser writes use the current Arena
+session and Origin/CSRF; they are not delegated external trading credentials.
 
-`validateCreatorMarketState` rejects unknown fields, wrong publisher/game/release hash, changed outcome mapping, malformed clocks, invalid phases, fabricated early terminal states and incorrect hashes. A content hash is not approval of a release or proof of public publication. Browser-supplied state is never source authority. The receiving adapter must independently authenticate the source, pin the exact eligible release, enforce durable epoch/sequence/clock/result continuity and recheck current source admission before an order.
+The selected [52-path internal engine](https://github.com/Hybrid-Chain/hybrid-chain-prediction-markets/blob/e164a855cb0e1024b113b8e69c9cdba55a618aad/docs/arena-practice.openapi.json)
+and [Arena player implementation](https://github.com/Hybrid-Chain/hybrid-arena-website/commit/877326410dd3f3fd96c36016b99022b83967ec8f)
+use a genuine persistent native source stream, dedicated source-only authority and
+one bounded maker. A creator cannot register an arbitrary financial source merely
+by installing this package. Externally hosted integrations retain their reviewed
+Studio/event contracts; the managed native adapter is not universal game admission.
+
+A live Core operator test produced 36 fresh observations, eight complete two-way
+depth observations, four distinct quote sets and an accepted terminal settlement.
+It is explicitly synthetic/operator activity: no participant grant or order was
+submitted, no human adoption is claimed, and depth was not continuously available.
+Actual quotes are finite; an estimate or last trade never guarantees an entry/exit.
+Independent creator/player testing and sustained liquidity coverage remain open.
+
+## Unchanged package authority
+
+`@hybrid-chain/arena-sdk/creator-markets` exports `projectManagedMarketState`,
+`validateCreatorMarketState`, `marketStateHash`, `estimateCreatorScoreWin` and the
+pinned model-policy constants. These helpers grant no source credential, release
+approval, market registration, account credit, order or wallet authority.
+The published alpha.9 package and its historical artifacts are unchanged.
+This current repository guide is not a replacement package release.
+
+The adapter projects all four reviewed managed engines into their **two genuine
+outcomes**, immutable manifest/package hashes, original match/epoch, tick,
+sequence, source occurrence time, scores and terminal result. Seeds, targets,
+selections, input history, private names and account/seat/Steam identity are excluded.
+Do not pad a binary game with invented outcomes or substitute browser state.
+
+The native execution sequence J is separate from produced host facts F and accepted
+Studio delivery N. The owning adapter validates the original counters/prefixes and
+current eligible release. A read never refreshes gameplay or an old admission.
+`request_admission_available` permits requesting a NEW game ticket, subject to both
+execution gates, balance and actual depth. It does not reserve a fill or renew an
+expired `admission_until`. Original UUIDs and terms survive uncertainty and restart.
 
 ## Experimental timed-score model
 
-`creator-timed-score-v1` uses actual scores, an explicit symmetric prior and the fixed game duration. Deterministic integer arithmetic, a fixed live probability floor and largest-remainder partition preserve a million-part total over the declared outcomes. The model is uncalibrated, does not model player strategy and does not certify game fairness. Its unchanged policy commitment is `0a398bbf89b1ddce8f28456ee10d75326a4476ebbf1a342d20baede5ec4ecbfc`.
+`creator-timed-score-v1` uses actual scores, a symmetric prior and fixed duration.
+Deterministic integer arithmetic, a live probability floor and largest-remainder
+partition preserve a million-part total over the declared outcomes. Its unchanged
+policy commitment is `0a398bbf89b1ddce8f28456ee10d75326a4476ebbf1a342d20baede5ec4ecbfc`.
+It is uncalibrated, does not model player strategy and does not certify fairness.
+An experimental win estimate is separate from an executable bid, ask or exit.
 
-Live input expires after three seconds, with 500 ms future-clock tolerance. Waiting, held and canceled states produce no forecast; completed source results remain distinct from live quotes and settlements, and draws remain null. Explicit historical evaluation is an offline-only caller option, never a browser trade-request option. The generic data/model schema permits 2–16 outcomes; the managed adapter emits two. This is not engine approval for arbitrary cardinalities or games.
+Preserve original source times and complete match splits when evaluating the model.
+Missing, stale, held, conflicting or ineligible sources must fail closed. Quiet
+heartbeats carry original game facts; repeatedly reading an old fact creates no
+new observation. Never retimestamp a queued or terminal event to make it current.
 
-## Current Arena read-only integration
+## Testnet accounts, finite liquidity and results
 
-[Website 1e7306c](https://github.com/Hybrid-Chain/hybrid-arena-website/commit/1e7306cea5bf124ea4116c9a0ced54dfcd6e6d03) deploys `GET https://hybrid-arena.com/api/testnet/creator-pricing?game=<public-24-hex-id>&match=<original-32-hex-id>`. Public IDs and matches come from `/api/games` and `/api/games/<id>`. [Integration guide](https://hybrid-arena.com/integrations/markets/creator-pricing-v1/README.md).
+Native binary and Star Quest contracts use the common once-only $10,000 Testnet
+account allocation, in integer cents. No refill or legacy conversion. A native
+winning contract redeems $1; an accepted native void redeems $0.50. Star Quest
+retains its four-house policy and $0.25 void. Pooled points, earlier per-market
+creator-lab units and the old exchange keep their own original records.
 
-The existing-store read-only projection checks the complete accepted prefix, exact original release/package, objective/score pairs, original source occurrence time, clock and final accepted receipt. Reads do not create a workspace, database, account, balance or market. New source facts retain original occurrence time; legacy facts are not backfilled. Old completed results remain original after a source key is revoked or a newer release is published. Stale/held/revoked live sources or missing original times return unavailable without fallback odds.
+One fixed nonredeemable maker allocation has global cash/inventory/exposure limits.
+It is not participant money, automatic creator earnings or unlimited exit liquidity.
+A queued order is not a fill. A fill is not a wallet payout. A closed match may
+await accepted terminal settlement. Game admission is independent of market entry;
+a contract purchase does not grant a player seat.
 
-Current website source [d5d7e6a](https://github.com/Hybrid-Chain/hybrid-arena-website/commit/d5d7e6a711a16190775ac1ab09abd19563da30a5) optionally compares the complete original accepted prefix and receipt with the protected local managed host. A matching binding sets `managed_host_provenance_verified:true`; unavailable comparison remains explicitly false, and mismatches or known host completion close the live view. This is single-operator source attribution, not independent game truth, anti-cheat or native finality. `market_admission_eligible:false`, `executable_quote:false` and `value_movement:false` remain unchanged. Current source-clock order admission is still separate. Original terminal evidence is not a financial settlement receipt.
+## Evidence and acceptance boundaries
 
-The [isolated binary matcher foundation](https://github.com/Hybrid-Chain/hybrid-chain-prediction-markets/blob/e9da8e050dd4c16622531fdcc851c0af22880351/docs/ARENA_CREATOR_TESTNET.md) implements two-outcome collateral/conservation/void accounting, but creator market creation and execution remain inactive. Next: live source admission, immutable common-Testnet registration, Studio eligibility, finite maker integration, binary API/UI/portfolio and an actual second-game buy/partial-exit/settlement/evidence trial. Developer-lab units and legacy points remain separate. Mainnet, wallet funding and real payouts remain unavailable.
+The public creator-pricing API independently checks the immutable accepted game
+prefix/receipt against the protected host where available. That is single-operator
+source attribution, not independent gameplay truth, anti-cheat or native finality.
+Source authentication, market settlement and native Testnet proof confirmation are
+separate. The Arena/Explorer proof-window repair remains a distinct operator track.
 
-The managed host now adds an original heartbeat within five quiet ticks (500 ms), retaining two-second batching and the original request limit. An actual 30-second operator/synthetic game returned nine live observations with maximum source age 1,974 ms and no unavailable responses after startup. No order or account allocation was submitted. Sustained maximum-load quote and recovery acceptance remain required; do not relax freshness, retimestamp events or treat repeated reads as new gameplay. Synthetic conformance is not independent player acceptance or real-data calibration.
+The isolated actual game/native-journal/Rust HTTP/MySQL/maker trial bought three
+contracts, sold one, recovered a lost committed mint and reconciled final balances.
+Compiled disposable AuthStore/journal/HMAC/restart and browser fixtures are separate
+synthetic checks. Neither constitutes independent creator/player acceptance.
+Mainnet, real funds, wallet funding and wallet payouts remain disabled.
 
-## Native admission source checkpoint — not activated
-
-[Selected closed-gate enginee6367db](https://github.com/Hybrid-Chain/hybrid-chain-prediction-markets/blob/e6367db8a881dbf7cc91b9ef3f8983a0758af082/docs/ARENA_CREATOR_NATIVE_SOURCE.md) adds strict creator-native decoding, independent model recomputation, a separate durable intent/event cursor and accepted-result/acknowledgment settlement joins. [Arena producer source54a9f08](https://github.com/Hybrid-Chain/hybrid-arena-website/blob/54a9f08928e8cf336b87cf3da6967c6635afdcb6/lib/hosting/creator-trading.mjs) retains original native tickets, source times and restart holds. Its `creator_native_execution_v1` event sequence J is explicitly separate from produced host facts F and accepted game delivery N; do not silently substitute those counters when constructing a model reference.
-
-The private engine now exposes separately signed native source routes and owned participant instruction submission/status/list/cancel with exact original positive/negative reply recovery. The selected binary retains all closed gates and original accounts/receipts; no new native stream, market, key or execution is activated. This is not a new alpha.9 package API, public intake or permission grant. The co-located host/current Studio transport is being integrated with a separate default-off feature; its actual source worker, binary UI and finite maker still require rollout and acceptance. Read the [native integration guide](https://hybrid-arena.com/integrations/markets/creator-pricing-v1/native-admission.md). Original SDK model/state/policy and published release artifacts remain immutable. An original admission or Testnet settlement is not a wallet payout or native-chain confirmation.
-
-
-## Native worker acceptance and remaining activation
-
-The current Arena implementation connects its protected actual managed host to the signed Testnet API, with independent current Studio approval refresh, exact original dispatch/reply recovery, durable acknowledgments and accepted-result settlement. Its real isolated Rust HTTP/MySQL +20-second managed-game run passed request recovery, queued cancellation, unchanged once-only starting balance and the complete terminal join. The IOC had zero fills without a counterparty; this is synthetic/operator acceptance, not active production liquidity or independent creators.
-
-The internal49-path engine adds binding, uncertain dispatch and unjoined-terminal recovery reads. A stopped/expired original dispatch recovers any original ticket or gets a retained negative fence so a late request cannot acquire a new ticket. Original positive acknowledgments cannot be discarded. No migration, native source key, stream, market, maker capital or production worker was commissioned. Public intake and execution flags remain false. Finite binary liquidity/player UI and guarded host/worker commissioning remain required. See the current [native integration guide](https://hybrid-arena.com/integrations/markets/creator-pricing-v1/native-admission.md). This is repository documentation, not a replacement alpha.9 package or new SDK credential authority.
+Historical source-only checkpoints remain pinned in
+[the preceding guide revision](https://github.com/Hybrid-Chain/hybrid-arena-sdk/blob/8b80d9f1ad870a201972afc81a8f4e884a31f1c5/contracts/creator-markets-v1/README.md).
