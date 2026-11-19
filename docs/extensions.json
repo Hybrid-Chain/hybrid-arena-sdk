@@ -81,7 +81,11 @@
       "authority": "public_read",
       "readonly_projection_available": true,
       "managed_host_provenance": "per_response_protected_host_comparison",
-      "readonly_projection_source": "https://github.com/Hybrid-Chain/hybrid-arena-website/commit/d5d7e6a711a16190775ac1ab09abd19563da30a5"
+      "readonly_projection_source": "https://github.com/Hybrid-Chain/hybrid-arena-website/commit/d5d7e6a711a16190775ac1ab09abd19563da30a5",
+      "native_execution_implementation": "internal_source_only_not_activated",
+      "native_execution_sequence_domain": "creator_native_execution_v1",
+      "native_execution_guide": "https://hybrid-arena.com/integrations/markets/creator-pricing-v1/native-admission.md",
+      "native_engine_source": "https://github.com/Hybrid-Chain/hybrid-chain-prediction-markets/commit/13d4e264903251cc8911a8e5db1e42830192554e"
     }
   ],
   "node_helpers": [
