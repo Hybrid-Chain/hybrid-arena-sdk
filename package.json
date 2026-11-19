@@ -1,6 +1,6 @@
 {
   "name": "@hybrid-chain/arena-sdk",
-  "version": "0.1.0-alpha.8",
+  "version": "0.1.0-alpha.9",
   "description": "Hybrid Arena game-provider SDK and local reference sandbox",
   "type": "module",
   "license": "MIT",
@@ -25,6 +25,10 @@
     "./pricing-evaluation": {
       "types": "./contracts/live-markets-v1/evaluate.d.mts",
       "import": "./contracts/live-markets-v1/evaluate.mjs"
+    },
+    "./creator-markets": {
+      "types": "./contracts/creator-markets-v1/index.d.mts",
+      "import": "./contracts/creator-markets-v1/index.mjs"
     }
   },
   "bin": {

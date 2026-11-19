@@ -56,3 +56,8 @@ Use docs/pricing-evaluation.md and the immutable live-markets-v1 evaluation sche
 ## Creator-market source preview
 
 Read contracts/creator-markets-v1/README.md before using the new state/model files from repository source. Projection uses actual reviewed blueprint engines, two original outcomes, exact manifest and package hashes, original accepted event sequence and source-owned clocks. Timed-score completion requires the real duration and a unique score leader; draws/cancellation are distinct. No fake outcomes, price liquidity, source authentication, native proof or settlement is inferred. No new published package entry or hosted intake exists. The next integration must add genuine binary collateral/void accounting and independent current source admission in the common-Testnet lane before enabling any orders.
+
+
+## Creator market helpers — alpha.9
+
+Use `@hybrid-chain/arena-sdk/creator-markets` for the exact state/model contract. Public read-only GET `/api/testnet/creator-pricing` requires one published game ID and one original match ID. It has no authentication, state-write or account authority; check HTTP status and original times. Source fields remain game-scoped HMAC acceptance, not verified host provenance or native confirmation. Binary engine accounting is inactive and actual common-Testnet creator admission/quotes/orders remain pending. State/model hashes and original request identities must remain unchanged; never interpret an installed helper or successful synthetic fixture as an activated game market.

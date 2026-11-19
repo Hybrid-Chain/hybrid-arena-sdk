@@ -82,6 +82,6 @@ The optional server-side `@hybrid-chain/arena-sdk/pricing` entry validates aggre
 
 `@hybrid-chain/arena-sdk/pricing-evaluation` replays the unchanged pinned Star Quest model over complete original matches and reports equal-match Brier/log-loss, equal-prior baselines and calibration buckets. `node scripts/evaluate-live-pricing.mjs dataset.json [new-report.json]` runs entirely offline and refuses to overwrite a report. It does not certify input authenticity, calibrate/fine-tune a model, publish quotes or activate markets. [Dataset, holdout and trust requirements](docs/pricing-evaluation.md).
 
-## Creator market adapter source preview
+## Creator market helpers — alpha.9
 
-The [creator market-state contract](contracts/creator-markets-v1/README.md) projects the four actual managed game engines with their two real outcomes and immutable manifest/package/clock bindings. A versioned experimental timed-score model and exact synthetic source fixtures are included in repository source. This is not a published package entry, hosted market intake or activated common-Testnet integration. Binary matching, source admission and second-game acceptance remain next work.
+`@hybrid-chain/arena-sdk/creator-markets` exports exact source-state validation, managed-game projection and the unchanged experimental timed-score model. Arena's public read-only creator-pricing endpoint is documented alongside it. Binary engine accounting is deployed inactive; source/host admission, finite quotes and an actual second-game market trial remain required. No source key, account allocation, financial execution or wallet authority is included. [Contract and current limits](contracts/creator-markets-v1/README.md).

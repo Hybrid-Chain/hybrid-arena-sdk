@@ -1,3 +1,8 @@
+# Alpha.9 creator helpers — November 19, 2026
+
+- `./creator-markets` packages the original `288f0f4` state/model/policy bytes without changing commitments. Website `1e7306c` supplies a public existing-store read-only source projection. Engine `e9da8e0` has inactive binary collateral/conservation/void accounting. Keep their separate delivered and unaccepted boundaries accurate; older source-preview notes below describe the historical first slice.
+- This entry grants no key, market registration, credit, quote/order or wallet authority. Host provenance, source-clock admission, finite maker, Studio/binary UI integration and real second-game trial remain unfinished. Original provider, Star Quest model, Python client and legacy ledgers stay unchanged.
+
 # Hybrid Arena SDK
 
 - This public repository contains contracts, SDKs and a local reference sandbox.
