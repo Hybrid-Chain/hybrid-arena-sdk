@@ -1,6 +1,6 @@
 {
   "schema": "arena.sdk-extensions.v1",
-  "version": "2026-11-19.1",
+  "version": "2026-11-19.2",
   "core_source_contract": "2026-10-23.2",
   "canonical_origin": "https://hybrid-arena.com",
   "current_availability": "https://hybrid-arena.com/.well-known/arena.json",
@@ -80,7 +80,8 @@
       ],
       "authority": "public_read",
       "readonly_projection_available": true,
-      "managed_host_provenance_verified": false
+      "managed_host_provenance": "per_response_protected_host_comparison",
+      "readonly_projection_source": "https://github.com/Hybrid-Chain/hybrid-arena-website/commit/d5d7e6a711a16190775ac1ab09abd19563da30a5"
     }
   ],
   "node_helpers": [

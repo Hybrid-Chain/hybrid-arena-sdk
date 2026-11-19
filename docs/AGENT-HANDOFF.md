@@ -61,3 +61,8 @@ Read contracts/creator-markets-v1/README.md before using the new state/model fil
 ## Creator market helpers — alpha.9
 
 Use `@hybrid-chain/arena-sdk/creator-markets` for the exact state/model contract. Public read-only GET `/api/testnet/creator-pricing` requires one published game ID and one original match ID. It has no authentication, state-write or account authority; check HTTP status and original times. Source fields remain game-scoped HMAC acceptance, not verified host provenance or native confirmation. Binary engine accounting is inactive and actual common-Testnet creator admission/quotes/orders remain pending. State/model hashes and original request identities must remain unchanged; never interpret an installed helper or successful synthetic fixture as an activated game market.
+
+
+## Current protected host comparison — November 19 UTC
+
+Website `d5d7e6a` can positively compare the original complete accepted managed-host prefix and receipt over its existing private local service channel. Inspect the response provenance flag; missing comparison stays unverified and mismatches/host-known completion close live views. This is single-operator attribution, not independent game truth or native finality. Source-clock trading admission, finite executable liquidity and actual second-game trading remain unfinished. The actual operator/synthetic source trial completed at sequence93/tick300 with no account grant or order. Published alpha.9 artifacts remain immutable at their original source `5629527`; these are current runtime documentation updates only.
