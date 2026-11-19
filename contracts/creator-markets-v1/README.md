@@ -6,7 +6,7 @@ Arena's reviewed managed blueprints now connect actual game state to native bina
 Testnet contracts: live finite bids/asks, reviewed orders, partial exits, original
 request recovery, account-owned positions and accepted-result settlement.
 The [player API and native guide](https://hybrid-arena.com/integrations/markets/creator-pricing-v1/native-admission.md)
-and [Arena agent manifest](https://hybrid-arena.com/.well-known/agent.json) describe
+and [Arena agent manifest](https://hybrid-arena.com/.well-known/arena.json) describe
 current browser routes and availability. Browser writes use the current Arena
 session and Origin/CSRF; they are not delegated external trading credentials.
 
