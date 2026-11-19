@@ -85,8 +85,9 @@
       "native_execution_implementation": "private_adapter_and_owned_recovery_selected_closed_gates",
       "native_execution_sequence_domain": "creator_native_execution_v1",
       "native_execution_guide": "https://hybrid-arena.com/integrations/markets/creator-pricing-v1/native-admission.md",
-      "native_engine_source": "https://github.com/Hybrid-Chain/hybrid-chain-prediction-markets/commit/609ebb274ca7cb80c6d6ba5fe231bb64d120a2b8",
-      "native_owned_intent_recovery_implemented": true
+      "native_engine_source": "https://github.com/Hybrid-Chain/hybrid-chain-prediction-markets/commit/e6367db8a881dbf7cc91b9ef3f8983a0758af082",
+      "native_owned_intent_recovery_implemented": true,
+      "native_worker_implementation": "packaged_actual_http_mysql_acceptance_passed_not_commissioned"
     }
   ],
   "node_helpers": [

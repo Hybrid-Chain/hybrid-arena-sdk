@@ -2,7 +2,7 @@
   "schema": "arena.contract-checksums.v1",
   "version": "2026-11-19.3",
   "files": {
-    "README.md": "eb144a1bfaafce7337d61df8070452568c521eb9c4a843f5878078fa408df61a",
+    "README.md": "a739c13229e73031f807277ccf91e4f8ba405c7d3e2a969444f4e31581e3be6f",
     "fixtures/managed-models.json": "d36e4877d9171db871999eb916f713ceb51c9c79e03f88fb3d5992ce77663d55",
     "index.d.mts": "11edd70672d50350cff8057783269024d50b07e41974cc75cf2e0670b66c9c4d",
     "index.mjs": "b4b867591de3a82d523365a0a173e7252e49a0c45d51549aa1e73b6c6d6a134d",
