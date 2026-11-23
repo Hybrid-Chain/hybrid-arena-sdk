@@ -13,9 +13,9 @@ model heads and public match projections, never account/session/identity tables.
 The caller must already have appropriate local filesystem authority.
 
 The [selection protocol](selection-protocol.json) is committed before the real-data
-run: latest400unheld completed match candidates, original first-observation ordering,
-80/20chronological complete-match split before validation, no replacement of rejected
-candidates, at most40uniformly selected original frames per match, first original
+run: latest 400 unheld completed match candidates, original first-observation ordering,
+80/20 chronological complete-match split before validation, no replacement of rejected
+candidates, at most 40 uniformly selected original frames per match, first original
 per repeated tick, and original completed features agreeing with the retained
 source result. Unknown/missing/changed originals are excluded and counted; no
 terminal or observation is synthesized. Every original canonical hash and stored
@@ -40,23 +40,23 @@ to overwrite. The original evaluator/model regressions remain in place.
 A real-data report still does not establish independent governance, calibration,
 anti-cheat, human adoption, market liquidity, native finality or financial readiness.
 
-Validation before real-data evaluation: TypeScript build passed; all59SDKNode tests
-and5Python tests passed in a child-only loopback network namespace with disposable
-RAM-backed temporary storage. Focused model/evaluation runs overlap the full59and
+Validation before real-data evaluation: TypeScript build passed; all 59 SDK Node tests
+and5 Python tests passed in a child-only loopback network namespace with disposable
+RAM-backed temporary storage. Focused model/evaluation runs overlap the full 59 and
 are not additional passes. Fixture authority is synthetic; no real user, financial,
 provider or native-chain acceptance is inferred. Host mounts were restored.
 
 
 ## First actual-source result
 
-The operator tool read236,330original stored model rows from the400preselected
-completed source matches. All400retained candidates passed the original feature,
+The operator tool read236,330 original stored model rows from the400 preselected
+completed source matches. All 400 retained candidates passed the original feature,
 clock, source-result and pinned-estimate checks; none was replaced or excluded.
-The first320chronological matches were development-only; the final80were held out.
-Each match contributed40original frames, so evaluation used3200frames with equal
+The first 320 chronological matches were development-only; the final 80 were held out.
+Each match contributed40 original frames, so evaluation used3,200 frames with equal
 match weighting. There were no drawn or awaiting-result frames in this cohort.
-The underlying retained source inventory had480,990observations across856matches;
-this report covers the declared400candidate subset, not that entire population.
+The underlying retained source inventory had480,990 observations across856 matches;
+this report covers the declared400 candidate subset, not that entire population.
 
 | Held-out cohort | Matches | Brier score | Log loss |
 |---|---:|---:|---:|
@@ -82,7 +82,7 @@ observed outcome fractions. The report retains `calibrated:false`,
 `executable_quote:false` and `financial_execution:false`. Do not use this evaluation
 mode in a live request or change the frozen model hash on the strength of this run.
 A future model revision needs a separately predeclared training/evaluation process
-and fresh unseen matches, rather than repeated selection against these80labels.
+and fresh unseen matches, rather than repeated selection against these 80 labels.
 
 Artifacts: [report](report.json), [selection](selection.json),
 [provenance](provenance.json), and the pre-run [protocol](selection-protocol.json).
