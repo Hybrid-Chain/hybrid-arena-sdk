@@ -1,0 +1,131 @@
+{
+  "schema": "arena.pricing-evaluation-report.v1",
+  "model_version": "starquest-score-health-v1",
+  "model_hash": "43f490680d2b277e4dea1d4dfe56ffa6360f241a0fab6a4b23d14159a36dfa0b",
+  "dataset_hash": "e6c245c1e183931252d162a3827fb3328a6c5f84caa85ca35edd388423cd8d94",
+  "source_authenticity_verified": false,
+  "calibrated": false,
+  "executable_quote": false,
+  "financial_execution": false,
+  "parameter_fit_performed": false,
+  "weighting": "equal_original_matches_then_frames",
+  "development_matches_excluded": 320,
+  "drawn_matches_excluded": 0,
+  "evaluation_observations": 3200,
+  "awaiting_result_observations_excluded": 0,
+  "metrics": {
+    "matches": 80,
+    "brier": 0.4858088164656279,
+    "log_loss": 0.8660599617945959,
+    "equal_prior_brier": 0.75,
+    "equal_prior_log_loss": 1.3862943611198906
+  },
+  "by_mode": {
+    "battlefield": {
+      "matches": 50,
+      "brier": 0.49536539220761,
+      "log_loss": 0.8587336628091005,
+      "equal_prior_brier": 0.75,
+      "equal_prior_log_loss": 1.3862943611198906
+    },
+    "bombing": {
+      "matches": 13,
+      "brier": 0.5469505674590154,
+      "log_loss": 0.9972783380400182,
+      "equal_prior_brier": 0.75,
+      "equal_prior_log_loss": 1.3862943611198906
+    },
+    "capture": {
+      "matches": 8,
+      "brier": 0.15654942339505623,
+      "log_loss": 0.34907824427463574,
+      "equal_prior_brier": 0.75,
+      "equal_prior_log_loss": 1.3862943611198906
+    },
+    "transport": {
+      "matches": 9,
+      "brier": 0.6370758825268997,
+      "log_loss": 1.176763272710589,
+      "equal_prior_brier": 0.75,
+      "equal_prior_log_loss": 1.3862943611198906
+    }
+  },
+  "calibration_buckets": [
+    {
+      "lower": 0,
+      "upper": 0.1,
+      "weight": 0.2607031250000151,
+      "mean_probability": 0.03265300899010907,
+      "observed_fraction": 0
+    },
+    {
+      "lower": 0.1,
+      "upper": 0.2,
+      "weight": 0.1745312500000054,
+      "mean_probability": 0.15426043151297614,
+      "observed_fraction": 0.0532676812891658
+    },
+    {
+      "lower": 0.2,
+      "upper": 0.3,
+      "weight": 0.21367187500001153,
+      "mean_probability": 0.24936718427786797,
+      "observed_fraction": 0.20914076782448313
+    },
+    {
+      "lower": 0.3,
+      "upper": 0.4,
+      "weight": 0.15703125000000268,
+      "mean_probability": 0.34836936169153637,
+      "observed_fraction": 0.3746268656716296
+    },
+    {
+      "lower": 0.4,
+      "upper": 0.5,
+      "weight": 0.0916406249999984,
+      "mean_probability": 0.44662033162831155,
+      "observed_fraction": 0.5038363171355518
+    },
+    {
+      "lower": 0.5,
+      "upper": 0.6,
+      "weight": 0.05203124999999924,
+      "mean_probability": 0.5444708798798875,
+      "observed_fraction": 0.7852852852852867
+    },
+    {
+      "lower": 0.6,
+      "upper": 0.7,
+      "weight": 0.023984374999999832,
+      "mean_probability": 0.6429919706840438,
+      "observed_fraction": 0.9902280130293161
+    },
+    {
+      "lower": 0.7,
+      "upper": 0.8,
+      "weight": 0.011640625000000009,
+      "mean_probability": 0.7448524161073821,
+      "observed_fraction": 1
+    },
+    {
+      "lower": 0.8,
+      "upper": 0.9,
+      "weight": 0.0070312500000000045,
+      "mean_probability": 0.8484345888888882,
+      "observed_fraction": 1
+    },
+    {
+      "lower": 0.9,
+      "upper": 1,
+      "weight": 0.007734375000000005,
+      "mean_probability": 0.9387224848484839,
+      "observed_fraction": 1
+    }
+  ],
+  "limitations": [
+    "Offline input has not been source-authenticated by this evaluator.",
+    "Held-out labels are supplied by the operator; no independent acceptance or calibration is established.",
+    "Drawn outcomes are excluded because the four-outcome forecast has no draw category.",
+    "No live quote, order, grant, settlement or wallet operation is performed."
+  ]
+}

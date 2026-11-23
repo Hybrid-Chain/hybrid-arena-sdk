@@ -1,8 +1,9 @@
 # Retained original-match evaluation — November23
 
-Status: tested operator tool and declared selection protocol; real-data evaluation
-has not yet been run at this source checkpoint. This is not a new SDK package or
-live model release. Alpha.9 and the canonical model/policy/evaluator remain unchanged.
+Status: **first retained real-source chronological evaluation completed on Core**
+using source `96c130266925e5f1d3dc9bb1cf0ccf9947f109ee`. The selection protocol was
+pushed before the run. Alpha.9 and canonical model/policy/evaluator artifacts are
+unchanged; this is not a package publication, parameter fit or live model release.
 
 `tools/evaluation/arena-retained-originals.mjs` is an **operator-only offline tool**
 for Arena's existing retained public-safe game/model tables. It is not a public
@@ -44,3 +45,50 @@ and5Python tests passed in a child-only loopback network namespace with disposab
 RAM-backed temporary storage. Focused model/evaluation runs overlap the full59and
 are not additional passes. Fixture authority is synthetic; no real user, financial,
 provider or native-chain acceptance is inferred. Host mounts were restored.
+
+
+## First actual-source result
+
+The operator tool read236,330original stored model rows from the400preselected
+completed source matches. All400retained candidates passed the original feature,
+clock, source-result and pinned-estimate checks; none was replaced or excluded.
+The first320chronological matches were development-only; the final80were held out.
+Each match contributed40original frames, so evaluation used3200frames with equal
+match weighting. There were no drawn or awaiting-result frames in this cohort.
+The underlying retained source inventory had480,990observations across856matches;
+this report covers the declared400candidate subset, not that entire population.
+
+| Held-out cohort | Matches | Brier score | Log loss |
+|---|---:|---:|---:|
+| All modes | 80 | 0.485809 | 0.866060 |
+| Battlefield | 50 | 0.495365 | 0.858734 |
+| Bombing | 13 | 0.546951 | 0.997278 |
+| Capture | 8 | 0.156549 | 0.349078 |
+| Transport | 9 | 0.637076 | 1.176763 |
+| Equal-prior baseline | — | 0.750000 | 1.386294 |
+
+Lower scores are better. The fixed model beat equal priors on this source cohort;
+this is neither universal forecasting accuracy nor calibration certification.
+Per-mode counts are small, especially Capture and Transport. Matches were supplied
+by the same retained source system; independent human participation and source
+truth/anti-cheat have not been established. These are real retained source matches,
+not the synthetic unit fixtures, but no independent human acceptance is inferred.
+Sampling is uniform over retained observation indexes, not a guarantee of uniformly
+spaced physical gameplay. The development subset was not used to fit anything.
+
+Calibration buckets remain descriptive and show deviations between forecasts and
+observed outcome fractions. The report retains `calibrated:false`,
+`source_authenticity_verified:false`, `parameter_fit_performed:false`,
+`executable_quote:false` and `financial_execution:false`. Do not use this evaluation
+mode in a live request or change the frozen model hash on the strength of this run.
+A future model revision needs a separately predeclared training/evaluation process
+and fresh unseen matches, rather than repeated selection against these80labels.
+
+Artifacts: [report](report.json), [selection](selection.json),
+[provenance](provenance.json), and the pre-run [protocol](selection-protocol.json).
+The exact dataset and original-row commitments are recorded there. Raw datasets
+remain owner-only on Core; they were not exported or committed. Seven critical
+service identities stayed unchanged; no private account/session table, source key,
+model selection, service, database content, order, financial gate or wallet was
+changed. The operator ran in a child-only network namespace with global fetch
+denied. This delivery advances M5; it does not complete M6/M8/M9/M11/M12.

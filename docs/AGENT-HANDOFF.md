@@ -96,3 +96,10 @@ features/outcomes only and uses the unchanged alpha.8evaluator. Commit aggregate
 reports, not raw datasets. Source deployment PR14/15 was accepted November19;
 older pending notes are historical. Runtime selection, independent humans,
 source authenticity, calibration, liquidity and payouts remain separate claims.
+
+The first actual retained-source report is now in
+`docs/evaluation-20261123/report.json`:80chronologically held-out matches,
+Brier0.485809versus0.75equal priors, logloss0.866060versusln4. Review the protocol,
+selection and provenance together; no model fitting or live selection occurred.
+Treat this as scoped offline performance evidence, with calibration/source truth
+and independent human acceptance still unestablished.

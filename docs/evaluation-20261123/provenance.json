@@ -1,0 +1,27 @@
+{
+  "schema": "arena.original-pricing-evaluation-provenance.v1",
+  "operator_source_revision": "96c130266925e5f1d3dc9bb1cf0ccf9947f109ee",
+  "source_archive_sha256": "260ff2b01190c2c34f18629467a68feaee6fcc5073457a2db7d7a450f2a7ea94",
+  "frozen_artifacts_verified": {
+    "tools/evaluation/arena-retained-originals.mjs": "2191f01d4d95e2b56eb93d5e553e341c87e6f041c1b82718a01dcea313f42f75",
+    "contracts/live-markets-v1/evaluate.mjs": "c730a4cec191c58a6d508952ce48d3e6edf0e3c7dcfa117d7e5846d353529dc9",
+    "contracts/live-markets-v1/starquest-model.mjs": "0805691540259c6026e04ca5ee555a9c4f0f7a0b9cda4a62cde2b3c03af47095",
+    "contracts/live-markets-v1/model-policy.json": "53bf7b1615f604d57719c6496e480a2d9c3ecec97d92194effa2260300990ed0"
+  },
+  "protocol_declared_before_run": true,
+  "read_only_source_tables": [
+    "testnet_model_heads",
+    "testnet_model_observations",
+    "live_matches"
+  ],
+  "private_account_or_session_tables_read": false,
+  "child_network_namespace_isolated": true,
+  "global_fetch_denied": true,
+  "critical_services_unchanged": 7,
+  "database_writes": false,
+  "source_or_model_selection_changed": false,
+  "native_confirmation_or_wallet_payment": false,
+  "raw_dataset_exported_from_core": false,
+  "at": 1795476734976,
+  "private_audit_id": "20261123T233117Z-96c130266925e5f1d3dc9bb1cf0ccf9947f109ee"
+}

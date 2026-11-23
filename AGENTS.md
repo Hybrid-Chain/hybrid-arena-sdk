@@ -48,3 +48,19 @@
   package capability flags or imply independent creator/player acceptance. Check
   the dated operational/evaluation records; never change source-preview manifests
   into production authority claims.
+
+
+# Frozen-model real-source evaluation completed — November23 UTC
+
+- `docs/evaluation-20261123/report.json` records the predeclared96c1302read-only
+  run:400original completed candidates retained,320development/80held-out matches,
+  3200held-out original frames, Brier0.485809/logloss0.866060 versus0.75/ln4equal
+  priors. No parameter fitting, model/source selection or financial operation.
+- Preserve exact protocol/cohort/dataset/row hashes and private raw exports. The
+  model remains experimental/uncalibrated; source-authenticity and independent
+  human acceptance remain false. Small per-mode samples are not a certification.
+  Never rewrite immutable model/policy/evaluator or source histories to improve a
+  score. Future fitting requires fresh unseen evaluation data and a new model hash.
+- TypeScript,59SDKNode and5Python checks passed; focused runs overlap. Original
+  package versions and canonical capability flags remain unchanged. Operator-only
+  code is outside the published SDK package file allowlist; no npm release.
