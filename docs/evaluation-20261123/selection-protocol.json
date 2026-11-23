@@ -1,0 +1,26 @@
+{
+  "schema": "arena.original-pricing-selection-protocol.v1",
+  "declared_before_real_evaluation": true,
+  "candidate_selection": "latest 400 unheld completed model heads by original first observation and match ID",
+  "split": "chronological 80% development / 20% evaluation, assigned before validation; rejected candidates are not replaced",
+  "sampling": "first original per tick; at most 40 original frames at uniformly spaced retained indexes",
+  "terminal": "original completed feature snapshot; exact winner/mode/rules agreement with retained source match; no inferred terminal",
+  "original_payloads": "stored envelope, canonical feature hash and frozen model recomputation must agree",
+  "bounds": {
+    "candidate_matches": 400,
+    "rows_per_match": 20000,
+    "frames_per_match": 40,
+    "dataset_file_bytes": 67108864
+  },
+  "draws": "retained and explicitly excluded from metrics by the original evaluator",
+  "operator_tool_sha256": "2191f01d4d95e2b56eb93d5e553e341c87e6f041c1b82718a01dcea313f42f75",
+  "frozen_evaluator_sha256": "c730a4cec191c58a6d508952ce48d3e6edf0e3c7dcfa117d7e5846d353529dc9",
+  "frozen_model_sha256": "0805691540259c6026e04ca5ee555a9c4f0f7a0b9cda4a62cde2b3c03af47095",
+  "frozen_policy_sha256": "53bf7b1615f604d57719c6496e480a2d9c3ecec97d92194effa2260300990ed0",
+  "parameter_fit_performed": false,
+  "source_authenticity_verified": false,
+  "independent_human_acceptance": false,
+  "database_writes": false,
+  "network_requests": 0,
+  "financial_execution": false
+}

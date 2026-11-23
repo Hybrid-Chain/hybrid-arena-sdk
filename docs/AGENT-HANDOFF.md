@@ -84,3 +84,15 @@ No native key/source/market/execution is commissioned. The co-located host conne
 Enginee6367db8a881dbf7cc91b9ef3f8983a0758af082 is selected with49 private paths and existing schema22 unchanged. The Arena source worker passed actual disposable managed-engine/native-journal + signed Rust HTTP/MySQL acceptance through original request recovery, queued cancellation, acknowledgment and accepted-terminal Testnet settlement. Starting balance remained unchanged; IOC fills were zero without counterparty inventory. Source/model times were not refreshed by reads or new approvals. Durable recovery reads do not grant a new account/market/admission. Uncertain stopped/expired dispatches recover originals or retain a negative native fence; an earlier positive ticket remains outstanding until its actual acknowledgment.
 
 The worker is packaged but not commissioned. Native keys, genuine stream/host selection, finite maker and binary player UX remain a guarded rollout. Hosted SDK intake/common-Testnet-execution flags remain false. Preserve original alpha.9/model/state/policy hashes and all earlier trust roots; no new package publication, human acceptance, native finality or wallet payout is established by this run.
+
+
+## Retained original-match evaluation — November23
+
+For an authorized Arena operator's offline analysis, read
+`docs/evaluation-20261123/README.md` and its predeclared selection protocol.
+`tools/evaluation/arena-retained-originals.mjs` does not belong in a client or live
+request path and grants no database access. It reads original public-safe game
+features/outcomes only and uses the unchanged alpha.8evaluator. Commit aggregate
+reports, not raw datasets. Source deployment PR14/15 was accepted November19;
+older pending notes are historical. Runtime selection, independent humans,
+source authenticity, calibration, liquidity and payouts remain separate claims.
