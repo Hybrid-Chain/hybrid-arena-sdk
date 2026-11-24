@@ -103,3 +103,39 @@ Brier0.485809versus0.75equal priors, logloss0.866060versusln4. Review the protoc
 selection and provenance together; no model fitting or live selection occurred.
 Treat this as scoped offline performance evidence, with calibration/source truth
 and independent human acceptance still unestablished.
+
+## Retained actual quote observations — November 23, 2026
+
+Arena website release
+[`0195a4d9f7e343117b89bebcc2d734542258e2aa`](https://github.com/Hybrid-Chain/hybrid-arena-website/commit/0195a4d9f7e343117b89bebcc2d734542258e2aa)
+is deployed. Its generated [public OpenAPI](https://hybrid-arena.com/api/openapi.json)
+describes these public, fixed-Testnet read-only market-data routes:
+
+- `GET /api/testnet/exchange/quote-history?market=starquest:<match_id>`
+- `GET /api/testnet/creator-exchange/quote-history?market=creator-<market_id>`
+
+These are separate from game-event intake and SDK source delivery. No credential,
+account allocation, source grant, order or wallet action is created by these GETs.
+Creator reads retain existing public release visibility. Preserve `next_cursor` as
+`before`; its sequence identifies a local quote observation, not an admission,
+execution or blockchain receipt. Pages contain 1–360 original sampled observations
+in chronological order, including actual bid/ask quantities and original book,
+source and model/feature references.
+
+The website chart cache records actual reads at most once every two seconds per
+market. It retains up to seven days and 250,000 observations across markets, with
+an additional 512 MiB SQLite page cap. Older chart samples can roll off at capacity;
+original event, order, execution and evidence histories are separate and retained.
+No earlier prices are reconstructed. Stale/held/terminal sources and missing
+bid/ask depth remain gaps, including intervals over six seconds on the chart.
+A midpoint is historical observation, not a probability, executable exit, accepted
+fill, source signature or native proof.
+
+Public Star Quest and creator routes were independently checked after deployment.
+Twenty read-only actual Star Quest listings across four markets produced thirteen
+retained two-sided samples and twelve source-gap samples, without grants/orders.
+This is scoped observational acceptance, not continuous liquidity, calibration,
+source truth, independent human participation or payment acceptance. See Arena's
+`docs/retained-quotes-20261123/` for the exact delivery and synthetic test provenance.
+SDK alpha.9, original provider/model/policy/evaluator artifacts and capability flags
+remain unchanged; this documentation update is not a new npm release.

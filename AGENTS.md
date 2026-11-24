@@ -64,3 +64,15 @@
 - TypeScript,59SDKNode and5Python checks passed; focused runs overlap. Original
   package versions and canonical capability flags remain unchanged. Operator-only
   code is outside the published SDK package file allowlist; no npm release.
+
+# Retained public quote-history APIs — November23 UTC
+
+- Arena website0195a4d is deployed with separate fixed-Testnet public quote-history
+  reads for Star Quest and native binary creators. This is sampled observational
+  data, at most every2s/read, up to7days/global250000samples/512MiBpages. Missing,
+  stale or one-sided depth is never a fabricated midpoint; creator publication
+  visibility remains required. Original event/order/evidence journals are separate.
+- See docs/AGENT-HANDOFF.md and Arena's exact delivery evidence. No source intake,
+  account allocation, admission/order authority or wallet payout is supplied by
+  these reads. Alpha.9 package, canonical contracts/models/evaluator and existing
+  capability flags remain immutable. Documentation only; no npm publication.
