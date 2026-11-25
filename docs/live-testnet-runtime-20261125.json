@@ -1,0 +1,61 @@
+{
+  "schema": "arena.sdk-runtime-observation.v1",
+  "observed_on": "2026-11-25",
+  "sdk_package_version": "0.1.0-alpha.9",
+  "package_release_changed": false,
+  "canonical_source_contract": "2026-10-23.2",
+  "discovery": {
+    "url": "https://hybrid-arena.com/.well-known/arena.json",
+    "observed_http_status": 200,
+    "version": "2026-11-24.1",
+    "availability_is_per_response": true
+  },
+  "hosted_source": {
+    "status_url": "https://hybrid-arena.com/v1/status",
+    "observed_http_status": 200,
+    "enabled": true,
+    "environment": "sandbox",
+    "payout_authority": false
+  },
+  "common_testnet": {
+    "network": "testnet",
+    "unit": "testnet_usd",
+    "unit_scale": 100,
+    "starting_allocation_units": 1000000,
+    "once_per_account": true,
+    "automatic_refill": false,
+    "mainnet_enabled": false,
+    "value_movement": false,
+    "starquest": {
+      "market_data_url": "https://hybrid-arena.com/api/testnet/exchange/markets",
+      "status": "commissioned_original_continuous_lane",
+      "continuous_depth_accepted": false
+    },
+    "managed_creators": {
+      "market_data_url": "https://hybrid-arena.com/api/testnet/creator-exchange/markets",
+      "observed_http_status": 200,
+      "status": "commissioned_for_approved_managed_releases",
+      "all_arbitrary_games_enabled": false,
+      "sdk_intake_activates_native_markets": false
+    }
+  },
+  "automation": {
+    "ai_required_per_quote": false,
+    "source": "authoritative_event_validation_and_original_admission",
+    "pricing": "pinned_deterministic_model_from_fresh_source_observations",
+    "liquidity": "finite_cash_and_inventory_backed_orders",
+    "model_estimate_is_executable_quote": false,
+    "new_packet_transport_deployed": false,
+    "new_renewal_policy_deployed": false
+  },
+  "acceptance": {
+    "independent_creator_player_acceptance": false,
+    "sustained_live_two_sided_depth": false,
+    "proof_window_repair_complete": false,
+    "wallet_payout": false
+  },
+  "evidence": [
+    "https://github.com/Hybrid-Chain/hybrid-chain-prediction-markets/blob/b69f85f8d06e57c5ec4e193fb6fcae54241bb8d1/docs/testnet-source-packets-20261125/README.md"
+  ],
+  "authority": "Dated documentation only; live status, exact release bindings and existing permissions govern every request. This record grants no source, account, order or payment authority."
+}

@@ -1,6 +1,6 @@
 {
   "schema": "arena.sdk-extensions.v1",
-  "version": "2026-11-19.2",
+  "version": "2026-11-25.1",
   "core_source_contract": "2026-10-23.2",
   "canonical_origin": "https://hybrid-arena.com",
   "current_availability": "https://hybrid-arena.com/.well-known/arena.json",
@@ -97,5 +97,7 @@
   ],
   "python_extension_helpers": false,
   "testnet_wallet_submission": false,
-  "mainnet_deployment": false
+  "mainnet_deployment": false,
+  "runtime_observation": "live-testnet-runtime-20261125.json",
+  "status_scope": "Extension entries retain their original packaged capability snapshots; use the dated runtime observation and current feature responses for operational status. No package, source, market, account or financial authority is granted."
 }

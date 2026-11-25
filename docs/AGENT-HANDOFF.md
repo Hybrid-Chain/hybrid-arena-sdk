@@ -1,5 +1,17 @@
 # Agent integration handoff
 
+## Current runtime guide — November 25, 2026
+
+Start with [live Testnet integration](live-testnet-integration.md) and the
+[dated runtime observation](live-testnet-runtime-20261125.json). Original Star Quest
+and approved managed native Testnet markets are commissioned; reliable continuous
+two-sided depth and independent creator/player acceptance remain unfinished.
+Background services validate facts, calculate the pinned model and maintain finite
+quotes without AI per quote. Package helpers do not grant native execution rights.
+Older pending-deployment and uncommissioned notes below are dated history; they
+do not override current per-response availability. Immutable alpha.9 artifacts
+and their capability snapshots remain unchanged. Mainnet/value/wallet holds remain.
+
 1. Read the README, common protocol and `contracts/game-provider-v1/manifest.json`.
 2. Check actual availability. OpenAPI paths support the local reference receiver and the canonical hosted sandbox. Check `/v1/status` and use only a game-scoped Studio key for hosted writes; fixture authority is never a hosted credential.
 3. Use a server-authoritative game source and the registered publisher/game/release

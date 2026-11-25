@@ -1,5 +1,15 @@
 # Milestone status
 
+## Current operational continuation — November 25, 2026
+
+This SDK roadmap and Arena's separate twelve-milestone live-Testnet program use
+different numbering. See [current integration guidance](live-testnet-integration.md)
+and [runtime observation](live-testnet-runtime-20261125.json). Approved managed
+native markets and Star Quest's original continuous Testnet lane are commissioned.
+Finite quote coverage, independent creators/players, the separate proof-window
+repair and end-to-end rollout remain unfinished. This documentation update changes
+no SDK release, frozen contract, capability grant or financial permission.
+
 | Milestone | Status | Evidence |
 | --- | --- | --- |
 | M1 common contract | Contract preview complete | Versioned schemas, reference OpenAPI, mappings, signing vectors and valid/invalid fixtures pass local validation. Hosted deployment remains M3. |
