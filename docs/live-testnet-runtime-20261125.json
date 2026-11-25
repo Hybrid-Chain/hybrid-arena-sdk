@@ -7,7 +7,7 @@
   "discovery": {
     "url": "https://hybrid-arena.com/.well-known/arena.json",
     "observed_http_status": 200,
-    "version": "2026-11-24.1",
+    "version": "2026-11-25.1",
     "availability_is_per_response": true
   },
   "hosted_source": {
@@ -52,10 +52,30 @@
     "independent_creator_player_acceptance": false,
     "sustained_live_two_sided_depth": false,
     "proof_window_repair_complete": false,
-    "wallet_payout": false
+    "wallet_payout": false,
+    "proof_window_selection_verified": true,
+    "fresh_post_repair_game_confirmation_accepted": false
   },
   "evidence": [
-    "https://github.com/Hybrid-Chain/hybrid-chain-prediction-markets/blob/b69f85f8d06e57c5ec4e193fb6fcae54241bb8d1/docs/testnet-source-packets-20261125/README.md"
+    "https://github.com/Hybrid-Chain/hybrid-chain-prediction-markets/blob/b69f85f8d06e57c5ec4e193fb6fcae54241bb8d1/docs/testnet-source-packets-20261125/README.md",
+    "https://github.com/Hybrid-Chain/hybrid-arena-website/blob/3cad9005d217992885a8756ca1b5d2474ec6651f/docs/testnet-status-20261125/public-readback.json",
+    "https://github.com/Hybrid-Chain/hybrid-chain-prediction-markets/blob/780b2e5789d64e59bd4c2439cb932d778c7b467b/docs/testnet-runtime-health-20261125/RECOVERY.md"
   ],
-  "authority": "Dated documentation only; live status, exact release bindings and existing permissions govern every request. This record grants no source, account, order or payment authority."
+  "authority": "Dated documentation only; live status, exact release bindings and existing permissions govern every request. This record grants no source, account, order or payment authority.",
+  "website_release": "5cd6a2e398aa678090534d15af70cbdbd6a459d0",
+  "native_contract": {
+    "revision": "172f89940edfd4764dfacf4b0be2ccdfb86cdc13",
+    "version": "2026-11-25.4",
+    "paths": 62,
+    "source": "https://hybrid-arena.com/integrations/markets/creator-pricing-v1/native-engine-source.json"
+  },
+  "health_interpretation": {
+    "url": "https://hybrid-arena.com/api/health",
+    "legacy_wager_execution_scope": "real_value",
+    "testnet_configuration_is_not_runtime_permission": true,
+    "runtime_probed": false,
+    "actual_starquest_status": "https://hybrid-arena.com/api/testnet/exchange/markets",
+    "provider_readiness": "https://hybrid-arena.com/api/providers",
+    "legacy_practice_exchange_is_separate": true
+  }
 }

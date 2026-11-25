@@ -1,6 +1,6 @@
 {
   "schema": "arena.sdk-extensions.v1",
-  "version": "2026-11-25.1",
+  "version": "2026-11-25.2",
   "core_source_contract": "2026-10-23.2",
   "canonical_origin": "https://hybrid-arena.com",
   "current_availability": "https://hybrid-arena.com/.well-known/arena.json",
@@ -99,5 +99,13 @@
   "testnet_wallet_submission": false,
   "mainnet_deployment": false,
   "runtime_observation": "live-testnet-runtime-20261125.json",
-  "status_scope": "Extension entries retain their original packaged capability snapshots; use the dated runtime observation and current feature responses for operational status. No package, source, market, account or financial authority is granted."
+  "status_scope": "Extension entries retain their original packaged capability snapshots; use the dated runtime observation and current feature responses for operational status. No package, source, market, account or financial authority is granted.",
+  "operational_status": {
+    "health": "https://hybrid-arena.com/api/health",
+    "health_testnet_configuration_not_runtime_permission": true,
+    "legacy_execution_flag_scope": "real_value",
+    "provider_readiness": "https://hybrid-arena.com/api/providers",
+    "mainnet_available": false,
+    "real_value_execution": false
+  }
 }

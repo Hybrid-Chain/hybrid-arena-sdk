@@ -12,6 +12,12 @@ Older pending-deployment and uncommissioned notes below are dated history; they
 do not override current per-response availability. Immutable alpha.9 artifacts
 and their capability snapshots remain unchanged. Mainnet/value/wallet holds remain.
 
+Current website `5cd6a2e` exposes discovery `2026-11-25.1` and the exact deployed
+Native62-path source record. Health's legacy execution flag is explicitly
+real-value only; Testnet configuration is not a runtime probe. Use actual
+Testnet book/admission/depth responses, not the legacy exchange gate or a
+configured flag, to decide what can be requested. See the current guide above.
+
 1. Read the README, common protocol and `contracts/game-provider-v1/manifest.json`.
 2. Check actual availability. OpenAPI paths support the local reference receiver and the canonical hosted sandbox. Check `/v1/status` and use only a game-scoped Studio key for hosted writes; fixture authority is never a hosted credential.
 3. Use a server-authoritative game source and the registered publisher/game/release

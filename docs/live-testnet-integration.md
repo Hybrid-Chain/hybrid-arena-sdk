@@ -54,6 +54,15 @@ A non-200 response is unavailable or unconfirmed, not a reason to fall back to
 fixture authority. Discovery describes implemented routes; the route's current
 response and your actual release permissions determine availability.
 
+`GET /api/health` separates real-value execution from Testnet configuration.
+The deprecated `wager_execution:false` applies to real value; it does not disable
+the separate Testnet lane. `testnet.configuration_present` and
+`testnet.order_entry_requested` are configuration observations with
+`runtime_probed:false`, not effective trading permission. Read the actual market
+API next. `GET /api/providers` reports current Testnet order entry independently
+of the legacy exchange; a stale or wrong-namespace view is unavailable. Enabled
+entry still needs current admission, eligibility and finite executable depth.
+
 The [public OpenAPI](https://hybrid-arena.com/api/openapi.json) describes current
 player and Studio APIs separately from this SDK's stable source contract. Public
 market reads are `/api/testnet/exchange/markets` for Star Quest and
@@ -66,6 +75,12 @@ new per-request admission, actual finite quote, accepted fill, terminal Testnet
 settlement, and published game evidence. A Testnet account credit is not a wallet
 payment; evidence inclusion is not independent gameplay adjudication. Existing
 proof publication limits and independent creator/player acceptance remain open.
+
+The coordinated 4097 window is now selected in Arena/Explorer and the existing
+Core hint, with original roots and histories preserved. The original chain has
+resumed. Genuine post-repair game confirmation remains a separately checked
+backlog/verification gate; neither this selection nor a Testnet fill is a Wallet
+payment or independent financial finality.
 
 ## Package versus deployed service
 
